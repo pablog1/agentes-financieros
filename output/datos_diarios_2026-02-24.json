@@ -1,0 +1,5743 @@
+{
+  "metadata": {
+    "fecha": "2026-02-24",
+    "timestamp_utc": "2026-02-24T16:39:53Z",
+    "duracion_segundos": 41.1,
+    "version": "1.0.0",
+    "fuentes": {
+      "dolarapi": {
+        "status": "ok"
+      },
+      "bluelytics": {
+        "status": "ok"
+      },
+      "bcra_macro": {
+        "status": "ok"
+      },
+      "bcra_cotizaciones": {
+        "status": "ok"
+      },
+      "argentinadatos": {
+        "status": "ok"
+      },
+      "yfinance": {
+        "status": "ok"
+      },
+      "yfinance_indices": {
+        "status": "ok"
+      },
+      "pyobd": {
+        "status": "ok"
+      },
+      "rss_ar": {
+        "status": "ok"
+      },
+      "rss_intl": {
+        "status": "ok"
+      }
+    },
+    "errores": [],
+    "advertencia_fechas": true
+  },
+  "macro": {
+    "dolar": {
+      "oficial": {
+        "compra": 1345.0,
+        "venta": 1395.0,
+        "fecha_actualizacion": "2026-02-24T11:05:00.000Z"
+      },
+      "blue": {
+        "compra": 1410.0,
+        "venta": 1430.0,
+        "fecha_actualizacion": "2026-02-24T15:56:00.000Z"
+      },
+      "mep": {
+        "compra": 1401.7,
+        "venta": 1403.2,
+        "fecha_actualizacion": "2026-02-24T15:56:00.000Z"
+      },
+      "ccl": {
+        "compra": 1446.0,
+        "venta": 1446.4,
+        "fecha_actualizacion": "2026-02-24T15:56:00.000Z"
+      },
+      "mayorista": {
+        "compra": 1367.0,
+        "venta": 1376.0,
+        "fecha_actualizacion": "2026-02-24T12:36:00.000Z"
+      },
+      "cripto": {
+        "compra": 1450.0,
+        "venta": 1450.1,
+        "fecha_actualizacion": "2026-02-24T15:56:00.000Z"
+      },
+      "tarjeta": {
+        "compra": 1748.5,
+        "venta": 1813.5,
+        "fecha_actualizacion": "2026-02-24T11:05:00.000Z"
+      }
+    },
+    "brechas": {
+      "blue_oficial_pct": 2.51,
+      "mep_oficial_pct": 0.59,
+      "ccl_oficial_pct": 3.68,
+      "ccl_mep_pct": 3.08
+    },
+    "euro": {
+      "oficial": {
+        "compra": 1460.0,
+        "venta": 1514.0
+      },
+      "blue": {
+        "compra": 1533.0,
+        "venta": 1554.0
+      }
+    },
+    "riesgo_pais": {
+      "valor": 519,
+      "fecha": "2026-02-20",
+      "fuente": "ArgentinaDatos"
+    },
+    "inflacion": {
+      "mensual_ultimo": {
+        "valor": 2.9,
+        "fecha": "2026-01-31"
+      },
+      "interanual_ultimo": {
+        "valor": 32.4,
+        "fecha": "2026-01-31"
+      },
+      "serie_12m": [
+        {
+          "fecha": "2025-02-28",
+          "valor": 2.4
+        },
+        {
+          "fecha": "2025-03-31",
+          "valor": 3.7
+        },
+        {
+          "fecha": "2025-04-30",
+          "valor": 2.8
+        },
+        {
+          "fecha": "2025-05-31",
+          "valor": 1.5
+        },
+        {
+          "fecha": "2025-06-30",
+          "valor": 1.6
+        },
+        {
+          "fecha": "2025-07-31",
+          "valor": 1.9
+        },
+        {
+          "fecha": "2025-08-31",
+          "valor": 1.9
+        },
+        {
+          "fecha": "2025-09-30",
+          "valor": 2.1
+        },
+        {
+          "fecha": "2025-10-31",
+          "valor": 2.3
+        },
+        {
+          "fecha": "2025-11-30",
+          "valor": 2.5
+        },
+        {
+          "fecha": "2025-12-31",
+          "valor": 2.8
+        },
+        {
+          "fecha": "2026-01-31",
+          "valor": 2.9
+        }
+      ]
+    },
+    "tasas": {
+      "plazo_fijo": [
+        {
+          "entidad": "BANCO DE LA NACION ARGENTINA",
+          "tna_clientes": 0.25,
+          "tna_no_clientes": null
+        },
+        {
+          "entidad": "BANCO SANTANDER ARGENTINA S.A.",
+          "tna_clientes": 0.23,
+          "tna_no_clientes": null
+        },
+        {
+          "entidad": "BANCO DE GALICIA Y BUENOS AIRES S.A.",
+          "tna_clientes": 0.23,
+          "tna_no_clientes": null
+        },
+        {
+          "entidad": "BANCO DE LA PROVINCIA DE BUENOS AIRES",
+          "tna_clientes": 0.25,
+          "tna_no_clientes": null
+        },
+        {
+          "entidad": "BANCO BBVA ARGENTINA S.A.",
+          "tna_clientes": 0.23,
+          "tna_no_clientes": null
+        },
+        {
+          "entidad": "BANCO MACRO S.A.",
+          "tna_clientes": 0.28,
+          "tna_no_clientes": null
+        },
+        {
+          "entidad": "Banco GGAL SA",
+          "tna_clientes": null,
+          "tna_no_clientes": null
+        },
+        {
+          "entidad": "BANCO CREDICOOP COOPERATIVO LIMITADO",
+          "tna_clientes": 0.24,
+          "tna_no_clientes": 0.24
+        },
+        {
+          "entidad": "INDUSTRIAL AND COMMERCIAL BANK OF CHINA (ARGENTINA) S.A.U.",
+          "tna_clientes": null,
+          "tna_no_clientes": null
+        },
+        {
+          "entidad": "BANCO DE LA CIUDAD DE BUENOS AIRES",
+          "tna_clientes": 0.23,
+          "tna_no_clientes": null
+        },
+        {
+          "entidad": "Otros bancos que informan tasa de plazo fijo online para no clientes",
+          "tna_clientes": null,
+          "tna_no_clientes": null
+        },
+        {
+          "entidad": "BANCO BICA S.A.",
+          "tna_clientes": 0.33,
+          "tna_no_clientes": 0.33
+        },
+        {
+          "entidad": "BANCO CMF S.A.",
+          "tna_clientes": null,
+          "tna_no_clientes": null
+        },
+        {
+          "entidad": "BANCO COMAFI SOCIEDAD ANONIMA",
+          "tna_clientes": null,
+          "tna_no_clientes": null
+        },
+        {
+          "entidad": "BANCO DE COMERCIO S.A.",
+          "tna_clientes": null,
+          "tna_no_clientes": null
+        },
+        {
+          "entidad": "BANCO DE CORRIENTES S.A.",
+          "tna_clientes": null,
+          "tna_no_clientes": null
+        },
+        {
+          "entidad": "BANCO DE FORMOSA S.A.",
+          "tna_clientes": 0.21,
+          "tna_no_clientes": 0.21
+        },
+        {
+          "entidad": "BANCO DE LA PROVINCIA DE CORDOBA S.A.",
+          "tna_clientes": 0.29,
+          "tna_no_clientes": 0.29
+        },
+        {
+          "entidad": "BANCO DEL CHUBUT S.A.",
+          "tna_clientes": 0.26,
+          "tna_no_clientes": 0.26
+        },
+        {
+          "entidad": "BANCO DEL SOL S.A.",
+          "tna_clientes": 0.32,
+          "tna_no_clientes": null
+        },
+        {
+          "entidad": "BANCO DINO S.A.",
+          "tna_clientes": 0.27,
+          "tna_no_clientes": 0.27
+        },
+        {
+          "entidad": "BANCO HIPOTECARIO S.A.",
+          "tna_clientes": 0.27,
+          "tna_no_clientes": null
+        },
+        {
+          "entidad": "BANCO JULIO SOCIEDAD ANONIMA",
+          "tna_clientes": null,
+          "tna_no_clientes": null
+        },
+        {
+          "entidad": "BANCO MARIVA S.A.",
+          "tna_clientes": null,
+          "tna_no_clientes": null
+        },
+        {
+          "entidad": "BANCO MASVENTAS S.A.",
+          "tna_clientes": 0.24,
+          "tna_no_clientes": 0.24
+        },
+        {
+          "entidad": "BANCO MERIDIAN S.A.",
+          "tna_clientes": null,
+          "tna_no_clientes": null
+        },
+        {
+          "entidad": "BANCO PROVINCIA DE TIERRA DEL FUEGO",
+          "tna_clientes": 0.25,
+          "tna_no_clientes": 0.21
+        },
+        {
+          "entidad": "BANCO VOII S.A.",
+          "tna_clientes": null,
+          "tna_no_clientes": null
+        },
+        {
+          "entidad": "BIBANK S.A.",
+          "tna_clientes": 0.28,
+          "tna_no_clientes": 0.28
+        },
+        {
+          "entidad": "CRÃDITO REGIONAL COMPAÃÃA FINANCIERA S.A.U.",
+          "tna_clientes": 0.33,
+          "tna_no_clientes": null
+        },
+        {
+          "entidad": "REBA COMPAÃIA FINANCIERA S.A.",
+          "tna_clientes": 0.33,
+          "tna_no_clientes": 0.33
+        },
+        {
+          "entidad": "UALA",
+          "tna_clientes": 0.3,
+          "tna_no_clientes": 0.3
+        }
+      ],
+      "badlar": {
+        "valor": 32.6875,
+        "fecha": "2026-02-20"
+      }
+    },
+    "bcra": {
+      "reservas": {
+        "valor": 44904.0,
+        "fecha": "2026-02-19",
+        "unidad": "millones_usd"
+      },
+      "base_monetaria": {
+        "valor": 41882460.0,
+        "fecha": "2026-02-19",
+        "unidad": "millones_ars"
+      },
+      "cer": {
+        "valor": 724.5379,
+        "fecha": "2026-03-15"
+      },
+      "tc_minorista": {
+        "valor": 1392.75,
+        "fecha": "2026-02-23"
+      },
+      "tc_mayorista": {
+        "valor": 1367.24,
+        "fecha": "2026-02-23"
+      }
+    },
+    "divisas_bcra": [
+      {
+        "codigo": "ARS",
+        "descripcion": "PESO",
+        "tipo_cotizacion": 0.0
+      },
+      {
+        "codigo": "AUD",
+        "descripcion": "DOLAR AUSTRALIA",
+        "tipo_cotizacion": 967.71005
+      },
+      {
+        "codigo": "AWG",
+        "descripcion": "FLORIN (ANTILLAS HOLANDESAS)",
+        "tipo_cotizacion": 765.642458
+      },
+      {
+        "codigo": "BOB",
+        "descripcion": "BOLIVIANOS",
+        "tipo_cotizacion": 199.720202
+      },
+      {
+        "codigo": "BRL",
+        "descripcion": "REAL",
+        "tipo_cotizacion": 265.554458
+      },
+      {
+        "codigo": "CAD",
+        "descripcion": "DOLAR CANADIEN.",
+        "tipo_cotizacion": 1001.168822
+      },
+      {
+        "codigo": "CHF",
+        "descripcion": "FRANCO SUIZO",
+        "tipo_cotizacion": 1770.900633
+      },
+      {
+        "codigo": "CLP",
+        "descripcion": "PESO CHILENO",
+        "tipo_cotizacion": 1.580829
+      },
+      {
+        "codigo": "CNH",
+        "descripcion": "YUAN CNH RENMINBI OFF SHORE",
+        "tipo_cotizacion": 198.980777
+      },
+      {
+        "codigo": "CNY",
+        "descripcion": "YUAN CNY RENMINBI",
+        "tipo_cotizacion": 198.485112
+      },
+      {
+        "codigo": "COP",
+        "descripcion": "COLOMBIANOS",
+        "tipo_cotizacion": 0.371466
+      },
+      {
+        "codigo": "CZK",
+        "descripcion": "CORONAS CHECAS",
+        "tipo_cotizacion": 66.738413
+      },
+      {
+        "codigo": "DKK",
+        "descripcion": "CORONAS DANESAS",
+        "tipo_cotizacion": 216.484749
+      },
+      {
+        "codigo": "EUR",
+        "descripcion": "EURO",
+        "tipo_cotizacion": 1617.19
+      },
+      {
+        "codigo": "GBP",
+        "descripcion": "LIBRA ESTERLINA",
+        "tipo_cotizacion": 1849.9009
+      },
+      {
+        "codigo": "HKD",
+        "descripcion": "DOLAR HONG KONG",
+        "tipo_cotizacion": 175.273685
+      },
+      {
+        "codigo": "ILS",
+        "descripcion": "LIBRA ISRAELI",
+        "tipo_cotizacion": 438.391658
+      },
+      {
+        "codigo": "INR",
+        "descripcion": "RUPIA (INDIA)",
+        "tipo_cotizacion": 15.079712
+      },
+      {
+        "codigo": "JPY",
+        "descripcion": "YENS",
+        "tipo_cotizacion": 8.876295
+      },
+      {
+        "codigo": "MXP",
+        "descripcion": "PESO MEXICANO",
+        "tipo_cotizacion": 79.341187
+      },
+      {
+        "codigo": "NIO",
+        "descripcion": "CORDOBA NICARAGUENSE",
+        "tipo_cotizacion": 37.226775
+      },
+      {
+        "codigo": "NOK",
+        "descripcion": "CORONAS NORUEGA",
+        "tipo_cotizacion": 143.362239
+      },
+      {
+        "codigo": "NZD",
+        "descripcion": "DOLAR NEOZELANDES",
+        "tipo_cotizacion": 817.22915
+      },
+      {
+        "codigo": "PEN",
+        "descripcion": "SOLES",
+        "tipo_cotizacion": 408.093381
+      },
+      {
+        "codigo": "PYG",
+        "descripcion": "GUARANIES",
+        "tipo_cotizacion": 0.212523
+      },
+      {
+        "codigo": "REF",
+        "descripcion": "DOLAR REFERENCIA COM 3500",
+        "tipo_cotizacion": 1367.2357
+      },
+      {
+        "codigo": "RSD",
+        "descripcion": "DINAR SERBIA",
+        "tipo_cotizacion": 13.769496
+      },
+      {
+        "codigo": "RUB",
+        "descripcion": "RUSIA",
+        "tipo_cotizacion": 17.79043
+      },
+      {
+        "codigo": "SEK",
+        "descripcion": "CORONAS SUECAS",
+        "tipo_cotizacion": 151.319421
+      },
+      {
+        "codigo": "SGD",
+        "descripcion": "DOLAR DE SINGAPUR",
+        "tipo_cotizacion": 1082.543444
+      },
+      {
+        "codigo": "TRY",
+        "descripcion": "LIRA TURCA",
+        "tipo_cotizacion": 31.264258
+      },
+      {
+        "codigo": "USD",
+        "descripcion": "DOLAR E.E.U.U.",
+        "tipo_cotizacion": 1370.5
+      },
+      {
+        "codigo": "UYU",
+        "descripcion": "PESO URUGUAYO",
+        "tipo_cotizacion": 35.646011
+      },
+      {
+        "codigo": "VEB",
+        "descripcion": "BOLIVARES",
+        "tipo_cotizacion": 3.38723833
+      },
+      {
+        "codigo": "VND",
+        "descripcion": "DONG VIETNAM (C/1.000 UNIDADES)",
+        "tipo_cotizacion": 52.578071
+      },
+      {
+        "codigo": "XAG",
+        "descripcion": "PLATA - ONZA TROY",
+        "tipo_cotizacion": 0.0
+      },
+      {
+        "codigo": "XAU",
+        "descripcion": "ORO FINO (1 ONZA)",
+        "tipo_cotizacion": 0.0
+      },
+      {
+        "codigo": "XDR",
+        "descripcion": "DEG",
+        "tipo_cotizacion": 1883.272575
+      },
+      {
+        "codigo": "ZAR",
+        "descripcion": "RAND SUD",
+        "tipo_cotizacion": 85.577626
+      }
+    ]
+  },
+  "renta_fija": {
+    "bonos_soberanos": [
+      {
+        "ticker": "AE38",
+        "nombre": "",
+        "ultimo": 112540.0,
+        "variacion_pct": 0.0039000000000000003,
+        "volumen": 1459655,
+        "bid": 112500.0,
+        "ask": 112510.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "AE38C",
+        "nombre": "",
+        "ultimo": 77.83,
+        "variacion_pct": -0.0003,
+        "volumen": 446800,
+        "bid": 77.68,
+        "ask": 77.8,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "AE38D",
+        "nombre": "",
+        "ultimo": 80.15,
+        "variacion_pct": -0.0052,
+        "volumen": 1631974,
+        "bid": 80.14,
+        "ask": 80.17,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "AE38X",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "AE38Y",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "AE38Z",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "AL29",
+        "nombre": "",
+        "ultimo": 86540.0,
+        "variacion_pct": -0.0027,
+        "volumen": 450980,
+        "bid": 86540.0,
+        "ask": 86570.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "AL29C",
+        "nombre": "",
+        "ultimo": 59.8,
+        "variacion_pct": -0.0063,
+        "volumen": 38704,
+        "bid": 59.74,
+        "ask": 59.85,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "AL29D",
+        "nombre": "",
+        "ultimo": 61.65,
+        "variacion_pct": -0.0086,
+        "volumen": 255474,
+        "bid": 61.62,
+        "ask": 61.69,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "AL29X",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "AL29Y",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "AL29Z",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "AL30",
+        "nombre": "",
+        "ultimo": 85840.0,
+        "variacion_pct": 0.004,
+        "volumen": 47641288,
+        "bid": 85830.0,
+        "ask": 85840.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "AL30C",
+        "nombre": "",
+        "ultimo": 59.31,
+        "variacion_pct": 0.0,
+        "volumen": 37609232,
+        "bid": 59.31,
+        "ask": 59.32,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "AL30D",
+        "nombre": "",
+        "ultimo": 61.14,
+        "variacion_pct": -0.0024,
+        "volumen": 54783612,
+        "bid": 61.14,
+        "ask": 61.15,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "AL30X",
+        "nombre": "",
+        "ultimo": 85430.257,
+        "variacion_pct": 0.0,
+        "volumen": 1902758,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "AL30Y",
+        "nombre": "",
+        "ultimo": 61.094,
+        "variacion_pct": 0.0,
+        "volumen": 7545045,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "AL30Z",
+        "nombre": "",
+        "ultimo": 59.326,
+        "variacion_pct": 0.0,
+        "volumen": 15988123,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "AL35",
+        "nombre": "",
+        "ultimo": 109500.0,
+        "variacion_pct": 0.0,
+        "volumen": 1262712,
+        "bid": 109470.0,
+        "ask": 109500.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "AL35C",
+        "nombre": "",
+        "ultimo": 75.67,
+        "variacion_pct": -0.003,
+        "volumen": 93891,
+        "bid": 75.59,
+        "ask": 75.72,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "AL35D",
+        "nombre": "",
+        "ultimo": 77.98,
+        "variacion_pct": -0.0059,
+        "volumen": 511640,
+        "bid": 77.98,
+        "ask": 78.03,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "AL35X",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "AL35Y",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "AL35Z",
+        "nombre": "",
+        "ultimo": 75.477,
+        "variacion_pct": 0.0,
+        "volumen": 1325161,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "AL41",
+        "nombre": "",
+        "ultimo": 102200.0,
+        "variacion_pct": -0.0006,
+        "volumen": 1442251,
+        "bid": 102160.0,
+        "ask": 102210.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "AL41C",
+        "nombre": "",
+        "ultimo": 70.73,
+        "variacion_pct": -0.0002,
+        "volumen": 156363,
+        "bid": 70.52,
+        "ask": 70.68,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "AL41D",
+        "nombre": "",
+        "ultimo": 72.84,
+        "variacion_pct": -0.0026,
+        "volumen": 180220,
+        "bid": 72.7,
+        "ask": 72.83,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "AL41X",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "AL41Y",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "AL41Z",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "AN29",
+        "nombre": "",
+        "ultimo": 133050.0,
+        "variacion_pct": 0.0064,
+        "volumen": 302061,
+        "bid": 132660.0,
+        "ask": 133050.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "AN29C",
+        "nombre": "",
+        "ultimo": 91.9,
+        "variacion_pct": 0.0008,
+        "volumen": 21855,
+        "bid": 91.63,
+        "ask": 91.9,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "AN29D",
+        "nombre": "",
+        "ultimo": 94.79,
+        "variacion_pct": -0.0022,
+        "volumen": 461318,
+        "bid": 94.53,
+        "ask": 94.79,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "AN29X",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "AN29Y",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "AN29Z",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BA37D",
+        "nombre": "",
+        "ultimo": 111390.0,
+        "variacion_pct": 0.0054,
+        "volumen": 58506,
+        "bid": 110850.0,
+        "ask": 111390.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BA37E",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BA7DC",
+        "nombre": "",
+        "ultimo": 76.75,
+        "variacion_pct": -0.0019,
+        "volumen": 1813,
+        "bid": 76.59,
+        "ask": 77.03,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BA7DD",
+        "nombre": "",
+        "ultimo": 79.41,
+        "variacion_pct": 0.0039000000000000003,
+        "volumen": 44060,
+        "bid": 79.01,
+        "ask": 79.4,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BA7DX",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BA7DY",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BA7DZ",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BAS26",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BAS6D",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BB37D",
+        "nombre": "",
+        "ultimo": 111970.0,
+        "variacion_pct": 0.0179,
+        "volumen": 7696,
+        "bid": 108650.0,
+        "ask": 111970.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BB37E",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BB7DC",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 80.3,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BB7DD",
+        "nombre": "",
+        "ultimo": 79.59,
+        "variacion_pct": -0.0034999999999999996,
+        "volumen": 10724,
+        "bid": 78.51,
+        "ask": 79.88,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BB7DX",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BB7DY",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BB7DZ",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BC28C",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BC28D",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BC28X",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BC28Y",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BC28Z",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BC33C",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 104.45,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BC33D",
+        "nombre": "",
+        "ultimo": 108.2,
+        "variacion_pct": -0.0018,
+        "volumen": 5000,
+        "bid": 107.7,
+        "ask": 109.2,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BC37D",
+        "nombre": "",
+        "ultimo": 104080.0,
+        "variacion_pct": -0.0537,
+        "volumen": 5,
+        "bid": 105710.0,
+        "ask": 109990.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BC37E",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 129500.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BC7DC",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 5257.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BC7DD",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 68.05,
+        "ask": 79.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BDC28",
+        "nombre": "",
+        "ultimo": 102.95,
+        "variacion_pct": 0.009300000000000001,
+        "volumen": 2103000,
+        "bid": 102.25,
+        "ask": 102.95,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BPA7C",
+        "nombre": "",
+        "ultimo": 102.25,
+        "variacion_pct": -0.0043,
+        "volumen": 48,
+        "bid": 100.85,
+        "ask": 101.8,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BPA7D",
+        "nombre": "",
+        "ultimo": 104.05,
+        "variacion_pct": -0.019299999999999998,
+        "volumen": 3541,
+        "bid": 104.05,
+        "ask": 104.8,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BPA7X",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BPA7Y",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BPA7Z",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BPA8C",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 87.76,
+        "ask": 88.35,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BPA8D",
+        "nombre": "",
+        "ultimo": 90.53,
+        "variacion_pct": -0.0106,
+        "volumen": 60177,
+        "bid": 90.53,
+        "ask": 91.99,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BPA8X",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BPA8Z",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BPB7C",
+        "nombre": "",
+        "ultimo": 98.45,
+        "variacion_pct": 0.0015,
+        "volumen": 29961,
+        "bid": 98.27,
+        "ask": 98.45,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BPB7D",
+        "nombre": "",
+        "ultimo": 101.55,
+        "variacion_pct": -0.0019,
+        "volumen": 124238,
+        "bid": 101.35,
+        "ask": 101.5,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BPB7X",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BPB7Y",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BPB7Z",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BPB8C",
+        "nombre": "",
+        "ultimo": 86.81,
+        "variacion_pct": -0.0009,
+        "volumen": 17819,
+        "bid": 86.5,
+        "ask": 86.89,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BPB8D",
+        "nombre": "",
+        "ultimo": 89.49,
+        "variacion_pct": -0.0001,
+        "volumen": 117697,
+        "bid": 89.12,
+        "ask": 89.49,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BPB8Z",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BPC7C",
+        "nombre": "",
+        "ultimo": 97.6,
+        "variacion_pct": 0.0022,
+        "volumen": 1078718,
+        "bid": 97.57,
+        "ask": 97.75,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BPC7D",
+        "nombre": "",
+        "ultimo": 100.7,
+        "variacion_pct": 0.0,
+        "volumen": 1406082,
+        "bid": 100.65,
+        "ask": 100.7,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BPC7X",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BPC7Y",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BPC7Z",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BPD7C",
+        "nombre": "",
+        "ultimo": 97.6,
+        "variacion_pct": 0.0040999999999999995,
+        "volumen": 1939953,
+        "bid": 97.57,
+        "ask": 97.75,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BPD7D",
+        "nombre": "",
+        "ultimo": 100.65,
+        "variacion_pct": 0.0029,
+        "volumen": 3089334,
+        "bid": 100.65,
+        "ask": 100.7,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BPD7X",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BPD7Y",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BPD7Z",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BPOA7",
+        "nombre": "",
+        "ultimo": 146000.0,
+        "variacion_pct": -0.0168,
+        "volumen": 28985,
+        "bid": 146010.0,
+        "ask": 147990.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BPOA8",
+        "nombre": "",
+        "ultimo": 128980.0,
+        "variacion_pct": 0.0183,
+        "volumen": 41441,
+        "bid": 127010.0,
+        "ask": 128980.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BPOB7",
+        "nombre": "",
+        "ultimo": 142350.0,
+        "variacion_pct": -0.001,
+        "volumen": 152667,
+        "bid": 142350.0,
+        "ask": 142420.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BPOB8",
+        "nombre": "",
+        "ultimo": 125500.0,
+        "variacion_pct": 0.0072,
+        "volumen": 140943,
+        "bid": 125300.0,
+        "ask": 125500.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BPOC7",
+        "nombre": "",
+        "ultimo": 141190.0,
+        "variacion_pct": 0.005600000000000001,
+        "volumen": 640928,
+        "bid": 141200.0,
+        "ask": 141400.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BPOD7",
+        "nombre": "",
+        "ultimo": 141200.0,
+        "variacion_pct": 0.0079,
+        "volumen": 1065764,
+        "bid": 141200.0,
+        "ask": 141370.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BPY26",
+        "nombre": "",
+        "ultimo": 99000.0,
+        "variacion_pct": -0.008,
+        "volumen": 1233200,
+        "bid": 98910.0,
+        "ask": 99000.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BPY6C",
+        "nombre": "",
+        "ultimo": 68.35,
+        "variacion_pct": -0.0132,
+        "volumen": 1518100,
+        "bid": 68.31,
+        "ask": 68.52,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BPY6D",
+        "nombre": "",
+        "ultimo": 70.67,
+        "variacion_pct": -0.0033,
+        "volumen": 1109000,
+        "bid": 70.47,
+        "ask": 70.59,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BPY6X",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BPY6Y",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BPY6Z",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "C24DC",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "C24DD",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "C27DC",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "C27DD",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "C27DX",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "C27DY",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "C27DZ",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "CARP",
+        "nombre": "",
+        "ultimo": 92980.0,
+        "variacion_pct": 0.0218,
+        "volumen": 3372,
+        "bid": 86010.0,
+        "ask": 92970.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "CCO26",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "CEDI",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "CH24D",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "CHAQ",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "CHAQC",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "CI02Q",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "CO24D",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "CO24X",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "CO26",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 13605.0,
+        "ask": 14360.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "CO26D",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 9.5,
+        "ask": 10.6,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "CO26X",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "CO26Y",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "CO26Z",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "CO27D",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "CO2D7",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "CO32",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 152810.0,
+        "ask": 154240.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "CO32C",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 105.7,
+        "ask": 106.45,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "CO32D",
+        "nombre": "",
+        "ultimo": 109.9,
+        "variacion_pct": -0.0009,
+        "volumen": 29000,
+        "bid": 109.0,
+        "ask": 109.9,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "CO35X",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "CO3D7",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "COD7",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "COD7X",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "COY27",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "CUAP",
+        "nombre": "",
+        "ultimo": 39815.0,
+        "variacion_pct": 0.015,
+        "volumen": 55435,
+        "bid": 39325.0,
+        "ask": 39815.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "CUAPC",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "CUAPD",
+        "nombre": "",
+        "ultimo": 28.406,
+        "variacion_pct": 0.0108,
+        "volumen": 33,
+        "bid": 27.977,
+        "ask": 28.425,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "CUAPX",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "CUAPY",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "CUAPZ",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "CY27X",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "DB01A",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "DB01Q",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 141500.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "DCO24",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "DH01B",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "DICP",
+        "nombre": "",
+        "ultimo": 45350.0,
+        "variacion_pct": 0.0033,
+        "volumen": 577160,
+        "bid": 45255.0,
+        "ask": 45345.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "DICPC",
+        "nombre": "",
+        "ultimo": 31.777,
+        "variacion_pct": -0.0062,
+        "volumen": 5000,
+        "bid": 0.0,
+        "ask": 31.715,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "DICPD",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 31.5,
+        "ask": 32.899,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "DICPX",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "DICPY",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "DICPZ",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "DIP0",
+        "nombre": "",
+        "ultimo": 45895.0,
+        "variacion_pct": 0.0031,
+        "volumen": 89,
+        "bid": 44870.0,
+        "ask": 45800.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "DIP0C",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "DIP0D",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 24.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "EE27X",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "EF25C",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "EF25D",
+        "nombre": "",
+        "ultimo": 44.0,
+        "variacion_pct": -0.0535,
+        "volumen": 1741,
+        "bid": 44.21,
+        "ask": 46.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "EG01Q",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "ERF25",
+        "nombre": "",
+        "ultimo": 63300.0,
+        "variacion_pct": 0.0208,
+        "volumen": 3246,
+        "bid": 62120.0,
+        "ask": 63300.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "GD29",
+        "nombre": "",
+        "ultimo": 89890.0,
+        "variacion_pct": -0.0060999999999999995,
+        "volumen": 145663,
+        "bid": 89760.0,
+        "ask": 90080.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "GD29C",
+        "nombre": "",
+        "ultimo": 62.08,
+        "variacion_pct": -0.0027,
+        "volumen": 62667,
+        "bid": 62.03,
+        "ask": 62.27,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "GD29D",
+        "nombre": "",
+        "ultimo": 64.08,
+        "variacion_pct": 0.0004,
+        "volumen": 292819,
+        "bid": 63.99,
+        "ask": 64.18,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "GD29X",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "GD29Y",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "GD29Z",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "GD30",
+        "nombre": "",
+        "ultimo": 88800.0,
+        "variacion_pct": 0.004699999999999999,
+        "volumen": 3543736,
+        "bid": 88800.0,
+        "ask": 88850.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "GD30C",
+        "nombre": "",
+        "ultimo": 61.38,
+        "variacion_pct": -0.0001,
+        "volumen": 183447,
+        "bid": 61.38,
+        "ask": 61.43,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "GD30D",
+        "nombre": "",
+        "ultimo": 63.28,
+        "variacion_pct": -0.0025,
+        "volumen": 2005563,
+        "bid": 63.28,
+        "ask": 63.3,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "GD30X",
+        "nombre": "",
+        "ultimo": 89112.973,
+        "variacion_pct": 0.0,
+        "volumen": 960000,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "GD30Y",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "GD30Z",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "GD35",
+        "nombre": "",
+        "ultimo": 111300.0,
+        "variacion_pct": 0.0018,
+        "volumen": 4210479,
+        "bid": 111290.0,
+        "ask": 111300.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "GD35C",
+        "nombre": "",
+        "ultimo": 76.99,
+        "variacion_pct": -0.0022,
+        "volumen": 36885,
+        "bid": 76.83,
+        "ask": 76.97,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "GD35D",
+        "nombre": "",
+        "ultimo": 79.29,
+        "variacion_pct": -0.0062,
+        "volumen": 1186023,
+        "bid": 79.26,
+        "ask": 79.3,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "GD35X",
+        "nombre": "",
+        "ultimo": 111653.675,
+        "variacion_pct": 0.0,
+        "volumen": 2166692,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "GD35Y",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "GD35Z",
+        "nombre": "",
+        "ultimo": 76.87,
+        "variacion_pct": 0.0,
+        "volumen": 4543721,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "GD38",
+        "nombre": "",
+        "ultimo": 116040.0,
+        "variacion_pct": 0.0006,
+        "volumen": 3229496,
+        "bid": 116000.0,
+        "ask": 116050.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "GD38C",
+        "nombre": "",
+        "ultimo": 80.23,
+        "variacion_pct": -0.0039000000000000003,
+        "volumen": 19198,
+        "bid": 80.13,
+        "ask": 80.25,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "GD38D",
+        "nombre": "",
+        "ultimo": 82.65,
+        "variacion_pct": -0.0069,
+        "volumen": 377640,
+        "bid": 82.66,
+        "ask": 82.69,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "GD38X",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "GD38Y",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "GD38Z",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "GD41",
+        "nombre": "",
+        "ultimo": 103300.0,
+        "variacion_pct": -0.003,
+        "volumen": 1938237,
+        "bid": 103270.0,
+        "ask": 103300.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "GD41C",
+        "nombre": "",
+        "ultimo": 71.4,
+        "variacion_pct": -0.0032,
+        "volumen": 2743,
+        "bid": 71.3,
+        "ask": 71.43,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "GD41D",
+        "nombre": "",
+        "ultimo": 73.55,
+        "variacion_pct": -0.011399999999999999,
+        "volumen": 133062,
+        "bid": 73.55,
+        "ask": 73.58,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "GD41X",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "GD41Y",
+        "nombre": "",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "GD41Z",
+        "nombre": "",
+        "ultimo": 72.012,
+        "variacion_pct": 0.0,
+        "volumen": 9028443,
+        "bid": 0.0,
+        "ask": 0.0,
+        "vencimiento": null,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      }
+    ],
+    "bonos_clave": {
+      "AL29": {
+        "ultimo": 86540.0,
+        "variacion_pct": -0.0027
+      },
+      "AL30": {
+        "ultimo": 85840.0,
+        "variacion_pct": 0.004
+      },
+      "AL35": {
+        "ultimo": 109500.0,
+        "variacion_pct": 0.0
+      },
+      "AL41": {
+        "ultimo": 102200.0,
+        "variacion_pct": -0.0006
+      },
+      "GD30": {
+        "ultimo": 88800.0,
+        "variacion_pct": 0.004699999999999999
+      },
+      "GD35": {
+        "ultimo": 111300.0,
+        "variacion_pct": 0.0018
+      },
+      "GD38": {
+        "ultimo": 116040.0,
+        "variacion_pct": 0.0006
+      },
+      "GD41": {
+        "ultimo": 103300.0,
+        "variacion_pct": -0.003
+      }
+    },
+    "lecaps_boncaps": [
+      {
+        "ticker": "B3J6C",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "B4J6C",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "B4J6D",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BB2Y6",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BBJ26",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BBJ6C",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BBJ6D",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BGD26",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BGD6C",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BGD6D",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BL2G6",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BL2J6",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BL2Y6",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BLJ26",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BLM26",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BLY26",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BN2M6",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BNA26",
+        "ultimo": 35300.001,
+        "variacion_pct": 0.0048,
+        "volumen": 5274,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BNA6C",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BNA6D",
+        "ultimo": 25.3,
+        "variacion_pct": -0.0046,
+        "volumen": 1801,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BNA6X",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BNA6Y",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BNA6Z",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BNM26",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BNM6C",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BNM6D",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BRA26",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BRJ26",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BRJ6C",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BRJ6D",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BU3J6",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BU4J6",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BUA26",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BUA6C",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BUA6D",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BUM26",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BUM6C",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BUM6D",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BUM6Y",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BUM6Z",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BUS26",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BUS6C",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BUS6D",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "D27F6",
+        "ultimo": 137350.0,
+        "variacion_pct": 0.0054,
+        "volumen": 36372222,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "D30A6",
+        "ultimo": 136510.0,
+        "variacion_pct": 0.0096,
+        "volumen": 3454204,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "DA6C",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "DA6D",
+        "ultimo": 99.2,
+        "variacion_pct": 0.0333,
+        "volumen": 318,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "DA6X",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "DA6Y",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "DA6Z",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "DF6C",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "DF6D",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "DF6X",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "DF6Y",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "DF6Z",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "LBA26",
+        "ultimo": 94.671,
+        "variacion_pct": 0.0394,
+        "volumen": 185923,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "LBA6C",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "LBA6D",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "LBM26",
+        "ultimo": 97.9,
+        "variacion_pct": 0.0,
+        "volumen": 74594,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "LBM6C",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "LBM6D",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "LBO26",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "LBO6C",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "LBO6D",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "LBY26",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "LBY6C",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "LBY6D",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "M27F6",
+        "ultimo": 123.0,
+        "variacion_pct": 0.0,
+        "volumen": 14849520,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "M31G6",
+        "ultimo": 112.7,
+        "variacion_pct": 0.0062,
+        "volumen": 598162348,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "MA6C",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "MA6D",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "MA6X",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "MA6Y",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "MA6Z",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "MF6C",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "MF6D",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "MF6X",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "MF6Y",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "MF6Z",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "MG6C",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "MG6D",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "MG6X",
+        "ultimo": 112.092,
+        "variacion_pct": 0.0,
+        "volumen": 44000000,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "MG6Y",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "MG6Z",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "MRA26",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "MRM26",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "MRY26",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "S17A6",
+        "ultimo": 105.129,
+        "variacion_pct": 0.0037,
+        "volumen": 73065103013,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "S27F6",
+        "ultimo": 125.634,
+        "variacion_pct": 0.001,
+        "volumen": 20775860822,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "S29Y6",
+        "ultimo": 121.93,
+        "variacion_pct": 0.0064,
+        "volumen": 1728628886,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "S2A6C",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "S2A6D",
+        "ultimo": 0.075,
+        "variacion_pct": -0.0131,
+        "volumen": 100546,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "S2A6X",
+        "ultimo": 105.21,
+        "variacion_pct": 0.0,
+        "volumen": 4500000000,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "S2A6Y",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "S2A6Z",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "S30A6",
+        "ultimo": 120.709,
+        "variacion_pct": 0.0067,
+        "volumen": 2165917364,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "S30N6",
+        "ultimo": 103.3,
+        "variacion_pct": 0.0034000000000000002,
+        "volumen": 77989559,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "S31G6",
+        "ultimo": 108.999,
+        "variacion_pct": 0.005,
+        "volumen": 142750940,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "S31L6",
+        "ultimo": 103.149,
+        "variacion_pct": 0.0053,
+        "volumen": 3187403735,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "SA6C",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "SA6D",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "SA6X",
+        "ultimo": 120.436,
+        "variacion_pct": 0.0,
+        "volumen": 679779818,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "SA6Y",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "SA6Z",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "SF6C",
+        "ultimo": 0.088,
+        "variacion_pct": -0.011200000000000002,
+        "volumen": 4267,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "SF6D",
+        "ultimo": 0.089,
+        "variacion_pct": -0.0219,
+        "volumen": 6312672,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "SF6X",
+        "ultimo": 125.62,
+        "variacion_pct": 0.0,
+        "volumen": 11300000000,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "SF6Y",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "SF6Z",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "SG6C",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "SG6D",
+        "ultimo": 0.077,
+        "variacion_pct": 0.0,
+        "volumen": 100000,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "SG6X",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "SG6Y",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "SG6Z",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "SL6C",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "SL6D",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "SL6X",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "SL6Y",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "SL6Z",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "SM6C",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "SM6D",
+        "ultimo": 0.074,
+        "variacion_pct": 0.0,
+        "volumen": 12884461,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "SM6X",
+        "ultimo": 102.861,
+        "variacion_pct": 0.0,
+        "volumen": 15472224060,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "SM6Y",
+        "ultimo": 0.073,
+        "variacion_pct": 0.0,
+        "volumen": 684931507,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "SM6Z",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "SN6C",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "SN6X",
+        "ultimo": 103.534,
+        "variacion_pct": 0.0,
+        "volumen": 40000000,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "SN6Y",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "SN6Z",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "SO6C",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "SO6D",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "SO6X",
+        "ultimo": 110.25,
+        "variacion_pct": 0.0,
+        "volumen": 373964087,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "SO6Y",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "SO6Z",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "SY6C",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "SY6D",
+        "ultimo": 0.086,
+        "variacion_pct": -0.011399999999999999,
+        "volumen": 30536870,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "SY6X",
+        "ultimo": 121.666,
+        "variacion_pct": 0.0,
+        "volumen": 6556425845,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "SY6Y",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "SY6Z",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "X29Y6",
+        "ultimo": 106.75,
+        "variacion_pct": 0.0014000000000000002,
+        "volumen": 6109431800,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "X30N6",
+        "ultimo": 100.25,
+        "variacion_pct": -0.0059,
+        "volumen": 1002439640,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "X31L6",
+        "ultimo": 100.5,
+        "variacion_pct": 0.001,
+        "volumen": 1620043511,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "XBS26",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "XBS6C",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "XBS6D",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "XL6C",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "XL6D",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "XL6X",
+        "ultimo": 99.913,
+        "variacion_pct": 0.0,
+        "volumen": 7505397254,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "XL6Y",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "XL6Z",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "XN6C",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "XN6D",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "XN6X",
+        "ultimo": 99.848,
+        "variacion_pct": 0.0,
+        "volumen": 1505812977,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "XN6Y",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "XN6Z",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "XY6C",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "XY6X",
+        "ultimo": 106.7,
+        "variacion_pct": 0.0,
+        "volumen": 500000000,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "XY6Y",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "XY6Z",
+        "ultimo": 0.0,
+        "variacion_pct": 0.0,
+        "volumen": 0,
+        "vencimiento": null,
+        "fuente": "PyOBD"
+      }
+    ],
+    "obligaciones_negociables": [
+      {
+        "ticker": "YMCWX",
+        "emisor": "",
+        "ultimo": 135750.0,
+        "variacion_pct": 0.0,
+        "volumen": 500000,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "DNC8X",
+        "emisor": "",
+        "ultimo": 148058.0,
+        "variacion_pct": 0.0,
+        "volumen": 500000,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "YMCID",
+        "emisor": "",
+        "ultimo": 107.9,
+        "variacion_pct": -0.0078000000000000005,
+        "volumen": 369171,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "TLCTD",
+        "emisor": "",
+        "ultimo": 107.75,
+        "variacion_pct": -0.0059,
+        "volumen": 284001,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "YMCXO",
+        "emisor": "",
+        "ultimo": 157150.0,
+        "variacion_pct": 0.0054,
+        "volumen": 267907,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "YM42D",
+        "emisor": "",
+        "ultimo": 102.8,
+        "variacion_pct": -0.0009,
+        "volumen": 232449,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "PLC4D",
+        "emisor": "",
+        "ultimo": 108.95,
+        "variacion_pct": -0.0027,
+        "volumen": 216000,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "T643O",
+        "emisor": "",
+        "ultimo": 103.5,
+        "variacion_pct": -0.0416,
+        "volumen": 188209,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "DNC8O",
+        "emisor": "",
+        "ultimo": 146830.0,
+        "variacion_pct": 0.005600000000000001,
+        "volumen": 174971,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "YM39D",
+        "emisor": "",
+        "ultimo": 109.3,
+        "variacion_pct": 0.0009,
+        "volumen": 154228,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "IRCPO",
+        "emisor": "",
+        "ultimo": 152810.0,
+        "variacion_pct": 0.0038,
+        "volumen": 147790,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "RVS1O",
+        "emisor": "",
+        "ultimo": 81.8,
+        "variacion_pct": -0.0132,
+        "volumen": 147117,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "YMCVD",
+        "emisor": "",
+        "ultimo": 102.6,
+        "variacion_pct": 0.0019,
+        "volumen": 145365,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "VSCRD",
+        "emisor": "",
+        "ultimo": 107.5,
+        "variacion_pct": -0.0023,
+        "volumen": 136281,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BYCHD",
+        "emisor": "",
+        "ultimo": 109.95,
+        "variacion_pct": -0.0027,
+        "volumen": 134000,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "PQCSD",
+        "emisor": "",
+        "ultimo": 100.1,
+        "variacion_pct": -0.0089,
+        "volumen": 131687,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "YM37D",
+        "emisor": "",
+        "ultimo": 102.65,
+        "variacion_pct": -0.0053,
+        "volumen": 127603,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "LOC5D",
+        "emisor": "",
+        "ultimo": 103.55,
+        "variacion_pct": -0.0033,
+        "volumen": 116950,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "TLCMD",
+        "emisor": "",
+        "ultimo": 111.8,
+        "variacion_pct": -0.0017000000000000001,
+        "volumen": 115000,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "RCCTO",
+        "emisor": "",
+        "ultimo": 101.0,
+        "variacion_pct": -0.0194,
+        "volumen": 113235,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "YMCJD",
+        "emisor": "",
+        "ultimo": 105.35,
+        "variacion_pct": -0.0033,
+        "volumen": 110389,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "DNC5D",
+        "emisor": "",
+        "ultimo": 104.8,
+        "variacion_pct": -0.005600000000000001,
+        "volumen": 98877,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "DEC2D",
+        "emisor": "",
+        "ultimo": 100.55,
+        "variacion_pct": 0.008,
+        "volumen": 94370,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "VSCVD",
+        "emisor": "",
+        "ultimo": 110.9,
+        "variacion_pct": -0.0009,
+        "volumen": 94000,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "MTCGD",
+        "emisor": "",
+        "ultimo": 104.7,
+        "variacion_pct": -0.0004,
+        "volumen": 93797,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "PLC5D",
+        "emisor": "",
+        "ultimo": 108.1,
+        "variacion_pct": 0.0037,
+        "volumen": 92000,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "MR39D",
+        "emisor": "",
+        "ultimo": 71.0,
+        "variacion_pct": -0.01,
+        "volumen": 85469,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "TLCMO",
+        "emisor": "",
+        "ultimo": 156900.0,
+        "variacion_pct": 0.0043,
+        "volumen": 85000,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "YM38D",
+        "emisor": "",
+        "ultimo": 103.8,
+        "variacion_pct": -0.0009,
+        "volumen": 83084,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "LOC5O",
+        "emisor": "",
+        "ultimo": 145500.0,
+        "variacion_pct": 0.0104,
+        "volumen": 77350,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "YMCXD",
+        "emisor": "",
+        "ultimo": 112.0,
+        "variacion_pct": -0.0022,
+        "volumen": 76362,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "DNC3D",
+        "emisor": "",
+        "ultimo": 104.4,
+        "variacion_pct": -0.0042,
+        "volumen": 70726,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "PLC4C",
+        "emisor": "",
+        "ultimo": 105.6,
+        "variacion_pct": 0.0,
+        "volumen": 68000,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "RZABD",
+        "emisor": "",
+        "ultimo": 44.0,
+        "variacion_pct": 0.0002,
+        "volumen": 67494,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "TLCTO",
+        "emisor": "",
+        "ultimo": 151170.0,
+        "variacion_pct": 0.0084,
+        "volumen": 64089,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "TLCPO",
+        "emisor": "",
+        "ultimo": 157190.0,
+        "variacion_pct": 0.0032,
+        "volumen": 63547,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "BF37O",
+        "emisor": "",
+        "ultimo": 138140.0,
+        "variacion_pct": -0.006999999999999999,
+        "volumen": 62280,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "PLC4O",
+        "emisor": "",
+        "ultimo": 152190.0,
+        "variacion_pct": 0.0045000000000000005,
+        "volumen": 62000,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "YM42O",
+        "emisor": "",
+        "ultimo": 144190.0,
+        "variacion_pct": 0.0072,
+        "volumen": 60742,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "CS38D",
+        "emisor": "",
+        "ultimo": 105.95,
+        "variacion_pct": 0.0,
+        "volumen": 56318,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "RZABO",
+        "emisor": "",
+        "ultimo": 61150.0,
+        "variacion_pct": -0.0137,
+        "volumen": 54868,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "MCC1D",
+        "emisor": "",
+        "ultimo": 103.0,
+        "variacion_pct": 0.0,
+        "volumen": 54316,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "RC2CD",
+        "emisor": "",
+        "ultimo": 104.0,
+        "variacion_pct": 0.0092,
+        "volumen": 53401,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "PN43O",
+        "emisor": "",
+        "ultimo": 148090.0,
+        "variacion_pct": 0.0109,
+        "volumen": 53000,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "YFCMO",
+        "emisor": "",
+        "ultimo": 141790.0,
+        "variacion_pct": 0.014199999999999999,
+        "volumen": 52991,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "VSCRO",
+        "emisor": "",
+        "ultimo": 150610.0,
+        "variacion_pct": 0.0054,
+        "volumen": 52854,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "LOC6D",
+        "emisor": "",
+        "ultimo": 101.0,
+        "variacion_pct": -0.0063,
+        "volumen": 51788,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "DNC5O",
+        "emisor": "",
+        "ultimo": 146760.0,
+        "variacion_pct": 0.0038,
+        "volumen": 50865,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "PN35D",
+        "emisor": "",
+        "ultimo": 105.55,
+        "variacion_pct": -0.0009,
+        "volumen": 50537,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      },
+      {
+        "ticker": "TSC3O",
+        "emisor": "",
+        "ultimo": 153780.0,
+        "variacion_pct": 0.0058,
+        "volumen": 50000,
+        "moneda": "ARS",
+        "fuente": "PyOBD"
+      }
+    ],
+    "tasas_plazo_fijo": [
+      {
+        "entidad": "BANCO DE LA NACION ARGENTINA",
+        "tna_clientes": 0.25,
+        "tna_no_clientes": null
+      },
+      {
+        "entidad": "BANCO SANTANDER ARGENTINA S.A.",
+        "tna_clientes": 0.23,
+        "tna_no_clientes": null
+      },
+      {
+        "entidad": "BANCO DE GALICIA Y BUENOS AIRES S.A.",
+        "tna_clientes": 0.23,
+        "tna_no_clientes": null
+      },
+      {
+        "entidad": "BANCO DE LA PROVINCIA DE BUENOS AIRES",
+        "tna_clientes": 0.25,
+        "tna_no_clientes": null
+      },
+      {
+        "entidad": "BANCO BBVA ARGENTINA S.A.",
+        "tna_clientes": 0.23,
+        "tna_no_clientes": null
+      },
+      {
+        "entidad": "BANCO MACRO S.A.",
+        "tna_clientes": 0.28,
+        "tna_no_clientes": null
+      },
+      {
+        "entidad": "Banco GGAL SA",
+        "tna_clientes": null,
+        "tna_no_clientes": null
+      },
+      {
+        "entidad": "BANCO CREDICOOP COOPERATIVO LIMITADO",
+        "tna_clientes": 0.24,
+        "tna_no_clientes": 0.24
+      },
+      {
+        "entidad": "INDUSTRIAL AND COMMERCIAL BANK OF CHINA (ARGENTINA) S.A.U.",
+        "tna_clientes": null,
+        "tna_no_clientes": null
+      },
+      {
+        "entidad": "BANCO DE LA CIUDAD DE BUENOS AIRES",
+        "tna_clientes": 0.23,
+        "tna_no_clientes": null
+      },
+      {
+        "entidad": "Otros bancos que informan tasa de plazo fijo online para no clientes",
+        "tna_clientes": null,
+        "tna_no_clientes": null
+      },
+      {
+        "entidad": "BANCO BICA S.A.",
+        "tna_clientes": 0.33,
+        "tna_no_clientes": 0.33
+      },
+      {
+        "entidad": "BANCO CMF S.A.",
+        "tna_clientes": null,
+        "tna_no_clientes": null
+      },
+      {
+        "entidad": "BANCO COMAFI SOCIEDAD ANONIMA",
+        "tna_clientes": null,
+        "tna_no_clientes": null
+      },
+      {
+        "entidad": "BANCO DE COMERCIO S.A.",
+        "tna_clientes": null,
+        "tna_no_clientes": null
+      },
+      {
+        "entidad": "BANCO DE CORRIENTES S.A.",
+        "tna_clientes": null,
+        "tna_no_clientes": null
+      },
+      {
+        "entidad": "BANCO DE FORMOSA S.A.",
+        "tna_clientes": 0.21,
+        "tna_no_clientes": 0.21
+      },
+      {
+        "entidad": "BANCO DE LA PROVINCIA DE CORDOBA S.A.",
+        "tna_clientes": 0.29,
+        "tna_no_clientes": 0.29
+      },
+      {
+        "entidad": "BANCO DEL CHUBUT S.A.",
+        "tna_clientes": 0.26,
+        "tna_no_clientes": 0.26
+      },
+      {
+        "entidad": "BANCO DEL SOL S.A.",
+        "tna_clientes": 0.32,
+        "tna_no_clientes": null
+      },
+      {
+        "entidad": "BANCO DINO S.A.",
+        "tna_clientes": 0.27,
+        "tna_no_clientes": 0.27
+      },
+      {
+        "entidad": "BANCO HIPOTECARIO S.A.",
+        "tna_clientes": 0.27,
+        "tna_no_clientes": null
+      },
+      {
+        "entidad": "BANCO JULIO SOCIEDAD ANONIMA",
+        "tna_clientes": null,
+        "tna_no_clientes": null
+      },
+      {
+        "entidad": "BANCO MARIVA S.A.",
+        "tna_clientes": null,
+        "tna_no_clientes": null
+      },
+      {
+        "entidad": "BANCO MASVENTAS S.A.",
+        "tna_clientes": 0.24,
+        "tna_no_clientes": 0.24
+      },
+      {
+        "entidad": "BANCO MERIDIAN S.A.",
+        "tna_clientes": null,
+        "tna_no_clientes": null
+      },
+      {
+        "entidad": "BANCO PROVINCIA DE TIERRA DEL FUEGO",
+        "tna_clientes": 0.25,
+        "tna_no_clientes": 0.21
+      },
+      {
+        "entidad": "BANCO VOII S.A.",
+        "tna_clientes": null,
+        "tna_no_clientes": null
+      },
+      {
+        "entidad": "BIBANK S.A.",
+        "tna_clientes": 0.28,
+        "tna_no_clientes": 0.28
+      },
+      {
+        "entidad": "CRÃDITO REGIONAL COMPAÃÃA FINANCIERA S.A.U.",
+        "tna_clientes": 0.33,
+        "tna_no_clientes": null
+      },
+      {
+        "entidad": "REBA COMPAÃIA FINANCIERA S.A.",
+        "tna_clientes": 0.33,
+        "tna_no_clientes": 0.33
+      },
+      {
+        "entidad": "UALA",
+        "tna_clientes": 0.3,
+        "tna_no_clientes": 0.3
+      }
+    ]
+  },
+  "equity_ar": {
+    "acciones": {
+      "GGAL.BA": {
+        "ultimo": 7045.0,
+        "apertura": 6975.0,
+        "maximo": 7090.0,
+        "minimo": 6950.0,
+        "volumen": 726232,
+        "variacion_pct": 1.44,
+        "cierre_anterior": 6945.0,
+        "fecha_dato": "2026-02-24",
+        "fuente": "yfinance",
+        "nombre": "Grupo Financiero Galicia"
+      },
+      "YPFD.BA": {
+        "ultimo": 54900.0,
+        "apertura": 54350.0,
+        "maximo": 55150.0,
+        "minimo": 54325.0,
+        "volumen": 65939,
+        "variacion_pct": 1.06,
+        "cierre_anterior": 54325.0,
+        "fecha_dato": "2026-02-24",
+        "fuente": "yfinance",
+        "nombre": "YPF S.A."
+      },
+      "PAMP.BA": {
+        "ultimo": 4652.5,
+        "apertura": 4660.0,
+        "maximo": 4720.0,
+        "minimo": 4610.0,
+        "volumen": 291941,
+        "variacion_pct": 1.09,
+        "cierre_anterior": 4602.5,
+        "fecha_dato": "2026-02-24",
+        "fuente": "yfinance",
+        "nombre": "Pampa Energía"
+      },
+      "BBAR.BA": {
+        "ultimo": 7970.0,
+        "apertura": 7790.0,
+        "maximo": 8035.0,
+        "minimo": 7620.0,
+        "volumen": 71800,
+        "variacion_pct": 2.57,
+        "cierre_anterior": 7770.25,
+        "fecha_dato": "2026-02-24",
+        "fuente": "yfinance",
+        "nombre": "Banco BBVA Argentina"
+      },
+      "CEPU.BA": {
+        "ultimo": 2311.0,
+        "apertura": 2295.0,
+        "maximo": 2349.0,
+        "minimo": 2260.0,
+        "volumen": 55493,
+        "variacion_pct": 0.83,
+        "cierre_anterior": 2292.0,
+        "fecha_dato": "2026-02-24",
+        "fuente": "yfinance",
+        "nombre": "Central Puerto"
+      },
+      "TXAR.BA": {
+        "ultimo": 635.0,
+        "apertura": 643.0,
+        "maximo": 650.0,
+        "minimo": 620.0,
+        "volumen": 819356,
+        "variacion_pct": -1.85,
+        "cierre_anterior": 647.0,
+        "fecha_dato": "2026-02-24",
+        "fuente": "yfinance",
+        "nombre": "Ternium Argentina"
+      },
+      "TGSU2.BA": {
+        "ultimo": 8615.0,
+        "apertura": 8865.0,
+        "maximo": 8865.0,
+        "minimo": 8530.0,
+        "volumen": 27971,
+        "variacion_pct": 0.58,
+        "cierre_anterior": 8565.0,
+        "fecha_dato": "2026-02-24",
+        "fuente": "yfinance",
+        "nombre": "Transportadora de Gas del Sur"
+      },
+      "LOMA.BA": {
+        "ultimo": 3135.0,
+        "apertura": 3140.0,
+        "maximo": 3170.0,
+        "minimo": 3060.0,
+        "volumen": 80652,
+        "variacion_pct": 1.37,
+        "cierre_anterior": 3092.5,
+        "fecha_dato": "2026-02-24",
+        "fuente": "yfinance",
+        "nombre": "Loma Negra"
+      },
+      "CRES.BA": {
+        "ultimo": 1710.0,
+        "apertura": 1695.0,
+        "maximo": 1729.0,
+        "minimo": 1663.0,
+        "volumen": 49761,
+        "variacion_pct": 0.88,
+        "cierre_anterior": 1695.0,
+        "fecha_dato": "2026-02-24",
+        "fuente": "yfinance",
+        "nombre": "Cresud"
+      },
+      "ALUA.BA": {
+        "ultimo": 790.0,
+        "apertura": 833.0,
+        "maximo": 833.5,
+        "minimo": 786.0,
+        "volumen": 1608405,
+        "variacion_pct": -5.28,
+        "cierre_anterior": 834.0,
+        "fecha_dato": "2026-02-24",
+        "fuente": "yfinance",
+        "nombre": "Aluar"
+      }
+    }
+  },
+  "cedears": {
+    "MELI": {
+      "cedear_ticker": "MELI.BA",
+      "precio_cedear_ars": 22960.0,
+      "volumen_cedear": 250576,
+      "variacion_pct_cedear": 2.14,
+      "precio_us": 1907.9749755859375,
+      "variacion_pct_us": 2.33,
+      "ratio": 120,
+      "precio_teorico_ars": 22997.46,
+      "prima_descuento_pct": -0.16,
+      "fundamentals": {
+        "pe_ratio": 46.51487,
+        "forward_pe": 31.886293,
+        "pb_ratio": 15.487464,
+        "eps": 41.02,
+        "dividend_yield": null,
+        "market_cap": 96732258304,
+        "market_cap_fmt": "96.7B",
+        "sector": "Consumer Cyclical",
+        "industry": "Internet Retail"
+      },
+      "fuente": "yfinance"
+    },
+    "AAPL": {
+      "cedear_ticker": "AAPL.BA",
+      "precio_cedear_ars": 19820.0,
+      "volumen_cedear": 37978,
+      "variacion_pct_cedear": 3.28,
+      "precio_us": 273.1300048828125,
+      "variacion_pct_us": 2.61,
+      "ratio": 20,
+      "precio_teorico_ars": 19752.76,
+      "prima_descuento_pct": 0.34,
+      "fundamentals": {
+        "pe_ratio": 34.540455,
+        "forward_pe": 29.38058,
+        "pb_ratio": 45.551014,
+        "eps": 7.91,
+        "dividend_yield": 0.39,
+        "market_cap": 4015693758464,
+        "market_cap_fmt": "4.0T",
+        "sector": "Technology",
+        "industry": "Consumer Electronics"
+      },
+      "fuente": "yfinance"
+    },
+    "GOOGL": {
+      "cedear_ticker": "GOOGL.BA",
+      "precio_cedear_ars": 7755.0,
+      "volumen_cedear": 67031,
+      "variacion_pct_cedear": 0.19,
+      "precio_us": 310.7900085449219,
+      "variacion_pct_us": -0.22,
+      "ratio": 58,
+      "precio_teorico_ars": 7750.46,
+      "prima_descuento_pct": 0.06,
+      "fundamentals": {
+        "pe_ratio": 28.759481,
+        "forward_pe": 23.17954,
+        "pb_ratio": 9.049865,
+        "eps": 10.81,
+        "dividend_yield": 0.27,
+        "market_cap": 3760836575232,
+        "market_cap_fmt": "3.8T",
+        "sector": "Communication Services",
+        "industry": "Internet Content & Information"
+      },
+      "fuente": "yfinance"
+    },
+    "MSFT": {
+      "cedear_ticker": "MSFT.BA",
+      "precio_cedear_ars": 18650.0,
+      "volumen_cedear": 146019,
+      "variacion_pct_cedear": 1.14,
+      "precio_us": 385.97601318359375,
+      "variacion_pct_us": 0.39,
+      "ratio": 30,
+      "precio_teorico_ars": 18609.19,
+      "prima_descuento_pct": 0.22,
+      "fundamentals": {
+        "pe_ratio": 24.146029,
+        "forward_pe": 20.482939,
+        "pb_ratio": 7.338116,
+        "eps": 15.99,
+        "dividend_yield": 0.95,
+        "market_cap": 2869603860480,
+        "market_cap_fmt": "2.9T",
+        "sector": "Technology",
+        "industry": "Software - Infrastructure"
+      },
+      "fuente": "yfinance"
+    },
+    "AMZN": {
+      "cedear_ticker": "AMZN.BA",
+      "precio_cedear_ars": 2098.0,
+      "volumen_cedear": 477989,
+      "variacion_pct_cedear": 2.34,
+      "precio_us": 209.3249969482422,
+      "variacion_pct_us": 1.98,
+      "ratio": 144,
+      "precio_teorico_ars": 2102.55,
+      "prima_descuento_pct": -0.22,
+      "fundamentals": {
+        "pe_ratio": 29.248604,
+        "forward_pe": 22.531193,
+        "pb_ratio": 5.4670286,
+        "eps": 7.16,
+        "dividend_yield": null,
+        "market_cap": 2248107098112,
+        "market_cap_fmt": "2.2T",
+        "sector": "Consumer Cyclical",
+        "industry": "Internet Retail"
+      },
+      "fuente": "yfinance"
+    },
+    "TSLA": {
+      "cedear_ticker": "TSLA.BA",
+      "precio_cedear_ars": 38880.0,
+      "volumen_cedear": 11816,
+      "variacion_pct_cedear": 2.37,
+      "precio_us": 403.8399963378906,
+      "variacion_pct_us": 1.0,
+      "ratio": 15,
+      "precio_teorico_ars": 38940.94,
+      "prima_descuento_pct": -0.16,
+      "fundamentals": {
+        "pe_ratio": 374.0185,
+        "forward_pe": 144.04204,
+        "pb_ratio": 18.447277,
+        "eps": 1.08,
+        "dividend_yield": null,
+        "market_cap": 1515757371392,
+        "market_cap_fmt": "1.5T",
+        "sector": "Consumer Cyclical",
+        "industry": "Auto Manufacturers"
+      },
+      "fuente": "yfinance"
+    },
+    "NVDA": {
+      "cedear_ticker": "NVDA.BA",
+      "precio_cedear_ars": 11590.0,
+      "volumen_cedear": 75486,
+      "variacion_pct_cedear": 1.4,
+      "precio_us": 192.11500549316406,
+      "variacion_pct_us": 0.29,
+      "ratio": 24,
+      "precio_teorico_ars": 11578.13,
+      "prima_descuento_pct": 0.1,
+      "fundamentals": {
+        "pe_ratio": 47.548267,
+        "forward_pe": 24.44697,
+        "pb_ratio": 39.26717,
+        "eps": 4.04,
+        "dividend_yield": 0.02,
+        "market_cap": 4676937318400,
+        "market_cap_fmt": "4.7T",
+        "sector": "Technology",
+        "industry": "Semiconductors"
+      },
+      "fuente": "yfinance"
+    },
+    "JPM": {
+      "cedear_ticker": "JPM.BA",
+      "precio_cedear_ars": 28560.0,
+      "volumen_cedear": 8383,
+      "variacion_pct_cedear": -0.14,
+      "precio_us": 295.3500061035156,
+      "variacion_pct_us": -0.78,
+      "ratio": 15,
+      "precio_teorico_ars": 28479.62,
+      "prima_descuento_pct": 0.28,
+      "fundamentals": {
+        "pe_ratio": 14.758361,
+        "forward_pe": 12.5832615,
+        "pb_ratio": 2.3278577,
+        "eps": 20.03,
+        "dividend_yield": 2.02,
+        "market_cap": 797269753856,
+        "market_cap_fmt": "797.3B",
+        "sector": "Financial Services",
+        "industry": "Banks - Diversified"
+      },
+      "fuente": "yfinance"
+    },
+    "KO": {
+      "cedear_ticker": "KO.BA",
+      "precio_cedear_ars": 23370.0,
+      "volumen_cedear": 13863,
+      "variacion_pct_cedear": 0.65,
+      "precio_us": null,
+      "variacion_pct_us": null,
+      "ratio": 5,
+      "precio_teorico_ars": null,
+      "prima_descuento_pct": null,
+      "fundamentals": {
+        "pe_ratio": 26.518091,
+        "forward_pe": 23.278141,
+        "pb_ratio": 10.780289,
+        "eps": 3.04,
+        "dividend_yield": 2.56,
+        "market_cap": 346774208512,
+        "market_cap_fmt": "346.8B",
+        "sector": "Consumer Defensive",
+        "industry": "Beverages - Non-Alcoholic"
+      },
+      "fuente": "yfinance"
+    },
+    "GLOB": {
+      "cedear_ticker": "GLOB.BA",
+      "precio_cedear_ars": 3342.5,
+      "volumen_cedear": 229371,
+      "variacion_pct_cedear": -0.67,
+      "precio_us": 41.68000030517578,
+      "variacion_pct_us": 0.29,
+      "ratio": 18,
+      "precio_teorico_ars": 3349.22,
+      "prima_descuento_pct": -0.2,
+      "fundamentals": {
+        "pe_ratio": 19.09589,
+        "forward_pe": 6.6755524,
+        "pb_ratio": 0.8560725,
+        "eps": 2.19,
+        "dividend_yield": null,
+        "market_cap": 1842326016,
+        "market_cap_fmt": "1.8B",
+        "sector": "Technology",
+        "industry": "Information Technology Services"
+      },
+      "fuente": "yfinance"
+    },
+    "COIN": {
+      "cedear_ticker": "COIN.BA",
+      "precio_cedear_ars": 8430.0,
+      "volumen_cedear": 33983,
+      "variacion_pct_cedear": null,
+      "precio_us": 158.39999389648438,
+      "variacion_pct_us": -1.15,
+      "ratio": 27,
+      "precio_teorico_ars": 8485.55,
+      "prima_descuento_pct": -0.65,
+      "fundamentals": {
+        "pe_ratio": 35.65843,
+        "forward_pe": 26.58847,
+        "pb_ratio": 2.8729722,
+        "eps": 4.45,
+        "dividend_yield": null,
+        "market_cap": 42789265408,
+        "market_cap_fmt": "42.8B",
+        "sector": "Financial Services",
+        "industry": "Financial Data & Stock Exchanges"
+      },
+      "fuente": "yfinance"
+    }
+  },
+  "indices": {
+    "MERVAL": {
+      "ticker": "^MERV",
+      "ultimo": 2790784.75,
+      "apertura": 2763443.0,
+      "maximo": 2810691.75,
+      "minimo": 2763123.75,
+      "variacion_pct": 1.0,
+      "volumen": 0,
+      "fecha_dato": "2026-02-24",
+      "fuente": "yfinance"
+    },
+    "SP500": {
+      "ticker": "^GSPC",
+      "ultimo": 6873.6298828125,
+      "apertura": 6837.3701171875,
+      "maximo": 6884.68017578125,
+      "minimo": 6815.43017578125,
+      "variacion_pct": 0.52,
+      "volumen": 1129357000,
+      "fecha_dato": "2026-02-24",
+      "fuente": "yfinance"
+    },
+    "NASDAQ": {
+      "ticker": "^IXIC",
+      "ultimo": 22817.990234375,
+      "apertura": 22641.603515625,
+      "maximo": 22867.357421875,
+      "minimo": 22528.263671875,
+      "variacion_pct": 0.84,
+      "volumen": 3059509000,
+      "fecha_dato": "2026-02-24",
+      "fuente": "yfinance"
+    },
+    "DOW_JONES": {
+      "ticker": "^DJI",
+      "ultimo": 49116.66015625,
+      "apertura": 48827.80078125,
+      "maximo": 49256.37109375,
+      "minimo": 48752.73828125,
+      "variacion_pct": 0.64,
+      "volumen": 212973301,
+      "fecha_dato": "2026-02-24",
+      "fuente": "yfinance"
+    }
+  },
+  "commodities": {
+    "soja": {
+      "ticker": "ZS=F",
+      "ultimo": 1156.75,
+      "variacion_pct": 1.98,
+      "fecha_dato": "2026-02-24",
+      "unidad": "USD/bushel",
+      "fuente": "yfinance"
+    },
+    "maiz": {
+      "ticker": "ZC=F",
+      "ultimo": 438.25,
+      "variacion_pct": 2.51,
+      "fecha_dato": "2026-02-24",
+      "unidad": "USD/bushel",
+      "fuente": "yfinance"
+    },
+    "trigo": {
+      "ticker": "ZW=F",
+      "ultimo": 573.75,
+      "variacion_pct": 0.75,
+      "fecha_dato": "2026-02-24",
+      "unidad": "USD/bushel",
+      "fuente": "yfinance"
+    },
+    "petroleo_wti": {
+      "ticker": "CL=F",
+      "ultimo": 66.0199966430664,
+      "variacion_pct": -0.44,
+      "fecha_dato": "2026-02-24",
+      "unidad": "USD/barrel",
+      "fuente": "yfinance"
+    },
+    "oro": {
+      "ticker": "GC=F",
+      "ultimo": 5162.0,
+      "variacion_pct": -0.82,
+      "fecha_dato": "2026-02-24",
+      "unidad": "USD/oz",
+      "fuente": "yfinance"
+    }
+  },
+  "crypto": {
+    "BTC": {
+      "ticker": "BTC-USD",
+      "ultimo": 63869.97265625,
+      "variacion_pct": -1.16,
+      "variacion_7d_pct": -3.85,
+      "maximo_24h": 64949.078125,
+      "minimo_24h": 62694.75,
+      "volumen_24h": 44454449152,
+      "fecha_dato": "2026-02-24",
+      "fuente": "yfinance"
+    },
+    "ETH": {
+      "ticker": "ETH-USD",
+      "ultimo": 1845.03662109375,
+      "variacion_pct": -0.56,
+      "variacion_7d_pct": -5.58,
+      "maximo_24h": 1867.293701171875,
+      "minimo_24h": 1807.6436767578125,
+      "volumen_24h": 20080037888,
+      "fecha_dato": "2026-02-24",
+      "fuente": "yfinance"
+    },
+    "SOL": {
+      "ticker": "SOL-USD",
+      "ultimo": 77.5644760131836,
+      "variacion_pct": -0.24,
+      "variacion_7d_pct": -4.91,
+      "maximo_24h": 78.43131256103516,
+      "minimo_24h": 76.11032104492188,
+      "volumen_24h": 3896410880,
+      "fecha_dato": "2026-02-24",
+      "fuente": "yfinance"
+    },
+    "ADA": {
+      "ticker": "ADA-USD",
+      "ultimo": 0.2600288987159729,
+      "variacion_pct": -0.85,
+      "variacion_7d_pct": -4.96,
+      "maximo_24h": 0.2642706632614136,
+      "minimo_24h": 0.25475654006004333,
+      "volumen_24h": 405161632,
+      "fecha_dato": "2026-02-24",
+      "fuente": "yfinance"
+    }
+  },
+  "noticias": {
+    "argentina": [
+      {
+        "titulo": "El consumo cayó un 0,8% interanual en enero y complica el repunte de la actividad económica",
+        "fuente": "ambito",
+        "url": "https://www.ambito.com/economia/el-consumo-cayo-un-08-interanual-enero-y-complica-el-repunte-la-actividad-economica-n6248871",
+        "resumen": "La Cámara Argentina de Comercio y Servicios informó una caída en las cifras de enero, frente al mismo mes de 2025.",
+        "fecha": "Tue, 24 Feb 2026 12:46:00 -0300",
+        "autor": null
+      },
+      {
+        "titulo": "Cuánto sale el set de higiene para el jardín en 2026: precios de toallas, tazas y manteles",
+        "fuente": "ambito",
+        "url": "https://www.ambito.com/economia/cuanto-sale-el-set-higiene-el-jardin-2026-precios-toallas-tazas-y-manteles-n6248465",
+        "resumen": "Comienza otro ciclo lectivo y te informamos el costo de lo que necesitan los chicos para el inicio de clases.",
+        "fecha": "Tue, 24 Feb 2026 12:00:00 -0300",
+        "autor": null
+      },
+      {
+        "titulo": "¿Se mueve el plazo fijo? Así operan los bancos hoy, martes 24 de febrero",
+        "fuente": "ambito",
+        "url": "https://www.ambito.com/economia/se-mueve-el-plazo-fijo-asi-operan-los-bancos-hoy-martes-24-febrero-n6248778",
+        "resumen": "Con tasas que varían bastante según la entidad, muchos ahorristas están recalculando estrategias y mirando más de cerca los plazos fijos online.",
+        "fecha": "Tue, 24 Feb 2026 10:29:00 -0300",
+        "autor": null
+      },
+      {
+        "titulo": "Cuenta DNI: cómo aprovechar los descuentos de la última semana de febrero",
+        "fuente": "ambito",
+        "url": "https://www.ambito.com/economia/cuenta-dni-como-aprovechar-los-descuentos-la-ultima-semana-febrero-n6248531",
+        "resumen": "La billetera virtual mantiene múltiples beneficios para esta semana, con beneficios en gastronomía, supermercados, ferias, librerías y más.",
+        "fecha": "Tue, 24 Feb 2026 09:30:00 -0300",
+        "autor": null
+      },
+      {
+        "titulo": "Tras la aceleración de la inflación, las consultoras recalibran al alza sus proyecciones para el resto del año",
+        "fuente": "ambito",
+        "url": "https://www.ambito.com/economia/tras-la-aceleracion-la-inflacion-las-consultoras-recalibran-al-alza-sus-proyecciones-el-resto-del-ano-n6248525",
+        "resumen": "Los ajustes tarifarios y el incremento de la carne fueron más altos de lo esperado inicialmente, lo que obligó a modificar las expectativas en el corto plazo. Algunas estimaciones hablan de un primer trimestre con una suba de precios mayor a la del año pasado.",
+        "fecha": "Tue, 24 Feb 2026 09:09:00 -0300",
+        "autor": "Juan Marcos Pollio"
+      },
+      {
+        "titulo": "Aumenta la luz en la provincia de Buenos Aires: aprueban suba de entre el 12% y el 17%",
+        "fuente": "ambito",
+        "url": "https://www.ambito.com/economia/aumenta-la-luz-la-provincia-buenos-aires-aprueban-suba-el-12-y-el-17-n6248715",
+        "resumen": "El Gobierno bonaerense aprobó el recálculo de los cuadros tarifarios de EDELAP, EDEA, EDEN y EDES. Se incorporan los nuevos precios del MEM y el esquema de Subsidios Energéticos Focalizados (SEF).",
+        "fecha": "Tue, 24 Feb 2026 08:56:00 -0300",
+        "autor": null
+      },
+      {
+        "titulo": "EEUU comienza a aplicar los nuevos aranceles del 10% pese al fallo de la Corte Suprema",
+        "fuente": "ambito",
+        "url": "https://www.ambito.com/economia/eeuu-comienza-aplicar-los-nuevos-aranceles-del-10-pese-el-fallo-la-corte-suprema-n6248704",
+        "resumen": "El presidente Donald Trump aseguró que la decisión de la Corte lo hace más poderoso y que buscará formas legales para seguir con sus políticas arancelarias.",
+        "fecha": "Tue, 24 Feb 2026 08:38:00 -0300",
+        "autor": null
+      },
+      {
+        "titulo": "Aumentan los peajes en rutas clave: cuánto suben tras la oficialización de nuevos cuadros tarifarios para los Corredores Viales Nacionales",
+        "fuente": "ambito",
+        "url": "https://www.ambito.com/economia/aumentan-los-peajes-rutas-clave-cuanto-suben-la-oficializacion-nuevos-cuadros-tarifarios-los-corredores-viales-nacionales-n6248694",
+        "resumen": "A través de la Resolución 248/2026 publicada este martes en el Boletín Oficial, la Dirección Nacional de Vialidad oficializó los nuevos valores para los peajes concesionados a Corredores Viales S.A.. Las tarifas regirán tras su publicación previa en medios y en la web del organismo.",
+        "fecha": "Tue, 24 Feb 2026 07:46:00 -0300",
+        "autor": null
+      },
+      {
+        "titulo": "Dólar: el déficit de servicios fue récord en 2025 y erosionó más de la mitad del superávit comercial",
+        "fuente": "ambito",
+        "url": "https://www.ambito.com/economia/reservas-fue-record-el-deficit-cambiario-servicios-2025-n6248629",
+        "resumen": "Más de la mitad de las divisas que entraron por el superávit del comercio de bienes se fue por la ventana de servicios el año pasado. No solo por turismo y compras al exterior. Hay otros rubros que terminan siendo deficitarios en el Balance Cambiario del ente monetario.",
+        "fecha": "Tue, 24 Feb 2026 07:00:00 -0300",
+        "autor": "Jorge Herrera"
+      },
+      {
+        "titulo": "El Gobierno elimina el arancel antidumping del 28% al aluminio chino y perjudica a Aluar",
+        "fuente": "ambito",
+        "url": "https://www.ambito.com/economia/el-gobierno-elimina-el-arancel-antidumping-del-28-al-aluminio-chino-n6248643",
+        "resumen": "La medida, oficializada en el Boletín Oficial, pone fin a la protección vigente desde 2020 y reabre el ingreso de importaciones asiáticas. La decisión ya generó un proyecto en el Congreso para exigir su revisión.",
+        "fecha": "Mon, 23 Feb 2026 22:00:00 -0300",
+        "autor": null
+      },
+      {
+        "titulo": "Dólar: cuándo será el Día D en que empezarán a subir el blue y MEP",
+        "fuente": "cronista",
+        "url": "https://www.cronista.com/finanzas-mercados/dolar-cuando-sera-el-dia-d-en-que-empezaran-a-subir-el-blue-y-mep/",
+        "resumen": "",
+        "fecha": "Tue, 24 Feb 2026 16:00:15 +0000",
+        "autor": "Mariano  Gorodisch"
+      },
+      {
+        "titulo": "El dólar oficial abandona la tendencia bajista y sube: a cuánto cotiza en los bancos este martes",
+        "fuente": "cronista",
+        "url": "https://www.cronista.com/finanzas-mercados/dolar-hoy-a-cuanto-cotiza-el-oficial-en-los-bancos-de-la-city-este-martes-24-de-febrero/",
+        "resumen": "",
+        "fecha": "Tue, 24 Feb 2026 15:36:53 +0000",
+        "autor": null
+      },
+      {
+        "titulo": "Sube el dólar blue: a cuánto cotiza el martes 24 de febrero con el MEP y el CCL",
+        "fuente": "cronista",
+        "url": "https://www.cronista.com/finanzas-mercados/dolar-blue-hoy-a-cuanto-cotiza-el-martes-24-de-febrero-con-el-mep-y-el-ccl/",
+        "resumen": "",
+        "fecha": "Tue, 24 Feb 2026 15:34:42 +0000",
+        "autor": null
+      },
+      {
+        "titulo": "Dólar abajo de $ 1400: ¿es bueno o malo para Argentina?",
+        "fuente": "cronista",
+        "url": "https://www.cronista.com/finanzas-mercados/dolar-abajo-de-1400-es-bueno-o-malo-para-argentina/",
+        "resumen": "",
+        "fecha": "Tue, 24 Feb 2026 14:56:06 +0000",
+        "autor": "Lara  López Calvo"
+      },
+      {
+        "titulo": "La morosidad en los préstamos no bancarios no para de crecer: cuántos usuarios no pagan sus créditos",
+        "fuente": "cronista",
+        "url": "https://www.cronista.com/finanzas-mercados/la-morosidad-en-los-prestamos-no-bancarios-no-para-de-crecer-cuantos-usuarios-no-pagan-sus-creditos/",
+        "resumen": "",
+        "fecha": "Tue, 24 Feb 2026 14:52:54 +0000",
+        "autor": "Mariano  Gorodisch"
+      },
+      {
+        "titulo": "El BCRA podría comprar hasta u$s 31.000 millones: cómo impactaría en la deuda local",
+        "fuente": "cronista",
+        "url": "https://www.cronista.com/finanzas-mercados/el-bcra-podria-comprar-hasta-us-31000-millones-como-impactaria-en-la-deuda-local/",
+        "resumen": "",
+        "fecha": "Tue, 24 Feb 2026 14:33:17 +0000",
+        "autor": "Julián Yosovitch"
+      },
+      {
+        "titulo": "En plena caída, el Gurú del Blue anticipó que pasará con el dólar y dejó una recomendación para los ahorristas: “Descartar...”",
+        "fuente": "cronista",
+        "url": "https://www.cronista.com/finanzas-mercados/tras-el-desplome-del-dolar-la-nueva-bomba-del-guru-del-blue-el-verdadero-problema-es/",
+        "resumen": "",
+        "fecha": "Tue, 24 Feb 2026 09:20:43 +0000",
+        "autor": null
+      },
+      {
+        "titulo": "Nuevo plazo fijo: con nuevas tasas, cuánto gano si invierto $ 1 millón",
+        "fuente": "cronista",
+        "url": "https://www.cronista.com/finanzas-mercados/nuevo-plazo-fijo-con-nuevas-tasas-cuanto-gano-si-invierto-1-millon/",
+        "resumen": "Los bancos publicaron la tasa de interés para los depósitos. Conocé con qué entidad se consigue el mejor rendimiento.",
+        "fecha": "Tue, 24 Feb 2026 14:03:48 +0000",
+        "autor": null
+      },
+      {
+        "titulo": "Carry trade: qué es, cómo funciona y a quién beneficia",
+        "fuente": "cronista",
+        "url": "https://www.cronista.com/finanzas-mercados/carry-trade-que-es-como-funciona-y-a-quien-beneficia/",
+        "resumen": "El carry trade combina oportunidad y riesgo: permite obtener retornos atractivos en dólares a partir de inversiones en pesos, pero depende fuertemente de la estabilidad del tipo de cambio y de la gestión de la macro local.",
+        "fecha": "Mon, 25 Aug 2025 18:03:00 +0000",
+        "autor": null
+      },
+      {
+        "titulo": "El peso se acopla a las monedas de la región y el dólar se aleja del techo de la banda: cómo impacta en inversiones",
+        "fuente": "cronista",
+        "url": "https://www.cronista.com/finanzas-mercados/el-peso-se-acopla-a-las-monedas-de-la-region-y-el-dolar-se-aleja-del-techo-de-la-banda-como-impacta-en-inversiones/",
+        "resumen": "",
+        "fecha": "Tue, 24 Feb 2026 13:59:34 +0000",
+        "autor": "Julián Yosovitch"
+      },
+      {
+        "titulo": "Cerraron más de 5.800 empresas en la provincia de Buenos Aires en los últimos 2 años: cuáles fueron los rubros más afectados",
+        "fuente": "infobae",
+        "url": "https://www.infobae.com/economia/2026/02/24/cerraron-mas-de-5800-empresas-en-la-provincia-de-buenos-aires-en-los-ultimos-2-anos-cuales-fueron-los-rubros-mas-afectados/",
+        "resumen": "La crisis se profundiza en la jurisdicción con mayor peso industrial del país, aunque la problemática se extiende a todos los sectores",
+        "fecha": "Tue, 24 Feb 2026 16:37:59 +0000",
+        "autor": "Ludmila Di Grande"
+      },
+      {
+        "titulo": "Las exportaciones agroindustriales crecieron casi 18% en enero y superaron los USD 4.000 millones",
+        "fuente": "infobae",
+        "url": "https://www.infobae.com/economia/2026/02/24/las-exportaciones-agroindustriales-crecieron-casi-18-en-enero-y-superaron-los-usd-4000-millones/",
+        "resumen": "Impulsado por trigo, girasol y cebada, el sector compensó la caída estacional de soja y maíz en un contexto de apreciación cambiaria",
+        "fecha": "Tue, 24 Feb 2026 16:08:18 +0000",
+        "autor": null
+      },
+      {
+        "titulo": "Dólar hoy en vivo: a cuánto se negocian todas las cotizaciones minuto a minuto este martes 24 de febrero",
+        "fuente": "infobae",
+        "url": "https://www.infobae.com/economia/2026/02/24/dolar-hoy-en-vivo-a-cuanto-se-negocian-todas-las-cotizaciones-minuto-a-minuto-este-martes-24-de-febrero/",
+        "resumen": "En el Banco Nación sube a $1.395 y el blue es ofrecido a $1.430. Las reservas alcanzaron un máximo desde octubre de 2019",
+        "fecha": "Tue, 24 Feb 2026 15:41:32 +0000",
+        "autor": null
+      },
+      {
+        "titulo": "Mercados: suben las acciones y caen los bonos, atentos a factores locales y externos",
+        "fuente": "infobae",
+        "url": "https://www.infobae.com/economia/2026/02/24/mercados-suben-las-acciones-y-caen-los-bonos-atentos-a-factores-locales-y-externos/",
+        "resumen": "El rebote de los índices de Wall Street da sostén a un alza de 0,7% en el S&amp;P Merval. El anuncio de un nuevo bono en dólares afecta a los títulos de renta fija, que ceden 0,4% en promedio",
+        "fecha": "Tue, 24 Feb 2026 15:10:18 +0000",
+        "autor": null
+      },
+      {
+        "titulo": "¿Fin de los tours de compras a Chile?: por qué se desinflaron y qué pasó con los precios",
+        "fuente": "infobae",
+        "url": "https://www.infobae.com/economia/2026/02/24/fin-de-los-tours-de-compras-a-chile-por-que-se-desinflaron-y-que-paso-con-los-precios/",
+        "resumen": "Los cruces que antes mostraban vehículos cargados y centros comerciales repletos hoy registran menos movimiento. Las estadísticas oficiales reflejan una baja marcada y empresarios locales describen un cambio claro en la dinámica",
+        "fecha": "Tue, 24 Feb 2026 15:09:19 +0000",
+        "autor": "Natalia Donato"
+      },
+      {
+        "titulo": "El Gobierno prepara un aumento de peajes en autopistas y rutas nacionales: cuáles serán las nuevas tarifas",
+        "fuente": "infobae",
+        "url": "https://www.infobae.com/economia/2026/01/15/el-gobierno-prepara-un-aumento-de-peajes-en-autopistas-y-rutas-nacionales-cuales-seran-las-nuevas-tarifas/",
+        "resumen": "Vialidad Nacional convocó a una audiencia pública para aplicar los incrementos de la red vial concesionada a través de Corredores Viales",
+        "fecha": "Tue, 24 Feb 2026 14:56:17 +0000",
+        "autor": null
+      },
+      {
+        "titulo": "Influenza aviar: la Argentina suspendió las exportaciones y enfrenta un nuevo freno comercial",
+        "fuente": "infobae",
+        "url": "https://www.infobae.com/economia/2026/02/24/influenza-aviar-la-argentina-suspendio-las-exportaciones-y-enfrenta-un-nuevo-freno-comercial/",
+        "resumen": "Un nuevo caso de influenza aviar obligó a frenar los envíos a los principales destinos de exportación. En 2023, una suspensión similar le costó al sector USD 160 millones",
+        "fecha": "Tue, 24 Feb 2026 14:43:27 +0000",
+        "autor": null
+      },
+      {
+        "titulo": "El Gobierno aumentará los peajes de rutas nacionales y autopistas: cuáles serán las nuevas tarifas",
+        "fuente": "infobae",
+        "url": "https://www.infobae.com/economia/2026/02/24/el-gobierno-aumentara-los-peajes-de-rutas-nacionales-y-autopistas-cuales-seran-las-nuevas-tarifas/",
+        "resumen": "La actualización de precios impactará en los accesos más transitados y en extensos corredores viales, modificando el valor a partir del jueves 26 de febrero",
+        "fecha": "Tue, 24 Feb 2026 14:40:46 +0000",
+        "autor": null
+      },
+      {
+        "titulo": "Quiénes pueden acceder a préstamos personales de hasta $50.000.000 y cuáles son las tasas de interés en febrero de 2026",
+        "fuente": "infobae",
+        "url": "https://www.infobae.com/economia/2026/02/24/quienes-pueden-acceder-a-prestamos-personales-de-hasta-50000000-y-cuales-son-las-tasas-de-interes-en-febrero-de-2026/",
+        "resumen": "Diferentes entidades bancarias proponen montos elevados y condiciones específicas para quienes buscan financiamiento, con tasas y requisitos que varían según la institución",
+        "fecha": "Tue, 24 Feb 2026 14:39:32 +0000",
+        "autor": null
+      },
+      {
+        "titulo": "El presidente de YPF celebró la reforma laboral y anticipó exportaciones de energía por USD 14.000 millones en 2026",
+        "fuente": "infobae",
+        "url": "https://www.infobae.com/economia/2026/02/24/el-presidente-de-ypf-celebro-la-reforma-laboral-y-anticipo-exportaciones-de-energia-por-usd-14000-millones-en-2026/",
+        "resumen": "Aunque es una cifra importante, Horacio Marín consideró que el verdadero boom exportador ocurrirá en 2027, a partir de la puesta en marcha de distintos proyectos",
+        "fecha": "Tue, 24 Feb 2026 14:11:08 +0000",
+        "autor": "Newsroom Infobae"
+      }
+    ],
+    "internacionales": [
+      {
+        "titulo": "Oil Edges Lower as Investors Weigh Odds of Iranian Nuclear Deal",
+        "fuente": "bloomberg",
+        "url": "https://www.bloomberg.com/news/articles/2026-02-23/latest-oil-market-news-and-analysis-for-feb-24",
+        "resumen": "Oil flipped between gains and losses as investors weighed the odds of diplomacy between Washington and Tehran to secure a nuclear deal and stave off a US military strike on Iran.",
+        "fecha": "Mon, 23 Feb 2026 23:33:09 GMT",
+        "autor": "Alex Longley, Mia Gindis"
+      },
+      {
+        "titulo": "S&amp;P 500 Rebounds as Anthropic’s Update Tempers AI Concerns",
+        "fuente": "bloomberg",
+        "url": "https://www.bloomberg.com/news/articles/2026-02-24/s-p-500-rises-as-traders-assess-fallout-from-ai-fueled-slump",
+        "resumen": "US stocks rebounded on Tuesday as AI startup Anthropic PBC said it was expanding the reach of its Claude chatbot to build partnerships in the software and services sectors.",
+        "fecha": "Tue, 24 Feb 2026 14:50:49 GMT",
+        "autor": "Felice Maranz"
+      },
+      {
+        "titulo": "US Banks Gain in Key Metrics Despite Profit Dip, FDIC Says",
+        "fuente": "bloomberg",
+        "url": "https://www.bloomberg.com/news/articles/2026-02-24/us-banks-show-gains-in-key-metrics-despite-profit-dip-fdic-says",
+        "resumen": "US banks showed broad gains in key metrics during the fourth quarter despite a modest decline in overall profit, and the bedrock deposit insurance fund’s balance continued to tick higher, according the Federal Deposit Insurance Corp.",
+        "fecha": "Tue, 24 Feb 2026 15:00:08 GMT",
+        "autor": "Katanga Johnson, Miguel Ambriz"
+      },
+      {
+        "titulo": "Stocks Bounce After AI-Fueled Slide as AMD Surges: Markets Wrap",
+        "fuente": "bloomberg",
+        "url": "https://www.bloomberg.com/news/articles/2026-02-23/stock-market-today-dow-s-p-live-updates",
+        "resumen": "A rally in technology firms spurred a rebound in stocks after a rout driven by fears about the disruptive impacts of artificial intelligence, with sentiment also buoyed by an improvement in consumer confidence.",
+        "fecha": "Mon, 23 Feb 2026 22:27:29 GMT",
+        "autor": "Rita Nazareth"
+      },
+      {
+        "titulo": "Gabon’s Dollar Bonds Fall After Fitch Warns of Default Risks",
+        "fuente": "bloomberg",
+        "url": "https://www.bloomberg.com/news/articles/2026-02-24/gabon-risks-default-amid-imf-program-uncertainty-fitch-warns",
+        "resumen": "Fitch Ratings warned of an “inherent risk” of default by Gabon amid mounting concern over whether the oil-producing nation will formally ask the International Monetary Fund for a loan program.",
+        "fecha": "Tue, 24 Feb 2026 12:26:50 GMT",
+        "autor": "Ray Ndlovu"
+      },
+      {
+        "titulo": "Pritzker Scores Win as Japanese Manufacturer Expands to Chicago",
+        "fuente": "bloomberg",
+        "url": "https://www.bloomberg.com/news/articles/2026-02-24/pritzker-scores-win-as-japanese-manufacturer-expands-to-chicago",
+        "resumen": "A Japanese manufacturer of high-precision machine tools is expanding its business to Chicago, a win for Illinois Governor JB Pritzker, who is running for a third term.",
+        "fecha": "Tue, 24 Feb 2026 16:12:14 GMT",
+        "autor": "Miranda Davis"
+      },
+      {
+        "titulo": "US Treasury Rally Stalls With 10-Year Yield Approaching 4%",
+        "fuente": "bloomberg",
+        "url": "https://www.bloomberg.com/news/articles/2026-02-24/us-treasury-gains-fizzle-with-key-yield-hovering-near-4-level",
+        "resumen": "The rally that drove five- and 10-year Treasury yields to their lowest levels since January stalled ahead of this week’s three debt auctions as demand for havens eased.",
+        "fecha": "Tue, 24 Feb 2026 11:57:11 GMT",
+        "autor": "Will Standring, Alice Gledhill"
+      },
+      {
+        "titulo": "Cheap Stocks Are Harder to Find as Investors Rotate Out of US",
+        "fuente": "bloomberg",
+        "url": "https://www.bloomberg.com/news/articles/2026-02-24/cheap-stocks-are-harder-to-find-as-investors-rotate-out-of-us",
+        "resumen": "Attractive equity valuations in Europe and Japan were a big draw for investors looking beyond US stocks. The bad news: Those cheap price tags are fast disappearing.",
+        "fecha": "Tue, 24 Feb 2026 15:55:03 GMT",
+        "autor": "Olivia Levieux"
+      },
+      {
+        "titulo": "BlackRock Sees Improving Muni Returns This Year, Haskell Says",
+        "fuente": "bloomberg",
+        "url": "https://www.bloomberg.com/news/articles/2026-02-24/muni-returns-to-improve-as-market-steadies-blackrock-head-says",
+        "resumen": "Municipal bonds are poised for a solid year after lagging US Treasuries in 2025 as market conditions stabilize, according to Pat Haskell, head of the municipal bond group at BlackRock Inc.",
+        "fecha": "Tue, 24 Feb 2026 07:30:00 GMT",
+        "autor": "Erin Hudson"
+      },
+      {
+        "titulo": "US Lending Agency Wants to Be More Like a Sovereign Wealth Fund",
+        "fuente": "bloomberg",
+        "url": "https://www.bloomberg.com/news/articles/2026-02-24/us-lending-agency-wants-to-be-more-like-a-sovereign-wealth-fund",
+        "resumen": "A government agency traditionally responsible for development lending abroad aims to be more like a sovereign wealth fund, a key goal of President Donald Trump, according to a memo to staff.",
+        "fecha": "Tue, 24 Feb 2026 15:54:03 GMT",
+        "autor": "Joe Deaux, Loukia Gyftopoulou"
+      },
+      {
+        "titulo": "Fed's Goolsbee calls for a hold on cuts as current rate of inflation is 'not good enough'",
+        "fuente": "cnbc",
+        "url": "https://www.cnbc.com/2026/02/24/feds-goolsbee-calls-for-a-hold-on-cuts-as-current-rate-of-inflation-is-not-good-enough.html",
+        "resumen": "The Chicago Fed president said Tuesday that cuts aren't appropriate until there's more evidence that inflation is on its way down.",
+        "fecha": "Tue, 24 Feb 2026 15:58:03 GMT",
+        "autor": null
+      },
+      {
+        "titulo": "Stocks making the biggest moves premarket: AMD, Home Depot, Hims & Hers Health, Diamondback Energy and more",
+        "fuente": "cnbc",
+        "url": "https://www.cnbc.com/2026/02/24/stocks-making-the-biggest-moves-premarket-amd-hd-hims-fang.html",
+        "resumen": "These are the stocks posting the largest moves in early trading.",
+        "fecha": "Tue, 24 Feb 2026 12:40:26 GMT",
+        "autor": null
+      },
+      {
+        "titulo": "Jamie Dimon says 'watch out’ as lofty asset prices add to economic risks: ‘My anxiety is high’",
+        "fuente": "cnbc",
+        "url": "https://www.cnbc.com/2026/02/23/jamie-dimon-says-watch-out-as-high-asset-prices-add-to-economic-risks-my-anxiety-is-high.html",
+        "resumen": "JPMorgan Chase CEO Jamie Dimon is anxious as high asset levels collide with increased competition among lenders and jitters over loans to the software industry.",
+        "fecha": "Tue, 24 Feb 2026 13:17:41 GMT",
+        "autor": null
+      },
+      {
+        "titulo": "Supreme Court ruling throws Trump administration's tariff strategy into flux. What it means for global trade, U.S. economy",
+        "fuente": "cnbc",
+        "url": "https://www.cnbc.com/2026/02/23/what-supreme-court-tariff-ruling-means-for-global-trade-us-economy.html",
+        "resumen": "President Trump's new tariffs could further strain global trade relations, pushing businesses to operate more cautiously and hurting the U.S. economy.",
+        "fecha": "Tue, 24 Feb 2026 15:36:53 GMT",
+        "autor": null
+      },
+      {
+        "titulo": "Stocks making the biggest moves midday: KKR, Blackstone, CrowdStrike, International Paper & more",
+        "fuente": "cnbc",
+        "url": "https://www.cnbc.com/2026/02/23/stocks-making-the-biggest-moves-midday-kkr-bx-crwd-ip-.html",
+        "resumen": "These are some of the stocks posting the largest midday moves.",
+        "fecha": "Tue, 24 Feb 2026 15:53:04 GMT",
+        "autor": null
+      },
+      {
+        "titulo": "Bitcoin falls to nearly $64,000 as 2026 crypto woes continue",
+        "fuente": "cnbc",
+        "url": "https://www.cnbc.com/2026/02/23/bitcoin-falls-to-nearly-64000-as-2026-crypto-woes-continue-.html",
+        "resumen": "Bitcoin fell below $65,000 on Monday as geopolitical and macroeconomic uncertainty sparked another flight from risk-on investments.",
+        "fecha": "Mon, 23 Feb 2026 18:02:59 GMT",
+        "autor": null
+      },
+      {
+        "titulo": "Stocks making the biggest moves premarket: Arcellx, Novo Nordisk, Domino's Pizza and more",
+        "fuente": "cnbc",
+        "url": "https://www.cnbc.com/2026/02/23/stocks-making-the-biggest-moves-premarket-alcx-nvo-dpx.html",
+        "resumen": "These are the stocks posting the largest moves in premarket trading.",
+        "fecha": "Mon, 23 Feb 2026 13:02:35 GMT",
+        "autor": null
+      },
+      {
+        "titulo": "Here are 3 forces that drove the stock market during Wall Street’s comeback week",
+        "fuente": "cnbc",
+        "url": "https://www.cnbc.com/2026/02/21/3-forces-that-drove-the-stock-market-during-wall-streets-comeback-week.html",
+        "resumen": "The stock market staged a comeback, even as Wall Street waded through a flurry of both upbeat and unsettling headlines.",
+        "fecha": "Sat, 21 Feb 2026 17:46:51 GMT",
+        "autor": null
+      },
+      {
+        "titulo": "Market volatility trap? Why this income-first strategy may 'leave a lot on the table'",
+        "fuente": "cnbc",
+        "url": "https://www.cnbc.com/2026/02/21/market-volatility-trap-this-investment-strategy-may-hurt-investors-.html",
+        "resumen": "The market volatility may be leading retail investors astray.",
+        "fecha": "Sat, 21 Feb 2026 16:00:01 GMT",
+        "autor": null
+      },
+      {
+        "titulo": "Illiquid loans, investor demands: Blue Owl's software lending triggers another quake in private credit",
+        "fuente": "cnbc",
+        "url": "https://www.cnbc.com/2026/02/20/blue-owl-software-lending-private-credit-concerns.html",
+        "resumen": "Blue Owl, a direct lender specializing in loans to the software industry, said it had sold $1.4 billion of its loans to institutional investors at 99.7% of par value.",
+        "fecha": "Fri, 20 Feb 2026 22:07:13 GMT",
+        "autor": null
+      },
+      {
+        "titulo": "Investors seek shelter from AI rout in asset-heavy stocks",
+        "fuente": "ft",
+        "url": "https://www.ft.com/content/86b5591a-9e62-4c3f-9e03-7d90d36ed068",
+        "resumen": "Energy and utilities emerge as big winners from fears that artificial intelligence will upend software industry",
+        "fecha": "Tue, 24 Feb 2026 15:54:43 GMT",
+        "autor": null
+      },
+      {
+        "titulo": "The ‘extreme and improbable’ economics of Citrini’s AI report",
+        "fuente": "ft",
+        "url": "https://www.ft.com/content/597ea81c-184f-45ab-a8c1-4306a3579ceb",
+        "resumen": "Doomer dunking",
+        "fecha": "Tue, 24 Feb 2026 15:30:29 GMT",
+        "autor": null
+      },
+      {
+        "titulo": "Stripe valuation soars to $159bn in latest share sale",
+        "fuente": "ft",
+        "url": "https://www.ft.com/content/42639c42-2e95-42e7-aacf-3a39743657f5",
+        "resumen": "Deal will allow payments company to stay private for longer",
+        "fecha": "Tue, 24 Feb 2026 13:00:08 GMT",
+        "autor": null
+      },
+      {
+        "titulo": "Russian ‘illicit oil traders’ exposed by email blunder placed under UK sanctions",
+        "fuente": "ft",
+        "url": "https://www.ft.com/content/4ef6e06d-b877-4444-b58a-427513c58516",
+        "resumen": "Apparent network of energy companies’ vast reach revealed by FT",
+        "fecha": "Tue, 24 Feb 2026 12:25:56 GMT",
+        "autor": null
+      },
+      {
+        "titulo": "Mirror mirror on the wall, what is the most shorted stock of them all?",
+        "fuente": "ft",
+        "url": "https://www.ft.com/content/7f933b23-c4d5-449e-aa46-f9090da332df",
+        "resumen": "The answer probably won’t surprise you",
+        "fecha": "Tue, 24 Feb 2026 09:20:10 GMT",
+        "autor": null
+      },
+      {
+        "titulo": "China slams dozens of Japanese companies with export curbs",
+        "fuente": "ft",
+        "url": "https://www.ft.com/content/afa45318-1c56-435a-a3c8-8b82a93714a0",
+        "resumen": "Beijing bans shipments of critical ‘dual-use’ goods in latest escalation of row with Tokyo",
+        "fecha": "Tue, 24 Feb 2026 08:22:22 GMT",
+        "autor": null
+      },
+      {
+        "titulo": "The Citrini fuss exposes a market looking for an excuse to fall",
+        "fuente": "ft",
+        "url": "https://www.ft.com/content/8a09cc13-78c9-4fc1-8ec3-be855d4741ca",
+        "resumen": "Fear > insight",
+        "fecha": "Tue, 24 Feb 2026 06:30:06 GMT",
+        "autor": null
+      },
+      {
+        "titulo": "Global regulation, the best is yet to come",
+        "fuente": "ft",
+        "url": "https://www.ft.com/content/84adad06-a224-456b-b12f-1c81ff1bf353",
+        "resumen": "Rules < rulers",
+        "fecha": "Tue, 24 Feb 2026 06:00:06 GMT",
+        "autor": null
+      },
+      {
+        "titulo": "Wealthy spouses are hiding crypto assets in divorce cases, say lawyers",
+        "fuente": "ft",
+        "url": "https://www.ft.com/content/df01cdb5-aac8-4d41-bbd8-56a198694394",
+        "resumen": "Digital currencies add new dimension to old problem of dividing up finances when couples split",
+        "fecha": "Tue, 24 Feb 2026 05:00:10 GMT",
+        "autor": null
+      },
+      {
+        "titulo": "China is not dumping US Treasuries",
+        "fuente": "ft",
+        "url": "https://www.ft.com/content/9ea52aca-8d8d-485f-85c8-45d59601512e",
+        "resumen": "Ignore the amateur geopolitical strategists talking eloquently about the end of dollar dominance",
+        "fecha": "Tue, 24 Feb 2026 00:01:03 GMT",
+        "autor": null
+      }
+    ]
+  },
+  "calculados": {
+    "merval_usd_ccl": 1929.47,
+    "ratio_eth_btc": 0.028887,
+    "inflacion_anualizada_pct": 40.92,
+    "tasa_real_plazo_fijo_pct": -40.65,
+    "cedears_prima_promedio_pct": -0.04
+  }
+}

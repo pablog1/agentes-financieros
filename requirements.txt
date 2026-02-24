@@ -1,0 +1,7 @@
+requests>=2.31.0
+yfinance>=0.2.36
+python-dotenv>=1.0.0
+feedparser>=6.0.0
+PyOBD @ git+https://github.com/franco-lamas/PyOBD
+pdfplumber>=0.10.0
+openai>=1.0.0
