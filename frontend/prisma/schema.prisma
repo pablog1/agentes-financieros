@@ -1,0 +1,54 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Agent {
+  id          String   @id
+  name        String
+  fullAlias   String   @map("full_alias")
+  age         Int
+  reportName  String   @map("report_name")
+  motto       String
+  personality String
+  riskStance  String   @map("risk_stance")
+  audience    String
+  avatarUrl   String?  @map("avatar_url")
+  color       String
+  sortOrder   Int      @map("sort_order")
+  minWords    Int      @map("min_words")
+  maxWords    Int      @map("max_words")
+  reports     Report[]
+
+  @@map("agents")
+}
+
+model Report {
+  id        Int      @id @default(autoincrement())
+  agentId   String   @map("agent_id")
+  date      DateTime @db.Date
+  title     String
+  content   String
+  wordCount Int      @map("word_count")
+  excerpt   String
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+  agent     Agent    @relation(fields: [agentId], references: [id])
+
+  @@unique([agentId, date])
+  @@map("reports")
+}
+
+model DailyData {
+  id        Int      @id @default(autoincrement())
+  date      DateTime @unique @db.Date
+  data      Json
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@map("daily_data")
+}

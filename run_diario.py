@@ -79,6 +79,33 @@ def paso_validacion(reportes, datos_path, use_llm=False):
     return resultados
 
 
+def paso_push_db(reportes, datos_path):
+    """Paso 4: Push reportes y datos a PostgreSQL."""
+    print("\n" + "=" * 60)
+    print("PASO 4: PUSH A BASE DE DATOS")
+    print("=" * 60)
+
+    if not os.getenv("DATABASE_URL"):
+        print("  SKIP: DATABASE_URL no configurada, omitiendo push a DB")
+        return
+
+    try:
+        from scripts.push_to_db import push_reports, push_daily_data
+        import psycopg2
+
+        conn = psycopg2.connect(os.getenv("DATABASE_URL"))
+        fecha = os.path.basename(datos_path).replace("datos_diarios_", "").replace(".json", "")
+
+        push_reports(conn, fecha)
+        push_daily_data(conn, fecha, datos_path)
+        conn.close()
+        print("  ✓ Push a DB completado")
+    except ImportError:
+        print("  SKIP: psycopg2 no instalado (pip install psycopg2-binary)")
+    except Exception as e:
+        print(f"  ERROR pusheando a DB: {e}")
+
+
 def resumen_final(datos_path, reportes, resultados, duracion):
     """Imprimir resumen final del pipeline completo."""
     print("\n" + "=" * 60)
@@ -157,6 +184,9 @@ def main():
         print("\n(Validación omitida con --skip-validacion)")
     else:
         resultados = paso_validacion(reportes, datos_path, use_llm=args.llm)
+
+    # Paso 4: Push a DB
+    paso_push_db(reportes, datos_path)
 
     # Resumen
     duracion = time.time() - start

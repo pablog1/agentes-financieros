@@ -5,3 +5,4 @@ feedparser>=6.0.0
 PyOBD @ git+https://github.com/franco-lamas/PyOBD
 pdfplumber>=0.10.0
 openai>=1.0.0
+psycopg2-binary>=2.9.9
