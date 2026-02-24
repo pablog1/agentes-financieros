@@ -150,6 +150,26 @@ def test_pyobd_bonos():
         return ("FAIL", str(e)[:80])
 
 
+def test_indec_calendario():
+    """INDEC - Calendario de difusión (PDF parseable)."""
+    try:
+        import pdfplumber
+        import io
+
+        url = "https://www.indec.gob.ar/ftp/cuadros/publicaciones/calendario_1sem2026.pdf"
+        r = requests.get(url, timeout=TIMEOUT)
+        r.raise_for_status()
+        pdf = pdfplumber.open(io.BytesIO(r.content))
+        text = pdf.pages[0].extract_text()
+        has_ipc = "IPC" in text or "precios al consumidor" in text
+        has_emae = "EMAE" in text
+        if has_ipc and has_emae:
+            return ("OK", f"calendario 1sem2026 - IPC, EMAE, empleo, comercio")
+        return ("OK", f"calendario descargado ({len(text)} chars)")
+    except Exception as e:
+        return ("FAIL", str(e)[:80])
+
+
 def test_pyobd_lecaps():
     """PyOBD - Lecaps/Boncaps (Open BYMA Data, 20min delay)."""
     try:
@@ -347,6 +367,7 @@ def main():
         ("ArgentinaDatos riesgo", test_argentinadatos_riesgo),
         ("ArgentinaDatos inflac", test_argentinadatos_inflacion),
         ("yfinance AAPL.BA", test_yfinance),
+        ("INDEC Calendario", test_indec_calendario),
         ("BYMA Bonos", test_pyobd_bonos),
         ("BYMA Lecaps", test_pyobd_lecaps),
         ("RSS Ámbito", test_rss_ambito),

@@ -26,7 +26,7 @@ Tracking de fuentes de datos para que el agente escriba noticias y reportes fina
 | Bonos soberanos AR | ✅ Resuelto | PyOBD (Open BYMA Data) | Gratis, sin cuenta |
 | Obligaciones negociables | ✅ Resuelto | PyOBD (Open BYMA Data) | Gratis, sin cuenta |
 | Datos macro BCRA | ✅ Resuelto | BCRA API v4.0 | Gratis |
-| Calendario económico | ❌ Pendiente | Trading Economics u otro | Desde $20/mes |
+| Calendario económico | ✅ Resuelto | INDEC PDFs (pdfplumber) | Gratis |
 
 ---
 
@@ -86,21 +86,18 @@ Tracking de fuentes de datos para que el agente escriba noticias y reportes fina
   - Datos históricos extensos (algunos desde 1996)
   - Nota importante: YPF cotiza como YPFD en BYMA, usar YPFD.BA
 
+### Calendario económico
+- **INDEC PDFs** — Calendario de difusión semestral, parseable con pdfplumber. Sin key.
+  - Fechas de publicación de IPC, EMAE, empleo, comercio exterior, actividad industrial
+  - PDF: `calendario_1sem2026.pdf` y `calendario_2sem2026.pdf`
+  - Se descarga y parsea automáticamente con pdfplumber
+  - Nota: Trading Economics API descartada (free tier solo devuelve sample data, no datos de Argentina)
+
 ---
 
-## ❌ Pendiente
+## Opcional (no resuelto, prioridad baja)
 
-### 1. Calendario económico
-**Prioridad: BAJA** — Fechas de licitaciones, vencimientos de deuda, reuniones BCRA, datos de empleo.
-
-| Opción | Costo |
-|--------|-------|
-| Trading Economics API | Desde $20/mes |
-| Scraping agenda BCRA / Min. Economía | $0, frágil |
-
-Acción: evaluar si es necesario.
-
-### 4. Búsqueda contextual (opcional)
+### Búsqueda contextual
 **Prioridad: BAJA** — Los RSS ya cubren noticias. Estas APIs servirían para que el agente busque contexto puntual sobre un tema específico.
 
 | Opción | Límite free tier | Estado |
@@ -121,3 +118,4 @@ Acción: evaluar si los RSS son suficientes o si se necesita búsqueda ad-hoc.
 | 24 Feb 2026 | Noticias internacionales resueltas con RSS (Bloomberg, CNBC, FT, Infobae). Sin necesidad de API keys. |
 | 24 Feb 2026 | Bonos soberanos AR resueltos con PyOBD (Open BYMA Data). 189 bonos + 158 Lecaps sin key ni cuenta broker. |
 | 24 Feb 2026 | Datos macro BCRA resueltos con API v4.0 (la v2.0 estaba deprecada). Reservas, base monetaria, CER, BADLAR, TC. Total: 16 resueltas, 1 pendiente + 1 opcional. |
+| 24 Feb 2026 | Calendario económico resuelto con INDEC PDFs (pdfplumber). Trading Economics descartada. Total: 17 resueltas, 1 opcional. |

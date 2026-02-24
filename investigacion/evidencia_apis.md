@@ -603,15 +603,192 @@ for entry in d.entries:
 
 ---
 
+## 13. BCRA API v4.0 - Datos Macro
+
+**Base URL:** `https://api.bcra.gob.ar/estadisticas/v4.0`
+
+### Evidencia (24 Feb 2026)
+
+| Variable | ID | Valor | Fecha |
+|----------|-----|-------|-------|
+| Reservas internacionales | 1 | USD 44.904M | 21/02/2026 |
+| Base monetaria | 15 | $41.882.460M ARS | 14/02/2026 |
+| CER | 30 | 710,62 | 21/02/2026 |
+| Tasa BADLAR | 7 | 32,69% TNA | 21/02/2026 |
+| TC Minorista | 4 | $1.393 | 21/02/2026 |
+| TC Mayorista | 5 | $1.372 | 21/02/2026 |
+
+Total: 1.176 variables disponibles
+
+### Endpoints disponibles
+
+```
+GET /estadisticas/v4.0/Monetarias/{idVariable}?desde=YYYY-MM-DD&hasta=YYYY-MM-DD&limit=N
+```
+
+### Uso en Python
+
+```python
+import requests
+
+# Reservas internacionales (ID 1)
+url = "https://api.bcra.gob.ar/estadisticas/v4.0/Monetarias/1?desde=2026-01-01&hasta=2026-12-31&limit=3"
+r = requests.get(url)
+data = r.json()
+detalle = data["results"][0]["detalle"]
+# [{"fecha": "2026-02-21", "valor": 44904}, ...]
+
+# Base monetaria (ID 15)
+url = "https://api.bcra.gob.ar/estadisticas/v4.0/Monetarias/15?desde=2026-01-01&hasta=2026-12-31&limit=3"
+
+# CER (ID 30)
+url = "https://api.bcra.gob.ar/estadisticas/v4.0/Monetarias/30?desde=2026-01-01&hasta=2026-12-31&limit=3"
+
+# Tasa BADLAR (ID 7)
+url = "https://api.bcra.gob.ar/estadisticas/v4.0/Monetarias/7?desde=2026-01-01&hasta=2026-12-31&limit=3"
+```
+
+### IDs de variables útiles
+
+| ID | Variable |
+|----|----------|
+| 1 | Reservas internacionales |
+| 4 | TC minorista ($/USD) |
+| 5 | TC mayorista ($/USD) |
+| 7 | Tasa BADLAR |
+| 15 | Base monetaria |
+| 30 | CER |
+| 160 | Tasa política monetaria (discontinuada jul 2025) |
+
+### Características
+- Sin API key, sin registro
+- v2.0 deprecada (retorna 400), v3.0 se depreca 28/02/2026, usar v4.0
+- 1.176 variables disponibles
+- Series históricas extensas
+- Respuesta: `{"status": 200, "results": [{"idVariable": 1, "detalle": [...]}]}`
+
+---
+
+## 14. PyOBD - Bonos Soberanos AR (Open BYMA Data)
+
+**Librería Python:** `pip install PyOBD @ git+https://github.com/franco-lamas/PyOBD`
+**API REST subyacente:** `https://open.bymadata.com.ar/vanoms-be-core/rest/api/bymadata/free/`
+
+### Evidencia - Bonos (24 Feb 2026)
+
+| Ticker | Último | Var% | Volumen |
+|--------|--------|------|---------|
+| AL29 | $96.520 | +1,35% | 2.141.825 |
+| AL30 | $93.850 | +1,19% | 30.289.023 |
+| AL35 | $78.000 | +0,97% | 2.534.826 |
+| GD30 | $87.950 | +1,03% | 6.312.444 |
+| GD35 | $80.800 | +0,12% | 1.879.988 |
+
+Total: 189 bonos disponibles
+
+### Evidencia - Lecaps/Boncaps
+
+Total: 158 letras, mayoría con precio activo
+
+### Evidencia - Obligaciones Negociables
+
+Total: 2.920 tickers (236 con precio activo). Emisores: YPF, Telecom, Pan American, etc.
+
+### Uso en Python
+
+```python
+import PyOBD
+
+obd = PyOBD.openBYMAdata()
+
+# Bonos soberanos
+bonds = obd.get_bonds()
+# DataFrame con: symbol, last, bid, ask, volume, change, maturity, etc.
+al30 = bonds[bonds["symbol"] == "AL30"]
+
+# Lecaps / Boncaps
+short = obd.get_short_term_bonds()
+
+# Obligaciones negociables
+ons = obd.get_negociable_obligations()
+
+# Acciones líderes
+leaders = obd.get_leading_equity()
+
+# CEDEARs
+cedears = obd.get_cedears()
+```
+
+### Endpoints REST directos (sin PyOBD)
+
+```
+POST /vanoms-be-core/rest/api/bymadata/free/public-bonds
+POST /vanoms-be-core/rest/api/bymadata/free/lebacs
+POST /vanoms-be-core/rest/api/bymadata/free/negociable-obligations
+POST /vanoms-be-core/rest/api/bymadata/free/leading-equity
+POST /vanoms-be-core/rest/api/bymadata/free/general-equity
+POST /vanoms-be-core/rest/api/bymadata/free/cedears
+POST /vanoms-be-core/rest/api/bymadata/free/options
+```
+
+### Características
+- Sin API key, sin cuenta de broker
+- Gratis permanentemente (datos públicos con 20 min de delay)
+- PyOBD es un wrapper Python sobre la API REST de open.bymadata.com.ar
+- Se puede usar la API REST directamente desde cualquier lenguaje
+- Cobertura: bonos, letras, ONs, acciones, CEDEARs, opciones
+
+---
+
+## 15. INDEC - Calendario Económico
+
+**Fuente:** `https://www.indec.gob.ar/ftp/cuadros/publicaciones/calendario_1sem2026.pdf`
+
+### Evidencia (24 Feb 2026)
+
+PDF del calendario de difusión del 1er semestre 2026, parseable con pdfplumber. Contiene fechas de publicación de:
+- **IPC** (Índice de Precios al Consumidor) — mensual
+- **EMAE** (Estimador Mensual de Actividad Económica) — mensual
+- **Empleo** — trimestral
+- **Comercio exterior** — mensual
+- **Actividad industrial** — mensual
+- Otros indicadores estadísticos
+
+### Uso en Python
+
+```python
+import requests
+import pdfplumber
+import io
+
+url = "https://www.indec.gob.ar/ftp/cuadros/publicaciones/calendario_1sem2026.pdf"
+r = requests.get(url, timeout=15)
+pdf = pdfplumber.open(io.BytesIO(r.content))
+text = pdf.pages[0].extract_text()
+# Contiene tabla con fechas de difusión de cada indicador
+```
+
+### Características
+- Sin API key
+- PDF oficial del INDEC
+- Se publica semestralmente (1sem y 2sem)
+- Parseable automáticamente con pdfplumber
+- Trading Economics descartada (free tier solo sample data, no Argentina)
+
+---
+
 ## Resumen comparativo
 
 | API | Dato principal | Latencia | Histórico | Mejor para |
 |-----|---------------|----------|-----------|------------|
 | DolarAPI | Cotizaciones dólar (7 tipos) | ~200ms | No | Cotización actual de todos los dólares |
 | Bluelytics | Dólar + Euro (blue/oficial) | ~300ms | Sí | Blue/oficial con historia y EUR |
-| BCRA | 39 divisas oficiales | ~500ms | No | Cotizaciones oficiales de divisas |
+| BCRA Cambiarias | 39 divisas oficiales | ~500ms | No | Cotizaciones oficiales de divisas |
+| BCRA Macro v4 | Reservas, base monetaria, CER, BADLAR | ~500ms | Sí | Datos macro del Banco Central |
 | ArgentinaDatos | Riesgo país, inflación, tasas | ~300ms | Sí (desde 1999) | Indicadores macro argentinos |
 | yfinance | Precios acciones/CEDEARs | ~1-2s | Sí | Precios de activos financieros |
+| PyOBD / BYMA | Bonos, Lecaps, ONs, acciones AR | ~1-2s | No | Renta fija y variable AR con 20min delay |
+| INDEC PDF | Calendario económico | ~2s | No | Fechas de publicación de indicadores |
 | RSS Ámbito | Noticias economía AR (~20) | ~500ms | No | Titulares + copetes de economía |
 | RSS Cronista | Noticias finanzas AR (~37) | ~500ms | No | Titulares + autor de finanzas/mercados |
 | RSS Bloomberg | Noticias mercados globales (~30) | ~500ms | No | Mercados globales, macro, crypto |
@@ -624,13 +801,18 @@ for entry in d.entries:
 ```
 Dólar (oficial, blue, MEP, CCL, cripto, tarjeta) ✅ DolarAPI + Bluelytics
 Euro (oficial y blue)                              ✅ Bluelytics
-Cotizaciones divisas (39 monedas)                  ✅ BCRA
+Cotizaciones divisas (39 monedas)                  ✅ BCRA Cambiarias
+Reservas, base monetaria, CER, BADLAR             ✅ BCRA Macro v4
 Riesgo país                                        ✅ ArgentinaDatos
 Inflación mensual e interanual                     ✅ ArgentinaDatos
 Tasas plazo fijo                                   ✅ ArgentinaDatos
 Precios CEDEARs / acciones AR                      ✅ yfinance
 Precios acciones US                                ✅ yfinance
 Índice MERVAL                                      ✅ yfinance
+Bonos soberanos AR (189 bonos)                     ✅ PyOBD / BYMA
+Lecaps / Boncaps (158 letras)                      ✅ PyOBD / BYMA
+Obligaciones negociables (2.920 tickers)           ✅ PyOBD / BYMA
+Calendario económico (IPC, EMAE, empleo)           ✅ INDEC PDFs
 Noticias economía AR (titulares + copetes)         ✅ RSS Ámbito
 Noticias finanzas AR (titulares + autor)            ✅ RSS Cronista
 Noticias economía AR amplia (~100)                  ✅ RSS Infobae
