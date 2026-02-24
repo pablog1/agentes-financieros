@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { AgentAvatar } from "../agents/AgentAvatar";
 import { formatDateShort } from "@/lib/dates";
 
 interface ReportCardProps {
@@ -12,7 +11,7 @@ interface ReportCardProps {
   excerpt: string;
   date: Date | string;
   wordCount: number;
-  variant?: "default" | "hero";
+  variant?: "lead" | "secondary" | "column";
 }
 
 export function ReportCard({
@@ -20,78 +19,78 @@ export function ReportCard({
   agentName,
   reportName,
   agentColor,
-  avatarUrl,
   title,
   excerpt,
   date,
   wordCount,
-  variant = "default",
+  variant = "column",
 }: ReportCardProps) {
   const dateStr = typeof date === "string" ? date : date.toISOString().split("T")[0];
   const href = `/analista/${agentId}/${dateStr}`;
 
-  if (variant === "hero") {
+  if (variant === "lead") {
     return (
       <Link href={href} className="block group">
-        <article
-          className="bg-card rounded-sm p-6 border-l-4 hover:shadow-lg transition-shadow"
-          style={{ borderLeftColor: agentColor }}
-        >
-          <div className="flex items-center gap-3 mb-4">
-            <AgentAvatar name={agentName} color={agentColor} avatarUrl={avatarUrl} size="lg" />
-            <div>
-              <span className="font-semibold text-lg">{agentName}</span>
-              <span className="block text-sm text-muted-foreground">{reportName}</span>
-            </div>
-          </div>
-          <h2
-            className="text-2xl md:text-3xl font-bold mb-3 group-hover:text-accent transition-colors leading-tight"
-            style={{ fontFamily: "var(--font-serif)" }}
-          >
+        <article>
+          <h2 className="headline-lead mb-3 group-hover:text-accent transition-colors">
             {title}
           </h2>
-          <p className="text-muted-foreground leading-relaxed mb-4 text-base">
+          <div className="byline mb-3 flex items-center gap-2">
+            <span style={{ color: agentColor }}>&#9679;</span>
+            <span>Por {agentName}</span>
+            <span>&middot;</span>
+            <span>{reportName}</span>
+            <span>&middot;</span>
+            <time>{formatDateShort(dateStr)}</time>
+          </div>
+          <p className="excerpt-text mb-4">
             {excerpt}
           </p>
-          <div className="flex items-center gap-3 text-xs text-muted-foreground">
-            <time>{formatDateShort(dateStr)}</time>
-            <span>&middot;</span>
-            <span>{wordCount} palabras</span>
-            <span>&middot;</span>
-            <span className="group-hover:text-accent transition-colors">Leer completo →</span>
-          </div>
+          <span className="text-sm font-medium text-accent group-hover:underline">
+            Leer completo &rarr;
+          </span>
         </article>
       </Link>
     );
   }
 
+  if (variant === "secondary") {
+    return (
+      <Link href={href} className="block group sidebar-item">
+        <article>
+          <h3 className="headline-secondary mb-2 group-hover:text-accent transition-colors">
+            {title}
+          </h3>
+          <div className="byline mb-2 flex items-center gap-1.5">
+            <span style={{ color: agentColor }}>&#9679;</span>
+            <span>{agentName}</span>
+            <span>&middot;</span>
+            <time>{formatDateShort(dateStr)}</time>
+          </div>
+          <p className="text-sm text-muted-foreground leading-relaxed line-clamp-3" style={{ fontFamily: "var(--font-serif)" }}>
+            {excerpt}
+          </p>
+        </article>
+      </Link>
+    );
+  }
+
+  // column (default)
   return (
     <Link href={href} className="block group">
-      <article
-        className="bg-card rounded-sm p-4 border-l-3 hover:shadow-md transition-shadow h-full flex flex-col"
-        style={{ borderLeftColor: agentColor }}
-      >
-        <div className="flex items-center gap-2 mb-3">
-          <AgentAvatar name={agentName} color={agentColor} avatarUrl={avatarUrl} size="sm" />
-          <div className="leading-tight">
-            <span className="text-sm font-medium">{agentName}</span>
-            <span className="block text-xs text-muted-foreground">{reportName}</span>
-          </div>
-        </div>
-        <h3
-          className="text-lg font-semibold mb-2 group-hover:text-accent transition-colors leading-snug"
-          style={{ fontFamily: "var(--font-serif)" }}
-        >
+      <article>
+        <h3 className="headline-tertiary mb-2 group-hover:text-accent transition-colors">
           {title}
         </h3>
-        <p className="text-sm text-muted-foreground leading-relaxed mb-3 flex-1 line-clamp-3">
+        <div className="byline mb-2 flex items-center gap-1.5">
+          <span style={{ color: agentColor }}>&#9679;</span>
+          <span>{agentName}</span>
+          <span>&middot;</span>
+          <time>{formatDateShort(dateStr)}</time>
+        </div>
+        <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2" style={{ fontFamily: "var(--font-serif)" }}>
           {excerpt}
         </p>
-        <div className="flex items-center gap-2 text-xs text-muted-foreground mt-auto">
-          <time>{formatDateShort(dateStr)}</time>
-          <span>&middot;</span>
-          <span>{wordCount} pal.</span>
-        </div>
       </article>
     </Link>
   );

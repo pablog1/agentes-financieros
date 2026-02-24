@@ -180,3 +180,69 @@ body {
 .tabular-nums {
   font-variant-numeric: tabular-nums;
 }
+
+/* ── Newspaper Typography ──────────────────────────── */
+
+/* Headline hierarchy */
+.headline-lead {
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--foreground);
+}
+
+.headline-secondary {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--foreground);
+}
+
+.headline-tertiary {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--foreground);
+}
+
+/* Byline */
+.byline {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted-foreground);
+}
+
+/* Excerpt text */
+.excerpt-text {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--foreground);
+}
+
+/* Sidebar divider between stacked items */
+.sidebar-item + .sidebar-item {
+  border-top: 1px solid var(--border);
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+}
+
+/* Responsive headline sizing */
+@media (max-width: 1023px) {
+  .headline-lead {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 639px) {
+  .headline-lead {
+    font-size: 1.75rem;
+  }
+}

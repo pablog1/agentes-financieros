@@ -34,6 +34,57 @@ def _extraer_numeros(texto):
     return numeros
 
 
+def _extraer_numeros_json(data):
+    """Extraer recursivamente todos los valores numéricos del JSON de datos."""
+    numeros = set()
+
+    def _walk(obj):
+        if isinstance(obj, (int, float)):
+            numeros.add(float(obj))
+            # Agregar variantes redondeadas (conservadoras)
+            numeros.add(round(obj))
+            numeros.add(round(obj, 1))
+            numeros.add(round(obj, 2))
+            # Solo redondear a centenas para números muy grandes (>10000)
+            # Esto cubre "44.900" por 44904, pero no genera falsos matches en rangos de FX
+            if obj > 10000:
+                numeros.add(float(int(obj / 100) * 100))
+                numeros.add(float(int(obj / 1000) * 1000))
+        elif isinstance(obj, dict):
+            for v in obj.values():
+                _walk(v)
+        elif isinstance(obj, list):
+            for v in obj:
+                _walk(v)
+        elif isinstance(obj, str):
+            # Extraer números de strings (ej: fechas "2026-02-24" -> 2026, 2, 24)
+            for m in re.finditer(r'\b(\d+(?:\.\d+)?)\b', obj):
+                try:
+                    numeros.add(float(m.group(1)))
+                except ValueError:
+                    pass
+
+    _walk(data)
+    return numeros
+
+
+def _extraer_numeros_con_contexto(texto):
+    """Extraer números del reporte con su contexto circundante."""
+    resultados = []
+    for match in re.finditer(r'\b(\d{1,3}(?:\.\d{3})*(?:,\d+)?)\b', texto):
+        num_str = match.group(1).replace(".", "").replace(",", ".")
+        try:
+            valor = float(num_str)
+        except ValueError:
+            continue
+        # Capturar contexto (40 chars antes y después)
+        start = max(0, match.start() - 40)
+        end = min(len(texto), match.end() + 40)
+        contexto = texto[start:end].replace("\n", " ").strip()
+        resultados.append((valor, match.group(1), contexto))
+    return resultados
+
+
 def _word_count(texto):
     """Contar palabras (excluyendo markdown syntax)."""
     # Remover markdown headers, links, emphasis markers
@@ -255,11 +306,64 @@ def check_datos_vs_json(reporte, data):
             verificaciones.append(f"Reservas ({reservas}M): OK")
 
     # Buscar datos inventados (números que no están en el JSON)
-    # Esto es un check heurístico, no perfecto
-    json_str = json.dumps(data)
+    numeros_json = _extraer_numeros_json(data)
+    numeros_reporte = _extraer_numeros_con_contexto(reporte)
+
+    # Números que ignoramos por ser demasiado comunes o ambiguos
+    IGNORAR_MENORES_A = 20  # 1, 2, 3... son muy comunes en prosa
+    IGNORAR_EXACTOS = {100, 200, 300, 500, 1000}  # Números redondos genéricos
+
+    # Patrones de contexto que excluimos (temporales, décadas, ordinales)
+    CONTEXTO_EXCLUIR = re.compile(
+        r'(?:'
+        r"(?:los|la|las|el)\s*['\u2019]?\d{2}\b"  # "los '90", "los 80"
+        r'|\d+\s*(?:días?|semanas?|meses?|horas?|minutos?|años?|hs)\b'  # "45 días"
+        r'|\d+\s*(?:de\s+)?(?:enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre)'  # fechas en prosa
+        r')',
+        re.IGNORECASE
+    )
+
+    sospechosos = []
+    for valor, original, contexto in numeros_reporte:
+        if valor < IGNORAR_MENORES_A:
+            continue
+        if valor in IGNORAR_EXACTOS:
+            continue
+        # Excluir por contexto temporal/décadas
+        if CONTEXTO_EXCLUIR.search(contexto):
+            continue
+        # Verificar si el número está en el JSON (con tolerancia del 0.5%)
+        # Comparar tanto el valor como su absoluto (el regex no captura signos negativos)
+        encontrado = False
+        for json_num in numeros_json:
+            if json_num == 0:
+                continue
+            abs_json = abs(json_num)
+            if abs_json < 0.001:
+                continue
+            # Match directo con tolerancia
+            if abs(valor - json_num) / max(abs_json, 1) < 0.005:
+                encontrado = True
+                break
+            # Match por valor absoluto (para negativos como -40,6% → 40,6)
+            if abs(valor - abs_json) / max(abs_json, 1) < 0.005:
+                encontrado = True
+                break
+        if not encontrado:
+            sospechosos.append((valor, original, contexto))
+
+    if sospechosos:
+        for val, orig, ctx in sospechosos:
+            errores.append(f"Posible dato inventado: {orig} → \"{ctx}\"")
 
     datos_ok = len(verificaciones)
-    if datos_ok >= 3:
+    n_sosp = len(sospechosos)
+
+    if n_sosp > 3:
+        status = "FAIL"
+    elif n_sosp > 0:
+        status = "WARN"
+    elif datos_ok >= 3:
         status = "OK"
     elif datos_ok >= 1:
         status = "WARN"
@@ -267,10 +371,104 @@ def check_datos_vs_json(reporte, data):
         status = "FAIL"
 
     detail = f"Datos verificados: {datos_ok} coincidencias"
+    if sospechosos:
+        detail += f" | {n_sosp} número(s) sospechoso(s) no encontrado(s) en JSON"
     if errores:
-        detail += f" | Errores: {', '.join(errores)}"
+        detail += f"\n           Alertas: {'; '.join(errores[:5])}"
+        if len(errores) > 5:
+            detail += f" ... y {len(errores) - 5} más"
 
     return status, detail, verificaciones
+
+
+def check_anti_hallucination(reporte, data):
+    """Detectar patrones comunes de alucinación en reportes financieros."""
+    alertas = []
+
+    # --- 1. Años históricos no presentes en los datos ---
+    # Extraer todos los años mencionados en el reporte
+    anios_reporte = set(int(m) for m in re.findall(r'\b((?:19|20)\d{2})\b', reporte))
+    # Extraer años que sí están en el JSON (de fechas, timestamps, etc.)
+    json_str = json.dumps(data)
+    anios_json = set(int(m) for m in re.findall(r'\b((?:19|20)\d{2})\b', json_str))
+    # Años en el reporte que no están en el JSON
+    anios_inventados = anios_reporte - anios_json
+    for anio in sorted(anios_inventados):
+        # Buscar el contexto donde aparece el año
+        for match in re.finditer(r'\b' + str(anio) + r'\b', reporte):
+            start = max(0, match.start() - 50)
+            end = min(len(reporte), match.end() + 50)
+            ctx = reporte[start:end].replace("\n", " ").strip()
+            alertas.append(f"Año histórico sin respaldo en datos: {anio} → \"{ctx}\"")
+            break  # Solo una alerta por año
+
+    # --- 2. Claims de yield/rendimiento/maturity sin datos ---
+    yield_patterns = [
+        (r'rendimiento\s+(?:impl[ií]cito|estimado|anual)?\s*(?:del?\s*)?\d+[.,]\d+\s*%', "Rendimiento/yield con número específico"),
+        (r'yield\s+(?:del?\s*)?\d+[.,]\d+\s*%', "Yield con número específico"),
+        (r'maturity\s+(?:en\s+)?(?:enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre)\s+(?:de\s+)?\d{4}', "Fecha de maturity específica"),
+        (r'vencimiento\s+(?:en\s+)?(?:enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre)\s+(?:de\s+)?\d{4}', "Fecha de vencimiento específica"),
+        (r'tir\s+(?:del?\s*)?\d+[.,]\d+\s*%', "TIR con número específico"),
+        (r'spread\s+(?:sobre\s+)?\w+\s+(?:de\s+)?\d+\s+(?:puntos|bps|basis)', "Spread sobre referencia externa"),
+    ]
+    for pattern, desc in yield_patterns:
+        match = re.search(pattern, reporte, re.IGNORECASE)
+        if match:
+            # Verificar si hay datos de yield/maturity en el JSON
+            has_yield_data = "yield" in json_str.lower() or "rendimiento" in json_str.lower() or "maturity" in json_str.lower()
+            if not has_yield_data:
+                ctx = match.group()
+                alertas.append(f"{desc} (sin datos de yield en JSON): \"{ctx}\"")
+
+    # --- 3. Eventos futuros no respaldados por noticias ---
+    evento_patterns = [
+        (r'(?:pr[oó]xima|la|esta)\s+(?:semana|lunes|martes|miércoles|jueves|viernes).*?(?:licitaci[oó]n|subasta|reuni[oó]n|anuncio)', "Evento futuro"),
+        (r'licitaci[oó]n\s+del\s+tesoro', "Licitación del Tesoro"),
+        (r'reuni[oó]n\s+(?:del?\s+)?(?:BCRA|directorio|Fed|FOMC)', "Reunión de organismo"),
+        (r'(?:el|este)\s+(?:próximo\s+)?(?:lunes|martes|miércoles|jueves|viernes)\s+(?:se\s+)?(?:publica|sale|vence|licita)', "Evento futuro específico"),
+    ]
+    noticias_str = json.dumps(data.get("noticias", {}), ensure_ascii=False).lower()
+    for pattern, desc in evento_patterns:
+        match = re.search(pattern, reporte, re.IGNORECASE)
+        if match:
+            # Verificar si el evento está mencionado en las noticias
+            evento_texto = match.group().lower()
+            palabras_clave = [p for p in evento_texto.split() if len(p) > 4]
+            respaldado = any(p in noticias_str for p in palabras_clave)
+            if not respaldado:
+                alertas.append(f"{desc} sin respaldo en noticias: \"{match.group()}\"")
+
+    # --- 4. Comparaciones históricas con números específicos ---
+    hist_patterns = [
+        r'(?:en|durante|el|desde|como en)\s+(?:enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre)\s+(?:de\s+)?(?:19|20)\d{2}\s+(?:cuando|el|la|los)',
+        r'(?:lleg[oó]|cay[oó]|subi[oó]|cotiz[oó]|estaba)\s+(?:a|en)\s+(?:USD\s+)?\d+[.,]?\d*\s+(?:centavos|puntos|d[oó]lares)',
+        r'multiplic(?:aron|ó)\s+por\s+\d+[.,]?\d*x?\s+en\s+(?:menos\s+de\s+)?\d+',
+    ]
+    for pattern in hist_patterns:
+        match = re.search(pattern, reporte, re.IGNORECASE)
+        if match:
+            alertas.append(f"Comparación histórica con datos específicos: \"{match.group()}\"")
+
+    # --- 5. Países/referencias externas sin datos ---
+    ref_externa_patterns = [
+        (r'prima\s+(?:de\s+)?\w+\s+(?:puntos?\s+)?sobre\s+(?:Brasil|México|Colombia|Chile|Perú)', "Prima sobre país sin datos"),
+        (r'(?:spread|brecha)\s+(?:con|vs|versus|contra)\s+(?:Brasil|México|Colombia|Chile|Perú)', "Spread vs país sin datos"),
+    ]
+    for pattern, desc in ref_externa_patterns:
+        match = re.search(pattern, reporte, re.IGNORECASE)
+        if match:
+            pais = re.search(r'(Brasil|México|Colombia|Chile|Perú)', match.group(), re.IGNORECASE)
+            pais_nombre = pais.group() if pais else "externo"
+            if pais_nombre.lower() not in json_str.lower():
+                alertas.append(f"{desc}: \"{match.group()}\"")
+
+    # Resultado
+    if not alertas:
+        return "OK", "Sin patrones de alucinación detectados", []
+
+    status = "FAIL" if len(alertas) >= 2 else "WARN"
+    detail = f"{len(alertas)} patrón(es) de alucinación detectado(s)"
+    return status, detail, alertas
 
 
 def check_no_recomendaciones(reporte):
@@ -347,13 +545,39 @@ def check_llm(reporte, data, model=None, agente="manu"):
         '"sugerencias": ["...", "..."]}'
     )
 
-    # Preparar datos resumidos para el admin
+    # Preparar datos resumidos para el admin (incluir TODOS los datos relevantes)
+    # Renta fija: resumir bonos clave y ONs top por volumen
+    rf = data.get("renta_fija", {})
+    rf_resumen = {"bonos_clave": rf.get("bonos_clave", {})}
+    ons = rf.get("obligaciones_negociables", [])
+    rf_resumen["obligaciones_negociables_top"] = sorted(
+        ons, key=lambda x: x.get("volumen") or 0, reverse=True
+    )[:10]
+
+    # Equity AR: resumir top movers
+    eq = data.get("equity_ar", {})
+    acciones = eq.get("acciones", {})
+    eq_resumen = {
+        k: {"ultimo": v.get("ultimo"), "variacion_pct": v.get("variacion_pct"), "nombre": v.get("nombre")}
+        for k, v in sorted(acciones.items(), key=lambda x: abs(x[1].get("variacion_pct") or 0), reverse=True)[:10]
+    }
+
+    # Noticias: incluir titulares para verificar referencias
+    noticias = data.get("noticias", {})
+    noticias_resumen = {
+        "argentina": [{"titulo": n.get("titulo"), "fuente": n.get("fuente")} for n in noticias.get("argentina", [])[:10]],
+        "internacionales": [{"titulo": n.get("titulo"), "fuente": n.get("fuente")} for n in noticias.get("internacionales", [])[:10]],
+    }
+
     datos_resumen = json.dumps({
         "macro": data.get("macro", {}),
         "indices": data.get("indices", {}),
         "commodities": data.get("commodities", {}),
         "crypto": {k: {"ultimo": v.get("ultimo"), "variacion_pct": v.get("variacion_pct")} for k, v in data.get("crypto", {}).items()},
         "calculados": data.get("calculados", {}),
+        "renta_fija": rf_resumen,
+        "equity_ar": eq_resumen,
+        "noticias": noticias_resumen,
     }, ensure_ascii=False, indent=2)
 
     user_msg = f"""## REPORTE A EVALUAR:
@@ -466,6 +690,13 @@ def validar(reporte_path, datos_path=None, use_llm=False, llm_model=None):
         for v in verificaciones:
             print(f"           {v}")
         results.append((status, detail))
+
+        # Check anti-alucinación
+        ah_status, ah_detail, ah_alertas = check_anti_hallucination(reporte, data)
+        print(f"  [{ah_status}]   Anti-alucinación: {ah_detail}")
+        for a in ah_alertas:
+            print(f"           ⚠ {a}")
+        results.append((ah_status, ah_detail))
     else:
         print(f"  [SKIP]  Datos vs JSON: no se encontró archivo de datos")
 
