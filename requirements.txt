@@ -1,0 +1,5 @@
+requests
+yfinance
+python-dotenv
+feedparser
+PyOBD @ git+https://github.com/franco-lamas/PyOBD
