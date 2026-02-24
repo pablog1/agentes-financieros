@@ -306,20 +306,16 @@ def _build_tomi_user_message(data):
         lines.append("## NASDAQ")
         lines.append(f"- NASDAQ: {_fmt(nasdaq['ultimo'])} ({_pct(nasdaq.get('variacion_pct')) or 'sin var'}){fecha_str}")
 
-    # CEDEARs tech relevantes para Tomi
-    tech_cedears = ["MELI", "TSLA", "NVDA", "COIN", "GLOB", "AAPL", "GOOGL", "MSFT", "AMZN"]
+    # Acciones tech relevantes para Tomi (con datos CEDEAR como referencia)
+    tech_tickers = ["MELI", "TSLA", "NVDA", "COIN", "GLOB", "AAPL", "GOOGL", "MSFT", "AMZN"]
     lines.append("")
-    lines.append("## CEDEARs Tech")
-    for ticker in tech_cedears:
+    lines.append("## Acciones Tech (precio USD = acción real, CEDEAR = instrumento local)")
+    for ticker in tech_tickers:
         ced = cedears.get(ticker, {})
         precio_us = ced.get("precio_us")
         var_us = ced.get("variacion_pct_us")
-        precio_ars = ced.get("precio_cedear_ars")
-        var_ars = ced.get("variacion_pct_cedear")
-        prima = ced.get("prima_descuento_pct")
         if precio_us:
-            prima_str = f", prima: {_pct(prima)}" if prima is not None else ""
-            lines.append(f"- {ticker}: USD {_fmt(precio_us, 2)} ({_pct(var_us) or 'sin var'}) | CEDEAR: ${_fmt(precio_ars)} ({_pct(var_ars) or 'sin var'}){prima_str}")
+            lines.append(f"- {ticker}: USD {_fmt(precio_us, 2)} ({_pct(var_us) or 'sin var'})")
 
     # Noticias internacionales (filtrar tech/crypto si es posible)
     lines.append("")
