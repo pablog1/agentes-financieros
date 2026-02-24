@@ -61,6 +61,31 @@ def check_disclaimer(reporte, agente="manu"):
             r"esto es especulaci[oó]n.{0,5}no inversi[oó]n",
             r"esto no es consejo financiero",
         ]
+    elif agente == "vale":
+        patterns = [
+            r"esto no es asesoramiento financiero",
+            r"consult[aá] con tu asesor",
+        ]
+    elif agente == "santi":
+        patterns = [
+            r"esto es an[aá]lisis fundamental",
+            r"hac[eé] tu propia investigaci[oó]n",
+        ]
+    elif agente == "sol":
+        patterns = [
+            r"portafolios modelo.{0,10}ejercicios educativos",
+            r"no.{0,5}recomendaciones personalizadas",
+        ]
+    elif agente == "diego":
+        patterns = [
+            r"an[aá]lisis t[eé]cnico.{0,10}probabilidades",
+            r"siempre us[aá] stop loss",
+        ]
+    elif agente == "roberto":
+        patterns = [
+            r"esto no es recomendaci[oó]n",
+            r"mi lectura del mercado",
+        ]
     else:
         patterns = [
             r"esto es análisis.{0,5}no predicción",
@@ -74,36 +99,76 @@ def check_disclaimer(reporte, agente="manu"):
 
 def check_titulo(reporte, agente="manu"):
     """Verificar formato del título."""
-    if agente == "manu":
-        if re.search(r'#\s*El Tablero\s*[—–-]', reporte):
-            return "OK", "Título correcto (El Tablero)"
-        return "FAIL", "Título incorrecto (debe ser '# El Tablero — [fecha]')"
-    if agente == "tomi":
-        if re.search(r'#\s*Señales\s*[—–-]', reporte):
-            return "OK", "Título correcto (Señales)"
-        return "FAIL", "Título incorrecto (debe ser '# Señales — [fecha]')"
+    titulo_patterns = {
+        "manu": (r'#\s*El Tablero\s*[—–-]', "El Tablero"),
+        "tomi": (r'#\s*Señales\s*[—–-]', "Señales"),
+        "vale": (r'#\s*Renta Fija Hoy\s*[—–-]', "Renta Fija Hoy"),
+        "santi": (r'#\s*Research Diario\s*[—–-]', "Research Diario"),
+        "sol": (r'#\s*Portafolio\s*[—–-]', "Portafolio"),
+        "diego": (r'#\s*Técnico\s*[—–-]', "Técnico"),
+        "roberto": (r'#\s*(Oportunidad|Sin novedad)\s*[—–-]', "Oportunidad/Sin novedad"),
+    }
+    if agente in titulo_patterns:
+        pattern, nombre = titulo_patterns[agente]
+        if re.search(pattern, reporte, re.IGNORECASE):
+            return "OK", f"Título correcto ({nombre})"
+        return "FAIL", f"Título incorrecto (debe ser '# {nombre} — [fecha]')"
     return "OK", "Check de título no implementado para este agente"
 
 
 def check_secciones(reporte, agente="manu"):
     """Verificar que todas las secciones obligatorias estén presentes."""
-    if agente == "manu":
-        secciones = [
+    secciones_por_agente = {
+        "manu": [
             ("resumen en 30 segundos", r"resumen.{0,10}30\s*segundo"),
             ("Argentina hoy", r"argentina\s+hoy"),
             ("El mundo que nos afecta", r"mundo.{0,10}(afecta|nos)"),
             ("Conexión de puntos", r"conexi[oó]n.{0,10}punto"),
             ("Lo que viene", r"lo que viene"),
-        ]
-    elif agente == "tomi":
-        secciones = [
+        ],
+        "tomi": [
             ("Qué se movió", r"qu[eé]\s+se\s+movi[oó]"),
             ("La oportunidad", r"la\s+oportunidad"),
             ("Aprendizaje", r"aprendizaje"),
             ("Track record", r"track\s*record"),
-        ]
-    else:
+        ],
+        "vale": [
+            ("Panorama del día", r"panorama.{0,10}d[ií]a"),
+            ("Comparativa de rendimientos", r"comparativa.{0,10}rendimiento"),
+            ("Oportunidad o alerta", r"oportunidad.{0,5}(o|y).{0,5}alerta"),
+            ("Simulación simple", r"simulaci[oó]n"),
+        ],
+        "santi": [
+            ("Mercado ayer", r"mercado\s+(ayer|hoy)"),
+            ("Análisis del día", r"an[aá]lisis.{0,10}d[ií]a"),
+            ("Tabla de seguimiento", r"tabla.{0,10}seguimiento"),
+            ("Scorecard", r"scorecard"),
+        ],
+        "sol": [
+            ("Lectura del entorno", r"lectura.{0,10}entorno"),
+            ("Portafolio modelo", r"portafolio.{0,10}modelo"),
+            ("Movimiento de la semana", r"movimiento.{0,10}semana"),
+            ("Escenario de riesgo", r"escenario.{0,10}riesgo"),
+            ("Matriz de correlación", r"matriz.{0,10}correlaci[oó]n"),
+        ],
+        "diego": [
+            ("Vista de mercado", r"vista.{0,10}mercado"),
+            ("Setups activos", r"setups?\s+activo"),
+            ("Gestión de trades", r"gesti[oó]n.{0,10}trade"),
+            ("Lección técnica", r"lecci[oó]n.{0,10}t[eé]cnic"),
+        ],
+        "roberto": [
+            ("Lectura política", r"lectura.{0,10}(pol[ií]tic|macro)"),
+            ("La tesis", r"la\s+tesis"),
+            ("Bitácora", r"bit[aá]cora"),
+            ("Perspectiva", r"perspectiva"),
+        ],
+    }
+
+    if agente not in secciones_por_agente:
         return "OK", "Check de secciones no implementado para este agente"
+
+    secciones = secciones_por_agente[agente]
 
     encontradas = 0
     faltantes = []
@@ -245,6 +310,11 @@ def check_llm(reporte, data, model=None, agente="manu"):
     agent_descriptions = {
         "manu": "Manu (Analista Macroeconómico, 38 años, analítico, directo, algo cínico)",
         "tomi": "Tomi (Crypto y Tendencias de Alto Riesgo, 24 años, energético, directo, crypto-bullish pero transparente con riesgos)",
+        "vale": "Vale (Analista de Renta Fija, 52 años, prudente, metódica, ultra conservadora, tono maternal)",
+        "santi": "Santi (Analista de Acciones y CEDEARs, 32 años, nerd de fundamentals, entusiasta pero riguroso)",
+        "sol": "Sol (Estratega de Portafolio, 41 años, estructurada, metodológica, piensa en sistemas y diversificación)",
+        "diego": "Diego (Analista Técnico, 35 años, frío, calculador, disciplinado, habla en probabilidades)",
+        "roberto": "Roberto (Oportunista Macro, 45 años, experimentado, cínico, contrarian, piensa en asimetrías)",
     }
     agent_desc = agent_descriptions.get(agente, f"agente '{agente}'")
 
@@ -363,10 +433,17 @@ def validar(reporte_path, datos_path=None, use_llm=False, llm_model=None):
     print("CHECKS AUTOMÁTICOS:")
 
     # Extensión depende del agente
-    if agente == "tomi":
-        ext_check = check_extension(reporte, min_words=500, max_words=800)
-    else:
-        ext_check = check_extension(reporte)
+    extension_limites = {
+        "manu": (800, 1200),
+        "tomi": (500, 800),
+        "vale": (600, 900),
+        "santi": (700, 1200),
+        "sol": (1000, 1500),
+        "diego": (600, 1000),
+        "roberto": (200, 1200),  # 200 for "sin novedad", 1200 for full report
+    }
+    min_w, max_w = extension_limites.get(agente, (800, 1200))
+    ext_check = check_extension(reporte, min_words=min_w, max_words=max_w)
 
     checks = [
         ext_check,

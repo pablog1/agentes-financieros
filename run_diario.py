@@ -110,8 +110,8 @@ def main():
     parser.add_argument(
         "--agentes",
         nargs="+",
-        default=["manu"],
-        help="Agentes a generar (default: manu)",
+        default=["manu", "tomi", "vale", "santi", "sol", "diego", "roberto"],
+        help="Agentes a generar (default: todos)",
     )
     parser.add_argument(
         "--skip-datos",
