@@ -75,3 +75,10 @@ export async function getLatestDate(): Promise<string | null> {
   });
   return latest ? latest.date.toISOString().split("T")[0] : null;
 }
+
+export async function getDailyData(date: string) {
+  const entry = await prisma.dailyData.findUnique({
+    where: { date: new Date(date + "T00:00:00.000Z") },
+  });
+  return entry?.data as Record<string, unknown> | null;
+}

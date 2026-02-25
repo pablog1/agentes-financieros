@@ -52,7 +52,7 @@ def parse_report(filepath):
     words = content.split()
     word_count = len(words)
 
-    # Excerpt: primer párrafo después del título (no vacío, no heading)
+    # Excerpt: primer párrafo después del título y subtítulo (no vacío, no heading)
     lines = content.split("\n")
     excerpt = ""
     past_title = False
@@ -61,12 +61,18 @@ def parse_report(filepath):
         if stripped.startswith("# "):
             past_title = True
             continue
-        if past_title and stripped and not stripped.startswith("#"):
-            # Limpiar markdown básico
-            clean = re.sub(r"[*_`\[\]]", "", stripped)
-            clean = re.sub(r"\(http[^)]+\)", "", clean)
-            excerpt = clean[:300]
-            break
+        if not past_title:
+            continue
+        if not stripped or stripped.startswith("#"):
+            continue
+        # Saltar subtítulo bold del nuevo formato: **Report Name** — fecha
+        if re.match(r"^\*\*.+\*\*\s*—", stripped):
+            continue
+        # Limpiar markdown básico
+        clean = re.sub(r"[*_`\[\]]", "", stripped)
+        clean = re.sub(r"\(http[^)]+\)", "", clean)
+        excerpt = clean[:300]
+        break
 
     if not excerpt and word_count > 10:
         excerpt = " ".join(words[:50]) + "..."

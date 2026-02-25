@@ -1,5 +1,6 @@
-import { getLatestReports, getLatestDate } from "@/lib/queries";
+import { getLatestReports, getLatestDate, getDailyData } from "@/lib/queries";
 import { EditionHeader } from "@/components/home/EditionHeader";
+import { MarketTicker } from "@/components/home/MarketTicker";
 import { ReportGrid } from "@/components/home/ReportGrid";
 import type { ReportWithAgent } from "@/types";
 
@@ -8,6 +9,7 @@ export const dynamic = "force-dynamic";
 export default async function HomePage() {
   const reports = (await getLatestReports()) as ReportWithAgent[];
   const latestDate = await getLatestDate();
+  const dailyData = latestDate ? await getDailyData(latestDate) : null;
 
   if (!latestDate || reports.length === 0) {
     return (
@@ -31,6 +33,7 @@ export default async function HomePage() {
   return (
     <>
       <EditionHeader date={latestDate} reportCount={reports.length} />
+      <MarketTicker data={dailyData} />
       <ReportGrid reports={reports} />
     </>
   );

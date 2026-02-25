@@ -1,8 +1,65 @@
+import Link from "next/link";
 import { ReportCard } from "../reports/ReportCard";
 import type { ReportWithAgent } from "@/types";
+import { formatDateShort } from "@/lib/dates";
 
 interface ReportGridProps {
   reports: ReportWithAgent[];
+}
+
+/**
+ * Extract the first N paragraphs of markdown content (after title lines).
+ * Strips H1/H2 headers and returns plain-ish text for inline display.
+ */
+function extractLeadContent(content: string, maxParagraphs = 4): string {
+  const lines = content.split("\n");
+  const paragraphs: string[] = [];
+  let currentPara = "";
+  let pastTitle = false;
+
+  for (const line of lines) {
+    const trimmed = line.trim();
+    // Skip the H1 title and the bold subtitle line
+    if (!pastTitle) {
+      if (trimmed.startsWith("# ") || trimmed.startsWith("**")) {
+        continue;
+      }
+      if (trimmed.startsWith("## ")) {
+        pastTitle = true;
+        continue;
+      }
+      if (trimmed === "") continue;
+      pastTitle = true;
+    }
+
+    // Skip section headers
+    if (trimmed.startsWith("## ") || trimmed.startsWith("### ")) {
+      if (currentPara) {
+        paragraphs.push(currentPara.trim());
+        currentPara = "";
+      }
+      if (paragraphs.length >= maxParagraphs) break;
+      continue;
+    }
+
+    // Skip blockquotes (disclaimers)
+    if (trimmed.startsWith("> ")) continue;
+
+    if (trimmed === "") {
+      if (currentPara) {
+        paragraphs.push(currentPara.trim());
+        currentPara = "";
+        if (paragraphs.length >= maxParagraphs) break;
+      }
+    } else {
+      currentPara += (currentPara ? " " : "") + trimmed;
+    }
+  }
+  if (currentPara && paragraphs.length < maxParagraphs) {
+    paragraphs.push(currentPara.trim());
+  }
+
+  return paragraphs.join("\n\n");
 }
 
 export function ReportGrid({ reports }: ReportGridProps) {
@@ -20,36 +77,43 @@ export function ReportGrid({ reports }: ReportGridProps) {
     );
   }
 
-  // Lead story (first report, typically Manu)
-  const lead = reports[0];
-  // Sidebar stories (2nd and 3rd, typically Tomi and Vale)
-  const sidebar = reports.slice(1, 3);
-  // Column stories (rest)
-  const columns = reports.slice(3);
+  // Find the editor report (lead/editorial) and separate from the rest
+  const editorReport = reports.find((r) => r.agentId === "editor");
+  const otherReports = reports.filter((r) => r.agentId !== "editor");
+
+  // First analyst report for sidebar lead, rest for columns
+  const sidebarReports = otherReports.slice(0, 3);
+  const columnReports = otherReports.slice(3);
 
   return (
     <div>
-      {/* Lead + Sidebar — 2fr 1fr on desktop, stacked on mobile */}
-      <div className="flex flex-col lg:grid lg:gap-8" style={{ gridTemplateColumns: "2fr 1fr" }}>
-        {/* Main story */}
-        <div>
-          <ReportCard
-            agentId={lead.agentId}
-            agentName={lead.agent.name}
-            reportName={lead.agent.reportName}
-            agentColor={lead.agent.color}
-            title={lead.title}
-            excerpt={lead.excerpt}
-            date={lead.date}
-            wordCount={lead.wordCount}
-            variant="lead"
-          />
-        </div>
+      {/* Lead editorial + sidebar analysts */}
+      <div className="flex flex-col lg:grid lg:gap-6" style={{ gridTemplateColumns: "3fr 2fr" }}>
+        {/* Main editorial */}
+        {editorReport ? (
+          <div>
+            <LeadEditorial report={editorReport} />
+          </div>
+        ) : otherReports[0] ? (
+          <div>
+            <ReportCard
+              agentId={otherReports[0].agentId}
+              agentName={otherReports[0].agent.name}
+              reportName={otherReports[0].agent.reportName}
+              agentColor={otherReports[0].agent.color}
+              title={otherReports[0].title}
+              excerpt={otherReports[0].excerpt}
+              date={otherReports[0].date}
+              wordCount={otherReports[0].wordCount}
+              variant="lead"
+            />
+          </div>
+        ) : null}
 
         {/* Sidebar */}
-        {sidebar.length > 0 && (
-          <div className="mt-6 pt-6 border-t border-border lg:mt-0 lg:pt-0 lg:border-t-0 lg:border-l lg:pl-6">
-            {sidebar.map((report) => (
+        {sidebarReports.length > 0 && (
+          <div className="mt-4 pt-4 border-t border-border lg:mt-0 lg:pt-0 lg:border-t-0 lg:border-l lg:pl-5">
+            {sidebarReports.map((report) => (
               <ReportCard
                 key={report.id}
                 agentId={report.agentId}
@@ -67,23 +131,22 @@ export function ReportGrid({ reports }: ReportGridProps) {
         )}
       </div>
 
-      {/* Heavy rule separator */}
-      {columns.length > 0 && (
+      {/* Column stories */}
+      {columnReports.length > 0 && (
         <>
           <hr
-            className="my-8"
+            className="my-6"
             style={{ border: "none", borderTop: "3px double var(--foreground)" }}
           />
 
-          {/* Column stories — 4 cols desktop, 2 cols tablet, 1 col mobile */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
-            {columns.map((report, i) => (
+            {columnReports.map((report, i) => (
               <div
                 key={report.id}
-                className={`py-4 md:py-0 ${
-                  i > 0 ? "border-t border-border md:border-t-0 md:border-l md:pl-5" : ""
+                className={`py-3 md:py-0 ${
+                  i > 0 ? "border-t border-border md:border-t-0 md:border-l md:pl-4" : ""
                 }`}
-                style={{ paddingRight: i < columns.length - 1 ? "1.25rem" : 0 }}
+                style={{ paddingRight: i < columnReports.length - 1 ? "1rem" : 0 }}
               >
                 <ReportCard
                   agentId={report.agentId}
@@ -102,5 +165,45 @@ export function ReportGrid({ reports }: ReportGridProps) {
         </>
       )}
     </div>
+  );
+}
+
+/**
+ * Lead editorial component — shows the editor's report with substantial content inline.
+ */
+function LeadEditorial({ report }: { report: ReportWithAgent }) {
+  const dateStr = typeof report.date === "string" ? report.date : report.date.toISOString().split("T")[0];
+  const href = `/analista/${report.agentId}/${dateStr}`;
+  const leadContent = extractLeadContent(report.content, 2);
+
+  return (
+    <article>
+      <Link href={href} className="block group">
+        <h2 className="headline-lead mb-2 group-hover:text-accent transition-colors">
+          {report.title}
+        </h2>
+      </Link>
+      <div className="byline mb-3 flex items-center gap-2">
+        <span style={{ color: report.agent.color }}>&#9679;</span>
+        <span>Por {report.agent.name}</span>
+        <span>&middot;</span>
+        <span>{report.agent.reportName}</span>
+        <span>&middot;</span>
+        <time>{formatDateShort(dateStr)}</time>
+      </div>
+      <div className="lead-content mb-3" style={{ fontFamily: "var(--font-serif)", lineHeight: 1.65, fontSize: "1.02rem" }}>
+        {leadContent.split("\n\n").map((para, i) => (
+          <p key={i} className="mb-2.5">
+            {para}
+          </p>
+        ))}
+      </div>
+      <Link
+        href={href}
+        className="text-sm font-medium text-accent hover:underline"
+      >
+        Leer completo &rarr;
+      </Link>
+    </article>
   );
 }

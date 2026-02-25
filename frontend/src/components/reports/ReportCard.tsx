@@ -67,7 +67,7 @@ export function ReportCard({
             <span>&middot;</span>
             <time>{formatDateShort(dateStr)}</time>
           </div>
-          <p className="text-sm text-muted-foreground leading-relaxed line-clamp-3" style={{ fontFamily: "var(--font-serif)" }}>
+          <p className="text-sm leading-relaxed line-clamp-5" style={{ fontFamily: "var(--font-serif)" }}>
             {excerpt}
           </p>
         </article>
@@ -88,7 +88,7 @@ export function ReportCard({
           <span>&middot;</span>
           <time>{formatDateShort(dateStr)}</time>
         </div>
-        <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2" style={{ fontFamily: "var(--font-serif)" }}>
+        <p className="text-sm leading-relaxed line-clamp-4" style={{ fontFamily: "var(--font-serif)" }}>
           {excerpt}
         </p>
       </article>

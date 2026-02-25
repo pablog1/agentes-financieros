@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
-import { getReportsByDate } from "@/lib/queries";
+import { getReportsByDate, getDailyData } from "@/lib/queries";
 import { EditionHeader } from "@/components/home/EditionHeader";
+import { MarketTicker } from "@/components/home/MarketTicker";
 import { ReportGrid } from "@/components/home/ReportGrid";
 import { formatDateLong } from "@/lib/dates";
 import Link from "next/link";
@@ -21,6 +22,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 export default async function ArchivoFechaPage({ params }: PageProps) {
   const { fecha } = await params;
   const reports = (await getReportsByDate(new Date(fecha + "T00:00:00.000Z"))) as ReportWithAgent[];
+  const dailyData = await getDailyData(fecha);
 
   if (reports.length === 0) notFound();
 
@@ -35,6 +37,7 @@ export default async function ArchivoFechaPage({ params }: PageProps) {
       </nav>
 
       <EditionHeader date={fecha} reportCount={reports.length} />
+      <MarketTicker data={dailyData} />
       <ReportGrid reports={reports} />
     </div>
   );
