@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { formatDateShort } from "@/lib/dates";
+import { AGENT_SECTIONS } from "@/lib/agents";
 
 interface ReportCardProps {
   agentId: string;
@@ -27,6 +28,7 @@ export function ReportCard({
 }: ReportCardProps) {
   const dateStr = typeof date === "string" ? date : date.toISOString().split("T")[0];
   const href = `/analista/${agentId}/${dateStr}`;
+  const section = AGENT_SECTIONS[agentId];
 
   if (variant === "lead") {
     return (
@@ -37,9 +39,7 @@ export function ReportCard({
           </h2>
           <div className="byline mb-3 flex items-center gap-2">
             <span style={{ color: agentColor }}>&#9679;</span>
-            <span>Por {agentName}</span>
-            <span>&middot;</span>
-            <span>{reportName}</span>
+            <span>{section ? `${section} (${agentName})` : agentName}</span>
             <span>&middot;</span>
             <time>{formatDateShort(dateStr)}</time>
           </div>
@@ -63,13 +63,16 @@ export function ReportCard({
           </h3>
           <div className="byline mb-2 flex items-center gap-1.5">
             <span style={{ color: agentColor }}>&#9679;</span>
-            <span>{agentName}</span>
+            <span>{section ? `${section} (${agentName})` : agentName}</span>
             <span>&middot;</span>
             <time>{formatDateShort(dateStr)}</time>
           </div>
           <p className="text-sm leading-relaxed line-clamp-5" style={{ fontFamily: "var(--font-serif)" }}>
             {excerpt}
           </p>
+          <span className="text-sm font-medium text-accent group-hover:underline mt-2 inline-block">
+            Leer completo &rarr;
+          </span>
         </article>
       </Link>
     );
@@ -91,6 +94,9 @@ export function ReportCard({
         <p className="text-sm leading-relaxed line-clamp-4" style={{ fontFamily: "var(--font-serif)" }}>
           {excerpt}
         </p>
+        <span className="text-sm font-medium text-accent group-hover:underline mt-2 inline-block">
+          Leer completo &rarr;
+        </span>
       </article>
     </Link>
   );

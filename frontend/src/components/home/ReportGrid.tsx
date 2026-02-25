@@ -1,7 +1,17 @@
 import Link from "next/link";
+import type { ReactNode } from "react";
 import { ReportCard } from "../reports/ReportCard";
 import type { ReportWithAgent } from "@/types";
 import { formatDateShort } from "@/lib/dates";
+import { AGENT_SECTIONS } from "@/lib/agents";
+
+/** Parse inline **bold** markdown into React nodes */
+function parseInlineBold(text: string): ReactNode[] {
+  const parts = text.split(/\*\*(.+?)\*\*/g);
+  return parts.map((part, i) =>
+    i % 2 === 1 ? <strong key={i}>{part}</strong> : part
+  );
+}
 
 interface ReportGridProps {
   reports: ReportWithAgent[];
@@ -185,16 +195,14 @@ function LeadEditorial({ report }: { report: ReportWithAgent }) {
       </Link>
       <div className="byline mb-3 flex items-center gap-2">
         <span style={{ color: report.agent.color }}>&#9679;</span>
-        <span>Por {report.agent.name}</span>
-        <span>&middot;</span>
-        <span>{report.agent.reportName}</span>
+        <span>{AGENT_SECTIONS[report.agentId] ? `${AGENT_SECTIONS[report.agentId]} (${report.agent.name})` : `Por ${report.agent.name}`}</span>
         <span>&middot;</span>
         <time>{formatDateShort(dateStr)}</time>
       </div>
       <div className="lead-content mb-3" style={{ fontFamily: "var(--font-serif)", lineHeight: 1.65, fontSize: "1.02rem" }}>
         {leadContent.split("\n\n").map((para, i) => (
           <p key={i} className="mb-2.5">
-            {para}
+            {parseInlineBold(para)}
           </p>
         ))}
       </div>

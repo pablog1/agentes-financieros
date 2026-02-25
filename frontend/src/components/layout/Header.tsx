@@ -3,6 +3,11 @@
 import Link from "next/link";
 import { ThemeToggle } from "./ThemeToggle";
 import { useState } from "react";
+import { AGENT_SECTIONS } from "@/lib/agents";
+
+const ANALYSTS = Object.entries(AGENT_SECTIONS)
+  .filter(([id]) => id !== "editor")
+  .map(([id, section]) => ({ id, section, name: id.charAt(0).toUpperCase() + id.slice(1) }));
 
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -39,13 +44,11 @@ export function Header() {
               Archivo
             </Link>
             <span className="text-border">|</span>
-            <Link href="/analista/manu" className="hover:text-accent transition-colors">Manu</Link>
-            <Link href="/analista/tomi" className="hover:text-accent transition-colors">Tomi</Link>
-            <Link href="/analista/vale" className="hover:text-accent transition-colors">Vale</Link>
-            <Link href="/analista/santi" className="hover:text-accent transition-colors">Santi</Link>
-            <Link href="/analista/sol" className="hover:text-accent transition-colors">Sol</Link>
-            <Link href="/analista/diego" className="hover:text-accent transition-colors">Diego</Link>
-            <Link href="/analista/roberto" className="hover:text-accent transition-colors">Roberto</Link>
+            {ANALYSTS.map((a) => (
+              <Link key={a.id} href={`/analista/${a.id}`} className="hover:text-accent transition-colors">
+                {a.section} <span className="text-muted-foreground">({a.name})</span>
+              </Link>
+            ))}
           </div>
 
           {/* Mobile hamburger */}
@@ -80,9 +83,9 @@ export function Header() {
               Archivo
             </Link>
             <hr className="border-border" />
-            {["manu", "tomi", "vale", "santi", "sol", "diego", "roberto"].map((a) => (
-              <Link key={a} href={`/analista/${a}`} onClick={() => setMenuOpen(false)} className="py-1 capitalize">
-                {a.charAt(0).toUpperCase() + a.slice(1)}
+            {ANALYSTS.map((a) => (
+              <Link key={a.id} href={`/analista/${a.id}`} onClick={() => setMenuOpen(false)} className="py-1">
+                {a.section} <span className="text-muted-foreground">({a.name})</span>
               </Link>
             ))}
           </div>
