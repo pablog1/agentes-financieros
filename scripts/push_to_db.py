@@ -26,7 +26,7 @@ from dotenv import load_dotenv
 
 load_dotenv(os.path.join(BASE_DIR, ".env"))
 
-AGENTES = ["manu", "tomi", "vale", "santi", "sol", "diego", "roberto"]
+AGENTES = ["manu", "tomi", "vale", "santi", "sol", "diego", "roberto", "editor"]
 REPORTES_DIR = os.path.join(BASE_DIR, "agentes", "reportes")
 OUTPUT_DIR = os.path.join(BASE_DIR, "output")
 

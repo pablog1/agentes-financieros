@@ -1,0 +1,5 @@
+- Preciso que haya un agente más, que opine sobre lo que escribieron los demas
+- preciso tambien que los títulos de todos los reportes sean más atractivos, manteniendo la seriedad que un periodico financiero implica
+- quiero que todos los reportes tengan en cuenta que no pueden dar consejos financieron en forma super explicita sino que lo tienen que hacer al estilo en que lo harian otros medios
+- quiero un resumen de noticias y datos importantes tipo "editorial" que ademas quede publicado en forma prominente
+- quiero que cada reporte, al ser pensado, pueda tener en cuenta lo que se escribio en los últimos 5 días, para mantener coherencia

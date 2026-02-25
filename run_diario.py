@@ -137,8 +137,8 @@ def main():
     parser.add_argument(
         "--agentes",
         nargs="+",
-        default=["manu", "tomi", "vale", "santi", "sol", "diego", "roberto"],
-        help="Agentes a generar (default: todos)",
+        default=["manu", "tomi", "vale", "santi", "sol", "diego", "roberto", "editor"],
+        help="Agentes a generar (default: todos, el editor se ejecuta al final)",
     )
     parser.add_argument(
         "--skip-datos",
@@ -175,8 +175,20 @@ def main():
         print("ERROR: No se pudieron obtener datos. Abortando.")
         sys.exit(1)
 
-    # Paso 2: Generación
-    reportes = paso_generacion(args.agentes, datos_path)
+    # Paso 2: Generación de reportes individuales
+    agentes_base = [a for a in args.agentes if a != "editor"]
+    reportes = paso_generacion(agentes_base, datos_path)
+
+    # Paso 2b: Generación del editorial (después de los demás, necesita sus reportes)
+    if "editor" in args.agentes:
+        print("\n--- Generando: editor (editorial, después de los demás) ---")
+        try:
+            from agentes.generar_reporte import generar
+            path = generar("editor", datos_path)
+            reportes["editor"] = path
+        except Exception as e:
+            print(f"  ERROR generando editor: {e}")
+            reportes["editor"] = None
 
     # Paso 3: Validación
     if args.skip_validacion:

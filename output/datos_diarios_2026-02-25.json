@@ -1,0 +1,1758 @@
+{
+  "metadata": {
+    "fecha": "2026-02-25",
+    "timestamp_utc": "2026-02-25T12:12:33Z",
+    "duracion_segundos": 25.1,
+    "version": "1.0.0",
+    "fuentes": {
+      "dolarapi": {
+        "status": "ok"
+      },
+      "bluelytics": {
+        "status": "ok"
+      },
+      "bcra_macro": {
+        "status": "ok"
+      },
+      "bcra_cotizaciones": {
+        "status": "ok"
+      },
+      "argentinadatos": {
+        "status": "ok"
+      },
+      "yfinance": {
+        "status": "ok"
+      },
+      "yfinance_indices": {
+        "status": "ok"
+      },
+      "pyobd": {
+        "status": "error"
+      },
+      "rss_ar": {
+        "status": "ok"
+      },
+      "rss_intl": {
+        "status": "ok"
+      }
+    },
+    "errores": [],
+    "advertencia_fechas": true
+  },
+  "macro": {
+    "dolar": {
+      "oficial": {
+        "compra": 1350.0,
+        "venta": 1400.0,
+        "fecha_actualizacion": "2026-02-24T17:00:00.000Z"
+      },
+      "blue": {
+        "compra": 1410.0,
+        "venta": 1430.0,
+        "fecha_actualizacion": "2026-02-25T11:57:00.000Z"
+      },
+      "mep": {
+        "compra": 1402.5,
+        "venta": 1406.6,
+        "fecha_actualizacion": "2026-02-25T11:57:00.000Z"
+      },
+      "ccl": {
+        "compra": 1446.1,
+        "venta": 1447.7,
+        "fecha_actualizacion": "2026-02-25T11:57:00.000Z"
+      },
+      "mayorista": {
+        "compra": 1371.5,
+        "venta": 1380.5,
+        "fecha_actualizacion": "2026-02-24T17:16:00.000Z"
+      },
+      "cripto": {
+        "compra": 1453.2,
+        "venta": 1453.3,
+        "fecha_actualizacion": "2026-02-25T11:57:00.000Z"
+      },
+      "tarjeta": {
+        "compra": 1755.0,
+        "venta": 1820.0,
+        "fecha_actualizacion": "2026-02-24T17:00:00.000Z"
+      }
+    },
+    "brechas": {
+      "blue_oficial_pct": 2.14,
+      "mep_oficial_pct": 0.47,
+      "ccl_oficial_pct": 3.41,
+      "ccl_mep_pct": 2.92
+    },
+    "euro": {
+      "oficial": {
+        "compra": 1467.0,
+        "venta": 1522.0
+      },
+      "blue": {
+        "compra": 1533.0,
+        "venta": 1554.0
+      }
+    },
+    "riesgo_pais": {
+      "valor": 537,
+      "fecha": "2026-02-23",
+      "fuente": "ArgentinaDatos"
+    },
+    "inflacion": {
+      "mensual_ultimo": {
+        "valor": 2.9,
+        "fecha": "2026-01-31"
+      },
+      "interanual_ultimo": {
+        "valor": 32.4,
+        "fecha": "2026-01-31"
+      },
+      "serie_12m": [
+        {
+          "fecha": "2025-02-28",
+          "valor": 2.4
+        },
+        {
+          "fecha": "2025-03-31",
+          "valor": 3.7
+        },
+        {
+          "fecha": "2025-04-30",
+          "valor": 2.8
+        },
+        {
+          "fecha": "2025-05-31",
+          "valor": 1.5
+        },
+        {
+          "fecha": "2025-06-30",
+          "valor": 1.6
+        },
+        {
+          "fecha": "2025-07-31",
+          "valor": 1.9
+        },
+        {
+          "fecha": "2025-08-31",
+          "valor": 1.9
+        },
+        {
+          "fecha": "2025-09-30",
+          "valor": 2.1
+        },
+        {
+          "fecha": "2025-10-31",
+          "valor": 2.3
+        },
+        {
+          "fecha": "2025-11-30",
+          "valor": 2.5
+        },
+        {
+          "fecha": "2025-12-31",
+          "valor": 2.8
+        },
+        {
+          "fecha": "2026-01-31",
+          "valor": 2.9
+        }
+      ]
+    },
+    "tasas": {
+      "plazo_fijo": [
+        {
+          "entidad": "BANCO DE LA NACION ARGENTINA",
+          "tna_clientes": 0.25,
+          "tna_no_clientes": null
+        },
+        {
+          "entidad": "BANCO SANTANDER ARGENTINA S.A.",
+          "tna_clientes": 0.23,
+          "tna_no_clientes": null
+        },
+        {
+          "entidad": "BANCO DE GALICIA Y BUENOS AIRES S.A.",
+          "tna_clientes": 0.23,
+          "tna_no_clientes": null
+        },
+        {
+          "entidad": "BANCO DE LA PROVINCIA DE BUENOS AIRES",
+          "tna_clientes": 0.25,
+          "tna_no_clientes": null
+        },
+        {
+          "entidad": "BANCO BBVA ARGENTINA S.A.",
+          "tna_clientes": 0.24,
+          "tna_no_clientes": null
+        },
+        {
+          "entidad": "BANCO MACRO S.A.",
+          "tna_clientes": 0.28,
+          "tna_no_clientes": null
+        },
+        {
+          "entidad": "Banco GGAL SA",
+          "tna_clientes": null,
+          "tna_no_clientes": null
+        },
+        {
+          "entidad": "BANCO CREDICOOP COOPERATIVO LIMITADO",
+          "tna_clientes": 0.24,
+          "tna_no_clientes": 0.24
+        },
+        {
+          "entidad": "INDUSTRIAL AND COMMERCIAL BANK OF CHINA (ARGENTINA) S.A.U.",
+          "tna_clientes": null,
+          "tna_no_clientes": null
+        },
+        {
+          "entidad": "BANCO DE LA CIUDAD DE BUENOS AIRES",
+          "tna_clientes": 0.23,
+          "tna_no_clientes": null
+        },
+        {
+          "entidad": "Otros bancos que informan tasa de plazo fijo online para no clientes",
+          "tna_clientes": null,
+          "tna_no_clientes": null
+        },
+        {
+          "entidad": "BANCO BICA S.A.",
+          "tna_clientes": 0.33,
+          "tna_no_clientes": 0.33
+        },
+        {
+          "entidad": "BANCO CMF S.A.",
+          "tna_clientes": null,
+          "tna_no_clientes": null
+        },
+        {
+          "entidad": "BANCO COMAFI SOCIEDAD ANONIMA",
+          "tna_clientes": null,
+          "tna_no_clientes": null
+        },
+        {
+          "entidad": "BANCO DE COMERCIO S.A.",
+          "tna_clientes": null,
+          "tna_no_clientes": null
+        },
+        {
+          "entidad": "BANCO DE CORRIENTES S.A.",
+          "tna_clientes": null,
+          "tna_no_clientes": null
+        },
+        {
+          "entidad": "BANCO DE FORMOSA S.A.",
+          "tna_clientes": 0.21,
+          "tna_no_clientes": 0.21
+        },
+        {
+          "entidad": "BANCO DE LA PROVINCIA DE CORDOBA S.A.",
+          "tna_clientes": 0.29,
+          "tna_no_clientes": 0.29
+        },
+        {
+          "entidad": "BANCO DEL CHUBUT S.A.",
+          "tna_clientes": 0.26,
+          "tna_no_clientes": 0.26
+        },
+        {
+          "entidad": "BANCO DEL SOL S.A.",
+          "tna_clientes": 0.32,
+          "tna_no_clientes": null
+        },
+        {
+          "entidad": "BANCO DINO S.A.",
+          "tna_clientes": 0.27,
+          "tna_no_clientes": 0.27
+        },
+        {
+          "entidad": "BANCO HIPOTECARIO S.A.",
+          "tna_clientes": 0.27,
+          "tna_no_clientes": null
+        },
+        {
+          "entidad": "BANCO JULIO SOCIEDAD ANONIMA",
+          "tna_clientes": null,
+          "tna_no_clientes": null
+        },
+        {
+          "entidad": "BANCO MARIVA S.A.",
+          "tna_clientes": null,
+          "tna_no_clientes": null
+        },
+        {
+          "entidad": "BANCO MASVENTAS S.A.",
+          "tna_clientes": 0.24,
+          "tna_no_clientes": 0.24
+        },
+        {
+          "entidad": "BANCO MERIDIAN S.A.",
+          "tna_clientes": null,
+          "tna_no_clientes": null
+        },
+        {
+          "entidad": "BANCO PROVINCIA DE TIERRA DEL FUEGO",
+          "tna_clientes": 0.25,
+          "tna_no_clientes": 0.21
+        },
+        {
+          "entidad": "BANCO VOII S.A.",
+          "tna_clientes": null,
+          "tna_no_clientes": null
+        },
+        {
+          "entidad": "BIBANK S.A.",
+          "tna_clientes": 0.28,
+          "tna_no_clientes": 0.28
+        },
+        {
+          "entidad": "CRÃDITO REGIONAL COMPAÃÃA FINANCIERA S.A.U.",
+          "tna_clientes": 0.33,
+          "tna_no_clientes": null
+        },
+        {
+          "entidad": "REBA COMPAÃIA FINANCIERA S.A.",
+          "tna_clientes": 0.33,
+          "tna_no_clientes": 0.33
+        },
+        {
+          "entidad": "UALA",
+          "tna_clientes": 0.3,
+          "tna_no_clientes": 0.3
+        }
+      ],
+      "badlar": {
+        "valor": 33.125,
+        "fecha": "2026-02-23"
+      }
+    },
+    "bcra": {
+      "reservas": {
+        "valor": 46264.0,
+        "fecha": "2026-02-20",
+        "unidad": "millones_usd"
+      },
+      "base_monetaria": {
+        "valor": 42378425.0,
+        "fecha": "2026-02-20",
+        "unidad": "millones_ars"
+      },
+      "cer": {
+        "valor": 724.5379,
+        "fecha": "2026-03-15"
+      },
+      "tc_minorista": {
+        "valor": 1400.12,
+        "fecha": "2026-02-24"
+      },
+      "tc_mayorista": {
+        "valor": 1377.09,
+        "fecha": "2026-02-24"
+      }
+    },
+    "divisas_bcra": [
+      {
+        "codigo": "ARS",
+        "descripcion": "PESO",
+        "tipo_cotizacion": 0.0
+      },
+      {
+        "codigo": "AUD",
+        "descripcion": "DOLAR AUSTRALIA",
+        "tipo_cotizacion": 975.32325
+      },
+      {
+        "codigo": "AWG",
+        "descripcion": "FLORIN (ANTILLAS HOLANDESAS)",
+        "tipo_cotizacion": 771.22905
+      },
+      {
+        "codigo": "BOB",
+        "descripcion": "BOLIVIANOS",
+        "tipo_cotizacion": 201.177482
+      },
+      {
+        "codigo": "BRL",
+        "descripcion": "REAL",
+        "tipo_cotizacion": 268.105106
+      },
+      {
+        "codigo": "CAD",
+        "descripcion": "DOLAR CANADIEN.",
+        "tipo_cotizacion": 1007.296607
+      },
+      {
+        "codigo": "CHF",
+        "descripcion": "FRANCO SUIZO",
+        "tipo_cotizacion": 1784.975433
+      },
+      {
+        "codigo": "CLP",
+        "descripcion": "PESO CHILENO",
+        "tipo_cotizacion": 1.605083
+      },
+      {
+        "codigo": "CNH",
+        "descripcion": "YUAN CNH RENMINBI OFF SHORE",
+        "tipo_cotizacion": 200.709498
+      },
+      {
+        "codigo": "CNY",
+        "descripcion": "YUAN CNY RENMINBI",
+        "tipo_cotizacion": 200.592842
+      },
+      {
+        "codigo": "COP",
+        "descripcion": "COLOMBIANOS",
+        "tipo_cotizacion": 0.372407
+      },
+      {
+        "codigo": "CZK",
+        "descripcion": "CORONAS CHECAS",
+        "tipo_cotizacion": 67.189713
+      },
+      {
+        "codigo": "DKK",
+        "descripcion": "CORONAS DANESAS",
+        "tipo_cotizacion": 217.754783
+      },
+      {
+        "codigo": "EUR",
+        "descripcion": "EURO",
+        "tipo_cotizacion": 1627.0573
+      },
+      {
+        "codigo": "GBP",
+        "descripcion": "LIBRA ESTERLINA",
+        "tipo_cotizacion": 1866.29795
+      },
+      {
+        "codigo": "HKD",
+        "descripcion": "DOLAR HONG KONG",
+        "tipo_cotizacion": 176.473596
+      },
+      {
+        "codigo": "ILS",
+        "descripcion": "LIBRA ISRAELI",
+        "tipo_cotizacion": 444.605475
+      },
+      {
+        "codigo": "INR",
+        "descripcion": "RUPIA (INDIA)",
+        "tipo_cotizacion": 15.178453
+      },
+      {
+        "codigo": "JPY",
+        "descripcion": "YENS",
+        "tipo_cotizacion": 8.864702
+      },
+      {
+        "codigo": "MXP",
+        "descripcion": "PESO MEXICANO",
+        "tipo_cotizacion": 80.41123
+      },
+      {
+        "codigo": "NIO",
+        "descripcion": "CORDOBA NICARAGUENSE",
+        "tipo_cotizacion": 37.456486
+      },
+      {
+        "codigo": "NOK",
+        "descripcion": "CORONAS NORUEGA",
+        "tipo_cotizacion": 144.486891
+      },
+      {
+        "codigo": "NZD",
+        "descripcion": "DOLAR NEOZELANDES",
+        "tipo_cotizacion": 824.1585
+      },
+      {
+        "codigo": "PEN",
+        "descripcion": "SOLES",
+        "tipo_cotizacion": 411.120045
+      },
+      {
+        "codigo": "PYG",
+        "descripcion": "GUARANIES",
+        "tipo_cotizacion": 0.21438
+      },
+      {
+        "codigo": "REF",
+        "descripcion": "DOLAR REFERENCIA COM 3500",
+        "tipo_cotizacion": 1377.0942
+      },
+      {
+        "codigo": "RSD",
+        "descripcion": "DINAR SERBIA",
+        "tipo_cotizacion": 13.848623
+      },
+      {
+        "codigo": "RUB",
+        "descripcion": "RUSIA",
+        "tipo_cotizacion": 18.03691
+      },
+      {
+        "codigo": "SEK",
+        "descripcion": "CORONAS SUECAS",
+        "tipo_cotizacion": 152.711866
+      },
+      {
+        "codigo": "SGD",
+        "descripcion": "DOLAR DE SINGAPUR",
+        "tipo_cotizacion": 1090.011844
+      },
+      {
+        "codigo": "TRY",
+        "descripcion": "LIRA TURCA",
+        "tipo_cotizacion": 31.486563
+      },
+      {
+        "codigo": "USD",
+        "descripcion": "DOLAR E.E.U.U.",
+        "tipo_cotizacion": 1380.5
+      },
+      {
+        "codigo": "UYU",
+        "descripcion": "PESO URUGUAYO",
+        "tipo_cotizacion": 35.852487
+      },
+      {
+        "codigo": "VEB",
+        "descripcion": "BOLIVARES",
+        "tipo_cotizacion": 3.47140061
+      },
+      {
+        "codigo": "VND",
+        "descripcion": "DONG VIETNAM (C/1.000 UNIDADES)",
+        "tipo_cotizacion": 52.714984
+      },
+      {
+        "codigo": "XAG",
+        "descripcion": "PLATA - ONZA TROY",
+        "tipo_cotizacion": 0.0
+      },
+      {
+        "codigo": "XAU",
+        "descripcion": "ORO FINO (1 ONZA)",
+        "tipo_cotizacion": 0.0
+      },
+      {
+        "codigo": "XDR",
+        "descripcion": "DEG",
+        "tipo_cotizacion": 1896.42046
+      },
+      {
+        "codigo": "ZAR",
+        "descripcion": "RAND SUD",
+        "tipo_cotizacion": 86.614173
+      }
+    ]
+  },
+  "renta_fija": {
+    "bonos_soberanos": [],
+    "bonos_clave": {
+      "AL29": {
+        "ultimo": null,
+        "variacion_pct": null
+      },
+      "AL30": {
+        "ultimo": null,
+        "variacion_pct": null
+      },
+      "AL35": {
+        "ultimo": null,
+        "variacion_pct": null
+      },
+      "AL41": {
+        "ultimo": null,
+        "variacion_pct": null
+      },
+      "GD30": {
+        "ultimo": null,
+        "variacion_pct": null
+      },
+      "GD35": {
+        "ultimo": null,
+        "variacion_pct": null
+      },
+      "GD38": {
+        "ultimo": null,
+        "variacion_pct": null
+      },
+      "GD41": {
+        "ultimo": null,
+        "variacion_pct": null
+      }
+    },
+    "lecaps_boncaps": [],
+    "obligaciones_negociables": [],
+    "tasas_plazo_fijo": [
+      {
+        "entidad": "BANCO DE LA NACION ARGENTINA",
+        "tna_clientes": 0.25,
+        "tna_no_clientes": null
+      },
+      {
+        "entidad": "BANCO SANTANDER ARGENTINA S.A.",
+        "tna_clientes": 0.23,
+        "tna_no_clientes": null
+      },
+      {
+        "entidad": "BANCO DE GALICIA Y BUENOS AIRES S.A.",
+        "tna_clientes": 0.23,
+        "tna_no_clientes": null
+      },
+      {
+        "entidad": "BANCO DE LA PROVINCIA DE BUENOS AIRES",
+        "tna_clientes": 0.25,
+        "tna_no_clientes": null
+      },
+      {
+        "entidad": "BANCO BBVA ARGENTINA S.A.",
+        "tna_clientes": 0.24,
+        "tna_no_clientes": null
+      },
+      {
+        "entidad": "BANCO MACRO S.A.",
+        "tna_clientes": 0.28,
+        "tna_no_clientes": null
+      },
+      {
+        "entidad": "Banco GGAL SA",
+        "tna_clientes": null,
+        "tna_no_clientes": null
+      },
+      {
+        "entidad": "BANCO CREDICOOP COOPERATIVO LIMITADO",
+        "tna_clientes": 0.24,
+        "tna_no_clientes": 0.24
+      },
+      {
+        "entidad": "INDUSTRIAL AND COMMERCIAL BANK OF CHINA (ARGENTINA) S.A.U.",
+        "tna_clientes": null,
+        "tna_no_clientes": null
+      },
+      {
+        "entidad": "BANCO DE LA CIUDAD DE BUENOS AIRES",
+        "tna_clientes": 0.23,
+        "tna_no_clientes": null
+      },
+      {
+        "entidad": "Otros bancos que informan tasa de plazo fijo online para no clientes",
+        "tna_clientes": null,
+        "tna_no_clientes": null
+      },
+      {
+        "entidad": "BANCO BICA S.A.",
+        "tna_clientes": 0.33,
+        "tna_no_clientes": 0.33
+      },
+      {
+        "entidad": "BANCO CMF S.A.",
+        "tna_clientes": null,
+        "tna_no_clientes": null
+      },
+      {
+        "entidad": "BANCO COMAFI SOCIEDAD ANONIMA",
+        "tna_clientes": null,
+        "tna_no_clientes": null
+      },
+      {
+        "entidad": "BANCO DE COMERCIO S.A.",
+        "tna_clientes": null,
+        "tna_no_clientes": null
+      },
+      {
+        "entidad": "BANCO DE CORRIENTES S.A.",
+        "tna_clientes": null,
+        "tna_no_clientes": null
+      },
+      {
+        "entidad": "BANCO DE FORMOSA S.A.",
+        "tna_clientes": 0.21,
+        "tna_no_clientes": 0.21
+      },
+      {
+        "entidad": "BANCO DE LA PROVINCIA DE CORDOBA S.A.",
+        "tna_clientes": 0.29,
+        "tna_no_clientes": 0.29
+      },
+      {
+        "entidad": "BANCO DEL CHUBUT S.A.",
+        "tna_clientes": 0.26,
+        "tna_no_clientes": 0.26
+      },
+      {
+        "entidad": "BANCO DEL SOL S.A.",
+        "tna_clientes": 0.32,
+        "tna_no_clientes": null
+      },
+      {
+        "entidad": "BANCO DINO S.A.",
+        "tna_clientes": 0.27,
+        "tna_no_clientes": 0.27
+      },
+      {
+        "entidad": "BANCO HIPOTECARIO S.A.",
+        "tna_clientes": 0.27,
+        "tna_no_clientes": null
+      },
+      {
+        "entidad": "BANCO JULIO SOCIEDAD ANONIMA",
+        "tna_clientes": null,
+        "tna_no_clientes": null
+      },
+      {
+        "entidad": "BANCO MARIVA S.A.",
+        "tna_clientes": null,
+        "tna_no_clientes": null
+      },
+      {
+        "entidad": "BANCO MASVENTAS S.A.",
+        "tna_clientes": 0.24,
+        "tna_no_clientes": 0.24
+      },
+      {
+        "entidad": "BANCO MERIDIAN S.A.",
+        "tna_clientes": null,
+        "tna_no_clientes": null
+      },
+      {
+        "entidad": "BANCO PROVINCIA DE TIERRA DEL FUEGO",
+        "tna_clientes": 0.25,
+        "tna_no_clientes": 0.21
+      },
+      {
+        "entidad": "BANCO VOII S.A.",
+        "tna_clientes": null,
+        "tna_no_clientes": null
+      },
+      {
+        "entidad": "BIBANK S.A.",
+        "tna_clientes": 0.28,
+        "tna_no_clientes": 0.28
+      },
+      {
+        "entidad": "CRÃDITO REGIONAL COMPAÃÃA FINANCIERA S.A.U.",
+        "tna_clientes": 0.33,
+        "tna_no_clientes": null
+      },
+      {
+        "entidad": "REBA COMPAÃIA FINANCIERA S.A.",
+        "tna_clientes": 0.33,
+        "tna_no_clientes": 0.33
+      },
+      {
+        "entidad": "UALA",
+        "tna_clientes": 0.3,
+        "tna_no_clientes": 0.3
+      }
+    ]
+  },
+  "equity_ar": {
+    "acciones": {
+      "GGAL.BA": {
+        "ultimo": 7055.0,
+        "apertura": 6975.0,
+        "maximo": 7110.0,
+        "minimo": 6950.0,
+        "volumen": 2495325,
+        "variacion_pct": 1.58,
+        "cierre_anterior": 6945.0,
+        "fecha_dato": "2026-02-24",
+        "fuente": "yfinance",
+        "nombre": "Grupo Financiero Galicia"
+      },
+      "YPFD.BA": {
+        "ultimo": 54900.0,
+        "apertura": 54350.0,
+        "maximo": 55150.0,
+        "minimo": 54325.0,
+        "volumen": 165825,
+        "variacion_pct": 1.06,
+        "cierre_anterior": 54325.0,
+        "fecha_dato": "2026-02-24",
+        "fuente": "yfinance",
+        "nombre": "YPF S.A."
+      },
+      "PAMP.BA": {
+        "ultimo": 4742.5,
+        "apertura": 4660.0,
+        "maximo": 4762.5,
+        "minimo": 4610.0,
+        "volumen": 1037412,
+        "variacion_pct": 3.04,
+        "cierre_anterior": 4602.5,
+        "fecha_dato": "2026-02-24",
+        "fuente": "yfinance",
+        "nombre": "Pampa Energía"
+      },
+      "BBAR.BA": {
+        "ultimo": 8200.0,
+        "apertura": 7790.0,
+        "maximo": 8335.0,
+        "minimo": 7620.0,
+        "volumen": 576444,
+        "variacion_pct": 5.53,
+        "cierre_anterior": 7770.25,
+        "fecha_dato": "2026-02-24",
+        "fuente": "yfinance",
+        "nombre": "Banco BBVA Argentina"
+      },
+      "CEPU.BA": {
+        "ultimo": 2360.0,
+        "apertura": 2295.0,
+        "maximo": 2375.0,
+        "minimo": 2260.0,
+        "volumen": 302128,
+        "variacion_pct": 2.97,
+        "cierre_anterior": 2292.0,
+        "fecha_dato": "2026-02-24",
+        "fuente": "yfinance",
+        "nombre": "Central Puerto"
+      },
+      "TXAR.BA": {
+        "ultimo": 636.0,
+        "apertura": 643.0,
+        "maximo": 650.0,
+        "minimo": 620.0,
+        "volumen": 1530966,
+        "variacion_pct": -1.7,
+        "cierre_anterior": 647.0,
+        "fecha_dato": "2026-02-24",
+        "fuente": "yfinance",
+        "nombre": "Ternium Argentina"
+      },
+      "TGSU2.BA": {
+        "ultimo": 8605.0,
+        "apertura": 8865.0,
+        "maximo": 8865.0,
+        "minimo": 8465.0,
+        "volumen": 392311,
+        "variacion_pct": 0.47,
+        "cierre_anterior": 8565.0,
+        "fecha_dato": "2026-02-24",
+        "fuente": "yfinance",
+        "nombre": "Transportadora de Gas del Sur"
+      },
+      "LOMA.BA": {
+        "ultimo": 3175.0,
+        "apertura": 3140.0,
+        "maximo": 3185.0,
+        "minimo": 3060.0,
+        "volumen": 196852,
+        "variacion_pct": 2.67,
+        "cierre_anterior": 3092.5,
+        "fecha_dato": "2026-02-24",
+        "fuente": "yfinance",
+        "nombre": "Loma Negra"
+      },
+      "CRES.BA": {
+        "ultimo": 1715.0,
+        "apertura": 1695.0,
+        "maximo": 1729.0,
+        "minimo": 1663.0,
+        "volumen": 92717,
+        "variacion_pct": 1.18,
+        "cierre_anterior": 1695.0,
+        "fecha_dato": "2026-02-24",
+        "fuente": "yfinance",
+        "nombre": "Cresud"
+      },
+      "ALUA.BA": {
+        "ultimo": 795.5,
+        "apertura": 833.0,
+        "maximo": 833.5,
+        "minimo": 772.5,
+        "volumen": 3667225,
+        "variacion_pct": -4.62,
+        "cierre_anterior": 834.0,
+        "fecha_dato": "2026-02-24",
+        "fuente": "yfinance",
+        "nombre": "Aluar"
+      }
+    }
+  },
+  "cedears": {
+    "MELI": {
+      "cedear_ticker": "MELI.BA",
+      "precio_cedear_ars": 23110.0,
+      "volumen_cedear": 578553,
+      "variacion_pct_cedear": 2.8,
+      "precio_us": 1922.56005859375,
+      "variacion_pct_us": 3.12,
+      "ratio": 120,
+      "precio_teorico_ars": 23194.08,
+      "prima_descuento_pct": -0.36,
+      "fundamentals": {
+        "pe_ratio": 46.948963,
+        "forward_pe": 23.314651,
+        "pb_ratio": 15.605322,
+        "eps": 40.95,
+        "dividend_yield": null,
+        "market_cap": 97468383232,
+        "market_cap_fmt": "97.5B",
+        "sector": "Consumer Cyclical",
+        "industry": "Internet Retail"
+      },
+      "fuente": "yfinance"
+    },
+    "AAPL": {
+      "cedear_ticker": "AAPL.BA",
+      "precio_cedear_ars": 19690.0,
+      "volumen_cedear": 52141,
+      "variacion_pct_cedear": 2.61,
+      "precio_us": 272.1400146484375,
+      "variacion_pct_us": 2.24,
+      "ratio": 20,
+      "precio_teorico_ars": 19698.85,
+      "prima_descuento_pct": -0.04,
+      "fundamentals": {
+        "pe_ratio": 34.491764,
+        "forward_pe": 29.26498,
+        "pb_ratio": 45.37179,
+        "eps": 7.89,
+        "dividend_yield": 0.38,
+        "market_cap": 3999893815296,
+        "market_cap_fmt": "4.0T",
+        "sector": "Technology",
+        "industry": "Consumer Electronics"
+      },
+      "fuente": "yfinance"
+    },
+    "GOOGL": {
+      "cedear_ticker": "GOOGL.BA",
+      "precio_cedear_ars": 7765.0,
+      "volumen_cedear": 150559,
+      "variacion_pct_cedear": 0.32,
+      "precio_us": 310.8999938964844,
+      "variacion_pct_us": -0.19,
+      "ratio": 58,
+      "precio_teorico_ars": 7760.17,
+      "prima_descuento_pct": 0.06,
+      "fundamentals": {
+        "pe_ratio": 28.733826,
+        "forward_pe": 23.180285,
+        "pb_ratio": 9.050156,
+        "eps": 10.82,
+        "dividend_yield": 0.27,
+        "market_cap": 3760957423616,
+        "market_cap_fmt": "3.8T",
+        "sector": "Communication Services",
+        "industry": "Internet Content & Information"
+      },
+      "fuente": "yfinance"
+    },
+    "MSFT": {
+      "cedear_ticker": "MSFT.BA",
+      "precio_cedear_ars": 18740.0,
+      "volumen_cedear": 291164,
+      "variacion_pct_cedear": 1.63,
+      "precio_us": 389.0,
+      "variacion_pct_us": 1.18,
+      "ratio": 30,
+      "precio_teorico_ars": 18771.84,
+      "prima_descuento_pct": -0.17,
+      "fundamentals": {
+        "pe_ratio": 24.327705,
+        "forward_pe": 20.637053,
+        "pb_ratio": 7.3933287,
+        "eps": 15.99,
+        "dividend_yield": 0.94,
+        "market_cap": 2891195088896,
+        "market_cap_fmt": "2.9T",
+        "sector": "Technology",
+        "industry": "Software - Infrastructure"
+      },
+      "fuente": "yfinance"
+    },
+    "AMZN": {
+      "cedear_ticker": "AMZN.BA",
+      "precio_cedear_ars": 2107.0,
+      "volumen_cedear": 738986,
+      "variacion_pct_cedear": 2.78,
+      "precio_us": 208.55999755859375,
+      "variacion_pct_us": 1.6,
+      "ratio": 144,
+      "precio_teorico_ars": 2096.75,
+      "prima_descuento_pct": 0.49,
+      "fundamentals": {
+        "pe_ratio": 29.087866,
+        "forward_pe": 22.440453,
+        "pb_ratio": 5.4445777,
+        "eps": 7.17,
+        "dividend_yield": null,
+        "market_cap": 2238874910720,
+        "market_cap_fmt": "2.2T",
+        "sector": "Consumer Cyclical",
+        "industry": "Internet Retail"
+      },
+      "fuente": "yfinance"
+    },
+    "TSLA": {
+      "cedear_ticker": "TSLA.BA",
+      "precio_cedear_ars": 39420.0,
+      "volumen_cedear": 19841,
+      "variacion_pct_cedear": 3.79,
+      "precio_us": 409.3800048828125,
+      "variacion_pct_us": 2.39,
+      "ratio": 15,
+      "precio_teorico_ars": 39510.63,
+      "prima_descuento_pct": -0.23,
+      "fundamentals": {
+        "pe_ratio": 386.20758,
+        "forward_pe": 145.9819,
+        "pb_ratio": 18.695713,
+        "eps": 1.06,
+        "dividend_yield": null,
+        "market_cap": 1536170524672,
+        "market_cap_fmt": "1.5T",
+        "sector": "Consumer Cyclical",
+        "industry": "Auto Manufacturers"
+      },
+      "fuente": "yfinance"
+    },
+    "NVDA": {
+      "cedear_ticker": "NVDA.BA",
+      "precio_cedear_ars": 11640.0,
+      "volumen_cedear": 175948,
+      "variacion_pct_cedear": 1.84,
+      "precio_us": 192.85000610351562,
+      "variacion_pct_us": 0.68,
+      "ratio": 24,
+      "precio_teorico_ars": 11632.87,
+      "prima_descuento_pct": 0.06,
+      "fundamentals": {
+        "pe_ratio": 47.853596,
+        "forward_pe": 24.543056,
+        "pb_ratio": 39.421505,
+        "eps": 4.03,
+        "dividend_yield": 0.02,
+        "market_cap": 4695319379968,
+        "market_cap_fmt": "4.7T",
+        "sector": "Technology",
+        "industry": "Semiconductors"
+      },
+      "fuente": "yfinance"
+    },
+    "JPM": {
+      "cedear_ticker": "JPM.BA",
+      "precio_cedear_ars": 28700.0,
+      "volumen_cedear": 14848,
+      "variacion_pct_cedear": 0.35,
+      "precio_us": 297.29998779296875,
+      "variacion_pct_us": -0.12,
+      "ratio": 15,
+      "precio_teorico_ars": 28693.41,
+      "prima_descuento_pct": 0.02,
+      "fundamentals": {
+        "pe_ratio": 14.857571,
+        "forward_pe": 12.6552,
+        "pb_ratio": 2.341166,
+        "eps": 20.01,
+        "dividend_yield": 2.02,
+        "market_cap": 801827717120,
+        "market_cap_fmt": "801.8B",
+        "sector": "Financial Services",
+        "industry": "Banks - Diversified"
+      },
+      "fuente": "yfinance"
+    },
+    "KO": {
+      "cedear_ticker": "KO.BA",
+      "precio_cedear_ars": 23320.0,
+      "volumen_cedear": 36344,
+      "variacion_pct_cedear": 0.43,
+      "precio_us": 80.72000122070312,
+      "variacion_pct_us": 0.2,
+      "ratio": 5,
+      "precio_teorico_ars": 23371.67,
+      "prima_descuento_pct": -0.22,
+      "fundamentals": {
+        "pe_ratio": 26.552631,
+        "forward_pe": 23.308462,
+        "pb_ratio": 10.79433,
+        "eps": 3.04,
+        "dividend_yield": 2.55,
+        "market_cap": 347225882624,
+        "market_cap_fmt": "347.2B",
+        "sector": "Consumer Defensive",
+        "industry": "Beverages - Non-Alcoholic"
+      },
+      "fuente": "yfinance"
+    },
+    "GLOB": {
+      "cedear_ticker": "GLOB.BA",
+      "precio_cedear_ars": 3417.5,
+      "volumen_cedear": 350460,
+      "variacion_pct_cedear": 1.56,
+      "precio_us": 42.33000183105469,
+      "variacion_pct_us": 1.85,
+      "ratio": 18,
+      "precio_teorico_ars": 3404.51,
+      "prima_descuento_pct": 0.38,
+      "fundamentals": {
+        "pe_ratio": 19.328768,
+        "forward_pe": 6.7569623,
+        "pb_ratio": 0.8665125,
+        "eps": 2.19,
+        "dividend_yield": null,
+        "market_cap": 1864793600,
+        "market_cap_fmt": "1.9B",
+        "sector": "Technology",
+        "industry": "Information Technology Services"
+      },
+      "fuente": "yfinance"
+    },
+    "COIN": {
+      "cedear_ticker": "COIN.BA",
+      "precio_cedear_ars": 8585.0,
+      "volumen_cedear": 47123,
+      "variacion_pct_cedear": null,
+      "precio_us": 162.02999877929688,
+      "variacion_pct_us": 1.12,
+      "ratio": 27,
+      "precio_teorico_ars": 8687.81,
+      "prima_descuento_pct": -1.18,
+      "fundamentals": {
+        "pe_ratio": 36.329597,
+        "forward_pe": 27.1498,
+        "pb_ratio": 2.9336255,
+        "eps": 4.46,
+        "dividend_yield": null,
+        "market_cap": 43692621824,
+        "market_cap_fmt": "43.7B",
+        "sector": "Financial Services",
+        "industry": "Financial Data & Stock Exchanges"
+      },
+      "fuente": "yfinance"
+    }
+  },
+  "indices": {
+    "MERVAL": {
+      "ticker": "^MERV",
+      "ultimo": 2812414.0,
+      "apertura": 2763443.0,
+      "maximo": 2815458.0,
+      "minimo": 2763124.0,
+      "variacion_pct": 1.79,
+      "volumen": 0,
+      "fecha_dato": "2026-02-24",
+      "fuente": "yfinance"
+    },
+    "SP500": {
+      "ticker": "^GSPC",
+      "ultimo": 6890.06982421875,
+      "apertura": 6837.3701171875,
+      "maximo": 6899.169921875,
+      "minimo": 6815.43017578125,
+      "variacion_pct": 0.77,
+      "volumen": 5266090000,
+      "fecha_dato": "2026-02-24",
+      "fuente": "yfinance"
+    },
+    "NASDAQ": {
+      "ticker": "^IXIC",
+      "ultimo": 22863.6796875,
+      "apertura": 22641.599609375,
+      "maximo": 22895.48046875,
+      "minimo": 22528.259765625,
+      "variacion_pct": 1.04,
+      "volumen": 7932270000,
+      "fecha_dato": "2026-02-24",
+      "fuente": "yfinance"
+    },
+    "DOW_JONES": {
+      "ticker": "^DJI",
+      "ultimo": 49174.5,
+      "apertura": 48827.80078125,
+      "maximo": 49295.2109375,
+      "minimo": 48752.73828125,
+      "variacion_pct": 0.76,
+      "volumen": 524270000,
+      "fecha_dato": "2026-02-24",
+      "fuente": "yfinance"
+    }
+  },
+  "commodities": {
+    "soja": {
+      "ticker": "ZS=F",
+      "ultimo": 1157.25,
+      "variacion_pct": 1.56,
+      "fecha_dato": "2026-02-25",
+      "unidad": "USD/bushel",
+      "fuente": "yfinance"
+    },
+    "maiz": {
+      "ticker": "ZC=F",
+      "ultimo": 439.5,
+      "variacion_pct": 2.75,
+      "fecha_dato": "2026-02-25",
+      "unidad": "USD/bushel",
+      "fuente": "yfinance"
+    },
+    "trigo": {
+      "ticker": "ZW=F",
+      "ultimo": 568.0,
+      "variacion_pct": 0.09,
+      "fecha_dato": "2026-02-25",
+      "unidad": "USD/bushel",
+      "fuente": "yfinance"
+    },
+    "petroleo_wti": {
+      "ticker": "CL=F",
+      "ultimo": 65.83999633789062,
+      "variacion_pct": 0.32,
+      "fecha_dato": "2026-02-25",
+      "unidad": "USD/barrel",
+      "fuente": "yfinance"
+    },
+    "oro": {
+      "ticker": "GC=F",
+      "ultimo": 5199.5,
+      "variacion_pct": 0.85,
+      "fecha_dato": "2026-02-25",
+      "unidad": "USD/oz",
+      "fuente": "yfinance"
+    }
+  },
+  "crypto": {
+    "BTC": {
+      "ticker": "BTC-USD",
+      "ultimo": 65457.7109375,
+      "variacion_pct": 2.15,
+      "variacion_7d_pct": -2.24,
+      "maximo_24h": 66247.453125,
+      "minimo_24h": 63949.7109375,
+      "volumen_24h": 38877167616,
+      "fecha_dato": "2026-02-25",
+      "fuente": "yfinance"
+    },
+    "ETH": {
+      "ticker": "ETH-USD",
+      "ultimo": 1927.80419921875,
+      "variacion_pct": 4.04,
+      "variacion_7d_pct": -1.05,
+      "maximo_24h": 1934.8548583984375,
+      "minimo_24h": 1847.05419921875,
+      "volumen_24h": 18445238272,
+      "fecha_dato": "2026-02-25",
+      "fuente": "yfinance"
+    },
+    "SOL": {
+      "ticker": "SOL-USD",
+      "ultimo": 83.10429382324219,
+      "variacion_pct": 5.15,
+      "variacion_7d_pct": 0.86,
+      "maximo_24h": 83.17265319824219,
+      "minimo_24h": 78.85843658447266,
+      "volumen_24h": 3902568704,
+      "fecha_dato": "2026-02-25",
+      "fuente": "yfinance"
+    },
+    "ADA": {
+      "ticker": "ADA-USD",
+      "ultimo": 0.27176013588905334,
+      "variacion_pct": 5.02,
+      "variacion_7d_pct": -0.29,
+      "maximo_24h": 0.27176013588905334,
+      "minimo_24h": 0.2582671642303467,
+      "volumen_24h": 420895008,
+      "fecha_dato": "2026-02-25",
+      "fuente": "yfinance"
+    }
+  },
+  "noticias": {
+    "argentina": [
+      {
+        "titulo": "Relajá en el cine y relajá el bolsillo con los descuentos de esta billetera virtual",
+        "fuente": "ambito",
+        "url": "https://www.ambito.com/economia/relaja-el-cine-y-relaja-el-bolsillo-los-descuentos-esta-billetera-virtual-n6248946",
+        "resumen": "Disfruta de las novedades cinéfilas con ofertas pensadas para acompañar el gasto mensual.",
+        "fecha": "Wed, 25 Feb 2026 08:30:00 -0300",
+        "autor": null
+      },
+      {
+        "titulo": "Inversiones: ¿cómo influye el alineamiento con Washington en el precio de los activos de la región?",
+        "fuente": "ambito",
+        "url": "https://www.ambito.com/economia/inversiones-como-influye-el-alineamiento-washington-el-precio-los-activos-la-region-n6249145",
+        "resumen": "El nuevo rol de EEUU en la política latinoamericana impacta en varios ámbitos y sobre todo en las proyecciones de los activos en la región. En medio de un ciclo electoral agitado es útil conocer cómo es el mapeo de los riesgos geopolíticos en cada país, en función de su alineamiento con la administración Trump.",
+        "fecha": "Wed, 25 Feb 2026 07:00:00 -0300",
+        "autor": null
+      },
+      {
+        "titulo": "Diálogos de Wall Street: ¿cómo continúa la saga de los aranceles tras el fallo de la Corte?",
+        "fuente": "ambito",
+        "url": "https://www.ambito.com/economia/dialogos-wall-street-como-continua-la-saga-los-aranceles-el-fallo-la-corte-n6249110",
+        "resumen": "Tras el fallo adverso de la Corte Suprema, ¿cómo sigue la saga de los aranceles, Gekko? ¿Puede Trump volver a erigir la misma muralla de recargos, pero invocando una base legal más sólida? La Bolsa primero subió, pero después se arrepintió. ¿Qué la hizo cambiar de opinión?",
+        "fecha": "Wed, 25 Feb 2026 00:00:00 -0300",
+        "autor": null
+      },
+      {
+        "titulo": "Caso FATE y crisis en neumáticos: advierten que la apertura, a contramano del mundo, puede acelerar cierre de autopartistas",
+        "fuente": "ambito",
+        "url": "https://www.ambito.com/economia/caso-fate-y-crisis-neumaticos-advierten-que-la-apertura-contramano-del-mundo-puede-acelerar-cierre-autopartistas-n6249098",
+        "resumen": "La apertura comercial generó una caída en el precio de los neumáticos. Sin embargo, la producción debajo de niveles de pandemia y los fabricantes locales reclaman algún tipo de compensación para poder competir.",
+        "fecha": "Tue, 24 Feb 2026 21:45:00 -0300",
+        "autor": null
+      },
+      {
+        "titulo": "Con buen dato del EMAE, el Gobierno recibió al G6: empresarios destacaron plan económico y respaldaron reformas",
+        "fuente": "ambito",
+        "url": "https://www.ambito.com/economia/con-buen-dato-del-emae-el-gobierno-recibio-al-g6-empresarios-destacaron-plan-economico-y-respaldaron-reformas-n6249100",
+        "resumen": "Los representantes de las principales entidades empresarias del país se reunieron con el jefe de Gabinete, Manuel Adorni. Le manifestaron su apoyo a la hoja de ruta que empuja Nación y celebraron el proyecto laboral que el viernes tendrá su último capítulo legislativo en el Senado.",
+        "fecha": "Tue, 24 Feb 2026 19:34:00 -0300",
+        "autor": null
+      },
+      {
+        "titulo": "Refuerzan en Chubut flota pesquera: nuevas embarcaciones para más exportaciones de langostinos",
+        "fuente": "ambito",
+        "url": "https://www.ambito.com/economia/refuerzan-chubut-flota-pesquera-nuevas-embarcaciones-mas-exportaciones-langostinos-n6249076",
+        "resumen": "La pesquera Cabo Vírgenes incorporó nuevas embarcaciones como parte del plan de expansión impulsado por Aisa Group, con el objetivo de aumentar la captura de langostino, generar empleo y fortalecer la proyección exportadora del sector en Chubut.",
+        "fecha": "Tue, 24 Feb 2026 18:49:00 -0300",
+        "autor": null
+      },
+      {
+        "titulo": "Crédito en dólares: ¿cómo es la estrategia que Luis Caputo planea impulsar a través del Congreso?",
+        "fuente": "ambito",
+        "url": "https://www.ambito.com/economia/credito-dolares-como-es-la-estrategia-que-luis-caputo-planea-impulsar-traves-del-congreso-n6248835",
+        "resumen": "La medida busca superar las restricciones históricas, vigentes desde la crisis de 2001-2002, que limitan estos préstamos casi exclusivamente a quienes generan ingresos directos en moneda extranjera, como exportadores. ¿Quiénes podrían acceder si prospera la iniciativa?",
+        "fecha": "Tue, 24 Feb 2026 16:48:00 -0300",
+        "autor": null
+      },
+      {
+        "titulo": "Plazo fijo con tasas por el piso: cuánto gano si deposito $450.000 a 30 días",
+        "fuente": "ambito",
+        "url": "https://www.ambito.com/economia/plazo-fijo-tasas-el-piso-cuanto-gano-si-deposito-450000-30-dias-n6248801",
+        "resumen": "La opción de ahorro en el banco ofrece estabilidad y el rendimiento varía según el canal elegido al contratar.",
+        "fecha": "Tue, 24 Feb 2026 16:30:00 -0300",
+        "autor": null
+      },
+      {
+        "titulo": "La economía creció 4,4% en 2025: en diciembre trepó fuerte, impulsada por el agro",
+        "fuente": "ambito",
+        "url": "https://www.ambito.com/economia/la-crecio-44-2025-diciembre-anoto-su-mayor-suba-mensual-un-ano-y-medio-n6249001",
+        "resumen": "El incremento mensual fue el más alto en un año y medio. De este modo, la serie desestacionalizada de actividad económica tocó el valor más alto de la serie, aunque se mantiene la heterogeneidad sectorial.",
+        "fecha": "Tue, 24 Feb 2026 16:23:00 -0300",
+        "autor": null
+      },
+      {
+        "titulo": "La advertencia del CEO de J.P Morgan sobre la competencia financiera y el paralelismo con la previa de la crisis del 2008",
+        "fuente": "ambito",
+        "url": "https://www.ambito.com/economia/la-advertencia-del-ceo-jp-morgan-la-competencia-financiera-y-el-paralelismo-la-previa-la-crisis-del-2008-n6248928",
+        "resumen": "Jamie Dimon identificó ciertos patrones que emergen en la actualidad y que fueron determinantes para el colapso del sistema financiero en Estados Unidos hace 18 años.",
+        "fecha": "Tue, 24 Feb 2026 14:42:00 -0300",
+        "autor": null
+      },
+      {
+        "titulo": "¿Aumenta o baja el PLAZO FIJO? El banco que paga más intereses este miércoles 25 de febrero",
+        "fuente": "cronista",
+        "url": "https://www.cronista.com/finanzas-mercados/aumenta-o-baja-el-plazo-fijo-el-banco-que-paga-mas-intereses-este-miercoles-25-de-febrero/",
+        "resumen": "",
+        "fecha": "Wed, 25 Feb 2026 12:00:29 +0000",
+        "autor": null
+      },
+      {
+        "titulo": "Nuevo bono: de dónde saldrán los dólares y cuánto rendirá el Bonar 2027",
+        "fuente": "cronista",
+        "url": "https://www.cronista.com/finanzas-mercados/nuevo-bono-en-dolares-de-donde-saldran-los-dolares-y-cuanto-rendira-el-bonar-2027/",
+        "resumen": "",
+        "fecha": "Tue, 24 Feb 2026 17:30:00 +0000",
+        "autor": "Julián Yosovitch"
+      },
+      {
+        "titulo": "Entre Ríos sale a la cancha en Wall Street y se suma al trade provincial",
+        "fuente": "cronista",
+        "url": "https://www.cronista.com/finanzas-mercados/entre-rios-sale-a-la-cancha-en-wall-street-y-se-suma-al-trade-provincial/",
+        "resumen": "",
+        "fecha": "Wed, 25 Feb 2026 09:00:01 +0000",
+        "autor": "Santiago Escobar"
+      },
+      {
+        "titulo": "Dólar blue hoy: a cuánto cotiza el miércoles 25 de febrero con el MEP y el CCL",
+        "fuente": "cronista",
+        "url": "https://www.cronista.com/finanzas-mercados/dolar-blue-hoy-a-cuanto-cotiza-el-miercoles-25-de-febrero-con-el-mep-y-el-ccl/",
+        "resumen": "",
+        "fecha": "Wed, 25 Feb 2026 03:00:00 +0000",
+        "autor": null
+      },
+      {
+        "titulo": "Dólar hoy: a cuánto cotiza el oficial en los bancos de la City este miércoles 25 de febrero",
+        "fuente": "cronista",
+        "url": "https://www.cronista.com/finanzas-mercados/dolar-hoy-a-cuanto-cotiza-el-oficial-en-los-bancos-de-la-city-este-miercoles-25-de-febrero/",
+        "resumen": "",
+        "fecha": "Wed, 25 Feb 2026 03:00:00 +0000",
+        "autor": null
+      },
+      {
+        "titulo": "Dólar hoy y dólar blue hoy: cuál es la cotización del miércoles 25 de febrero minuto a minuto",
+        "fuente": "cronista",
+        "url": "https://www.cronista.com/finanzas-mercados/dolar-hoy-y-dolar-blue-hoy-cual-es-la-cotizacion-del-miercoles-25-de-febrero-minuto-a-minuto/",
+        "resumen": "",
+        "fecha": "Wed, 25 Feb 2026 03:00:00 +0000",
+        "autor": null
+      },
+      {
+        "titulo": "El dólar cortó la racha bajista y volvió a los $1400: por qué subió y cómo seguirá",
+        "fuente": "cronista",
+        "url": "https://www.cronista.com/finanzas-mercados/el-dolar-corto-la-racha-bajista-y-volvio-a-los-1400-por-que-subio-y-como-seguira/",
+        "resumen": "",
+        "fecha": "Tue, 24 Feb 2026 22:06:41 +0000",
+        "autor": "Pilar  Wolffelt"
+      },
+      {
+        "titulo": "El riesgo país trepa a máximos de un mes, pero rebotan las acciones argentinas",
+        "fuente": "cronista",
+        "url": "https://www.cronista.com/finanzas-mercados/el-riesgo-pais-trepa-a-maximos-de-un-mes-pero-rebotan-las-acciones-argentinas/",
+        "resumen": "",
+        "fecha": "Tue, 24 Feb 2026 21:56:27 +0000",
+        "autor": "Santiago Escobar"
+      },
+      {
+        "titulo": "El BCRA alcanzó su mayor nivel de reservas desde 2019: cuántos dólares compró",
+        "fuente": "cronista",
+        "url": "https://www.cronista.com/finanzas-mercados/el-bcra-alcanzo-su-mayor-nivel-de-reservas-desde-2019-cuantos-dolares-compro/",
+        "resumen": "",
+        "fecha": "Tue, 24 Feb 2026 20:05:59 +0000",
+        "autor": "Leandro Dario"
+      },
+      {
+        "titulo": "Dólar oficial HOY: así cerró la cotización de este martes 24 de febrero",
+        "fuente": "cronista",
+        "url": "https://www.cronista.com/finanzas-mercados/dolar-oficial-hoy-asi-cerro-la-cotizacion-de-este-martes-24-de-febrero/",
+        "resumen": "",
+        "fecha": "Tue, 24 Feb 2026 20:00:35 +0000",
+        "autor": null
+      },
+      {
+        "titulo": "El consumo masivo bajó un 0,8% en enero y lleva tres meses consecutivos en caída",
+        "fuente": "infobae",
+        "url": "https://www.infobae.com/economia/2026/02/25/el-consumo-masivo-bajo-un-08-en-enero-y-lleva-tres-meses-consecutivos-en-caida/",
+        "resumen": "Las ventas decrecen en un contexto de desaceleración del crédito, freno en los bienes durables y una inflación que se aceleró en los últimos meses",
+        "fecha": "Wed, 25 Feb 2026 11:46:02 +0000",
+        "autor": null
+      },
+      {
+        "titulo": "“Algunos vamos a quedar en el camino, pero es el precio que hay que pagar para tener una Argentina normal”, reconoció el presidente de la Cámara de Comercio",
+        "fuente": "infobae",
+        "url": "https://www.infobae.com/economia/2026/02/25/algunos-vamos-a-quedar-en-el-camino-pero-es-el-precio-que-hay-que-pagar-para-tener-una-argentina-normal-reconocio-el-presidente-de-la-camara-de-comercio/",
+        "resumen": "Mario Grinman se refirió a los desafíos que enfrenta la economía durante la gestión del presidente Javier Milei luego de haberse reunido con el jefe de Gabinete, Manuel Adorni",
+        "fecha": "Wed, 25 Feb 2026 11:21:46 +0000",
+        "autor": null
+      },
+      {
+        "titulo": "Advertencia de ARCA: cómo evitar una nueva modalidad de estafas virtuales con correos falsos",
+        "fuente": "infobae",
+        "url": "https://www.infobae.com/economia/2026/02/25/advertencia-de-arca-como-evitar-una-nueva-modalidad-de-estafas-virtuales-con-correos-falsos/",
+        "resumen": "Desde el organismo advierten que el Domicilio Fiscal Electrónico es el único canal válido y que nunca se solicitan pagos ni descargas por mensajes privados",
+        "fecha": "Wed, 25 Feb 2026 11:15:04 +0000",
+        "autor": null
+      },
+      {
+        "titulo": "La actividad económica repuntó en diciembre y cerró 2025 con una expansión de 4,4 por ciento",
+        "fuente": "infobae",
+        "url": "https://www.infobae.com/economia/2026/02/24/la-actividad-economica-repunto-en-diciembre-y-cerro-2025-con-una-expansion-de-44-por-ciento/",
+        "resumen": "El Estimador Mensual de Actividad Económica avanzó 1,8% mensual durante el último mes del año. Cómo evolucionaron los distintos sectores y qué esperaban las consultoras privadas",
+        "fecha": "Wed, 25 Feb 2026 11:01:54 +0000",
+        "autor": null
+      },
+      {
+        "titulo": "Aerolíneas Argentinas tuvo superávit por segundo año consecutivo y no requirió aportes del Tesoro",
+        "fuente": "infobae",
+        "url": "https://www.infobae.com/economia/2026/02/25/aerolineas-argentinas-tuvo-superavit-por-segundo-ano-consecutivo-y-no-requirio-aportes-del-tesoro/",
+        "resumen": "La aerolínea de bandera registró un nuevo resultado positivo y, por primera vez desde que está en manos estatales, no necesitó asistencia",
+        "fecha": "Wed, 25 Feb 2026 10:25:43 +0000",
+        "autor": "Ludmila Di Grande"
+      },
+      {
+        "titulo": "ANSES: quiénes cobran hoy, miércoles 25 de febrero 2026",
+        "fuente": "infobae",
+        "url": "https://www.infobae.com/economia/2026/02/25/anses-quienes-cobran-hoy-miercoles-25-de-febrero-2026/",
+        "resumen": "La actualización diaria del sistema permite ver fechas, montos y detalles de pagos con incrementos según la última movilidad y actualizado por inflación",
+        "fecha": "Wed, 25 Feb 2026 09:00:01 +0000",
+        "autor": "Ramiro Manera"
+      },
+      {
+        "titulo": "Cambia la estrategia antiinflacionaria del Gobierno: bajan las tasas mientras el mercado aguarda el nuevo bono en dólares",
+        "fuente": "infobae",
+        "url": "https://www.infobae.com/economia/2026/02/25/cambia-la-estrategia-antiinflacionaria-del-gobierno-baja-las-tasas-mientras-el-mercado-aguarda-el-nuevo-bono-en-dolares/",
+        "resumen": "Este miércoles se licitará el título denominado en moneda extranjera y hay expectativa entre los inversores. En paralelo, la volatilidad sigue afectando a las bolsas de Estados Unidos y podría contagiar a la Argentina",
+        "fecha": "Wed, 25 Feb 2026 08:38:10 +0000",
+        "autor": "Luis Beldi"
+      },
+      {
+        "titulo": "El FMI sitúa a la economía silver como eje del crecimiento global",
+        "fuente": "infobae",
+        "url": "https://www.infobae.com/generacion-silver/2026/02/25/el-fmi-situa-a-la-economia-silver-como-eje-del-crecimiento-global/",
+        "resumen": "Innovación, tecnología y el auge del consumo adulto redefinen oportunidades de inversión y desarrollo para una región en pleno cambio demográfico",
+        "fecha": "Wed, 25 Feb 2026 04:05:05 +0000",
+        "autor": null
+      },
+      {
+        "titulo": "Nuevo bono en dólares: cuál es la expectativa del mercado para la primera emisión del título que busca tentar a ahorristas",
+        "fuente": "infobae",
+        "url": "https://www.infobae.com/economia/2026/02/25/nuevo-bono-en-dolares-cual-es-la-expectativa-del-mercado-para-la-primera-emision-del-titulo-que-busca-tentar-a-ahorristas/",
+        "resumen": "El equipo económico pone en marcha una estrategia financiera para cubrir obligaciones importantes de mitad de año, con un esquema de colocaciones periódicas y metas de recaudación específicas. Las consideraciones de los analistas financieros",
+        "fecha": "Wed, 25 Feb 2026 03:37:31 +0000",
+        "autor": "Lucrecia Eterovich"
+      },
+      {
+        "titulo": "El precio de la carne vuelve a empujar la inflación y amenaza con sumar hasta 0,5% al índice de febrero",
+        "fuente": "infobae",
+        "url": "https://www.infobae.com/economia/2026/02/25/el-precio-de-la-carne-vuelve-a-empujar-la-inflacion-y-amenaza-con-sumar-hasta-05-al-indice-de-febrero/",
+        "resumen": "La suba del 7% en la hacienda se traslada a los mostradores y podría agregar hasta medio punto al IPC de este mes. Menor faena, retención de animales y mejores expectativas de exportación presionan sobre una oferta ajustada",
+        "fecha": "Wed, 25 Feb 2026 03:36:48 +0000",
+        "autor": null
+      }
+    ],
+    "internacionales": [
+      {
+        "titulo": "Private Credit Fears Deepen With UBS Warning of 15% Defaults",
+        "fuente": "bloomberg",
+        "url": "https://www.bloomberg.com/news/articles/2026-02-24/ubs-now-sees-private-credit-defaults-reaching-15-in-worst-case",
+        "resumen": "A few weeks ago, analysts at UBS Group AG laid out a worst-case scenario for defaults in the private credit sector. Their outlook just became more grim.",
+        "fecha": "Tue, 24 Feb 2026 23:41:55 GMT",
+        "autor": "Yash Roy, Bruce Douglas"
+      },
+      {
+        "titulo": "US Mortgage Rates Reach Lowest Since 2022, Boosting Refinancing",
+        "fuente": "bloomberg",
+        "url": "https://www.bloomberg.com/news/articles/2026-02-25/us-mortgage-rates-reach-lowest-since-2022-boosting-refinancing",
+        "resumen": "US mortgage rates slipped last week to the lowest level since 2022, generating more refinancing activity.",
+        "fecha": "Wed, 25 Feb 2026 12:00:00 GMT",
+        "autor": "Vince Golle"
+      },
+      {
+        "titulo": "Li’s Bolttech Said in Talks to Buy Thiel-Backed MoneyHero",
+        "fuente": "bloomberg",
+        "url": "https://www.bloomberg.com/news/articles/2026-02-25/tycoon-richard-li-s-bolttech-is-said-in-talks-to-buy-moneyhero",
+        "resumen": "Bolttech Holdings Ltd. is in talks to buy Nasdaq-listed MoneyHero Ltd., people familiar with the matter said, a move that would combine two financial technology firms backed by billionaire Richard Li.",
+        "fecha": "Wed, 25 Feb 2026 08:28:18 GMT",
+        "autor": "Manuel Baigorri, Elffie Chew"
+      },
+      {
+        "titulo": "Circle’s Shares Surge After Profit, Revenue Top Estimates",
+        "fuente": "bloomberg",
+        "url": "https://www.bloomberg.com/news/articles/2026-02-25/circle-s-shares-surge-after-profit-revenue-top-estimates",
+        "resumen": "Circle Internet Group Inc.’s profit and revenue increased more than estimated while the amount of its USDC stablecoin in circulation jumped 72% to $75.3 billion in the fourth quarter.",
+        "fecha": "Wed, 25 Feb 2026 11:50:53 GMT",
+        "autor": "Emily Mason"
+      },
+      {
+        "titulo": "National Bank Beats Estimates as CWB Boosts Major Business Lines",
+        "fuente": "bloomberg",
+        "url": "https://www.bloomberg.com/news/articles/2026-02-25/national-bank-beats-estimates-as-cwb-boosts-major-business-lines",
+        "resumen": "National Bank of Canada beat analyst estimates in its fiscal first quarter after it reported stronger results across the board, boosted by the bank’s purchase of Canadian Western Bank.",
+        "fecha": "Wed, 25 Feb 2026 11:50:46 GMT",
+        "autor": "Stephanie Hughes"
+      },
+      {
+        "titulo": "Thailand’s $4 Billion Rice Exports Seen Strained by Baht Rally",
+        "fuente": "bloomberg",
+        "url": "https://www.bloomberg.com/news/articles/2026-02-25/thailand-s-4-billion-rice-exports-seen-strained-by-baht-rally",
+        "resumen": "Thailand’s rice exports are set to drop to a five-year low as a surge in the local currency dents the country’s competitiveness, according to a trade group, threatening incomes in a sector that employs one in four workers.",
+        "fecha": "Wed, 25 Feb 2026 11:49:48 GMT",
+        "autor": "Patpicha Tanakasempipat"
+      },
+      {
+        "titulo": "Stocks Rise as AI Trade Faces Nvidia Earnings Test: Markets Wrap",
+        "fuente": "bloomberg",
+        "url": "https://www.bloomberg.com/news/articles/2026-02-24/stock-market-today-dow-s-p-live-updates-",
+        "resumen": "Stocks rose as traders waited for Nvidia Corp.’s earnings to see whether the chipmaker can regain its place as the artificial-intelligence trade’s main driver.",
+        "fecha": "Tue, 24 Feb 2026 22:33:40 GMT",
+        "autor": "Andre Janse Van Vuuren, Julien Ponthus"
+      },
+      {
+        "titulo": "Cocoa Sales Resume in Ivory Coast After Regulator Drops Premium",
+        "fuente": "bloomberg",
+        "url": "https://www.bloomberg.com/news/articles/2026-02-25/cocoa-sales-resume-in-ivory-coast-after-regulator-drops-premium",
+        "resumen": "Some traders have resumed buying cocoa from top grower Ivory Coast after the local regulator agreed to sell at par with global prices, a shift from a policy that led to a standoff with buyers and left hundreds of thousands of tons unsold.",
+        "fecha": "Wed, 25 Feb 2026 11:46:33 GMT",
+        "autor": "Mumbi Gitau"
+      },
+      {
+        "titulo": "Hong Kong to Tap Peg Defense Fund for First Time in 40 Years",
+        "fuente": "bloomberg",
+        "url": "https://www.bloomberg.com/news/articles/2026-02-25/hong-kong-to-tap-peg-defense-fund-for-first-time-in-40-years",
+        "resumen": "Hong Kong is planning for the first time in 40 years to draw money from the fund that ensures the stability of its currency peg, in part to help finance the development of a technology hub on the city’s border with China.",
+        "fecha": "Wed, 25 Feb 2026 08:20:44 GMT",
+        "autor": "Kiuyan Wong"
+      },
+      {
+        "titulo": "Romania Taps Foreign Debt Market After Approving Budget Reforms",
+        "fuente": "bloomberg",
+        "url": "https://www.bloomberg.com/news/articles/2026-02-25/romania-taps-foreign-debt-market-after-approving-budget-reforms",
+        "resumen": "Romania is selling bonds on international markets for the first time this year to capitalize on improved sentiment after the government pushed through reforms needed to reduce the budget deficit.",
+        "fecha": "Wed, 25 Feb 2026 11:30:43 GMT",
+        "autor": "Andra Timu, Irina Vilcu"
+      },
+      {
+        "titulo": "Trump makes little mention of China in the longest State of the Union speech",
+        "fuente": "cnbc",
+        "url": "https://www.cnbc.com/2026/02/25/trump-china-state-of-the-union-speech.html",
+        "resumen": "U.S. President Donald Trump is scheduled to visit Beijing from March 31 to April 2, after a year of heightened trade tensions between the two countries.",
+        "fecha": "Wed, 25 Feb 2026 08:42:49 GMT",
+        "autor": null
+      },
+      {
+        "titulo": "The global M&A boom is rolling into 2026 as AI sparks deal frenzy — but cash is getting tight",
+        "fuente": "cnbc",
+        "url": "https://www.cnbc.com/2026/02/25/global-ma-boom-surges-2026-ai-mega-deals-capital-squeeze-merger-and-acquisition.html",
+        "resumen": "Markets are betting that the global M&amp;A surge has not yet finished, as Wall Street recovered its appetite for large-scale financings.",
+        "fecha": "Wed, 25 Feb 2026 02:46:43 GMT",
+        "autor": null
+      },
+      {
+        "titulo": "Register now: Applications open for the World's Top Fintech Companies 2026",
+        "fuente": "cnbc",
+        "url": "https://www.cnbc.com/2026/02/25/cnbc-worlds-top-fintech-companies-2026-apply-now.html",
+        "resumen": "CNBC and Statista chart the top fintech players from around the world, ranging from startups to Big Tech names.",
+        "fecha": "Tue, 24 Feb 2026 23:08:25 GMT",
+        "autor": null
+      },
+      {
+        "titulo": "Stocks making the biggest moves after hours: Workday, Cava, Lucid Group and more",
+        "fuente": "cnbc",
+        "url": "https://www.cnbc.com/2026/02/24/stocks-making-the-biggest-moves-after-hours-wday-cava-lcid.html",
+        "resumen": "These are the stocks posting the largest moves in extended trading.",
+        "fecha": "Tue, 24 Feb 2026 21:53:09 GMT",
+        "autor": null
+      },
+      {
+        "titulo": "PayPal pops nearly 7% on report fintech startup Stripe is weighing an acquisition",
+        "fuente": "cnbc",
+        "url": "https://www.cnbc.com/2026/02/24/paypal-stock-stripe-acquisition-report.html",
+        "resumen": "PayPal's stock lost nearly a third of its value last year due to slowing growth and competition concerns.",
+        "fecha": "Tue, 24 Feb 2026 22:10:28 GMT",
+        "autor": null
+      },
+      {
+        "titulo": "Jamie Dimon says AI is already reshaping JPMorgan Chase's workforce as bank plans 'huge redeployment’",
+        "fuente": "cnbc",
+        "url": "https://www.cnbc.com/2026/02/24/jpm-ceo-jamie-dimon-ai-reshaping-workforce-redeployment.html",
+        "resumen": "JPMorgan, the world's biggest bank by market cap, has the industry's largest annual tech budget at nearly $20 billion, and it has outlined an ambitious AI plan.",
+        "fecha": "Tue, 24 Feb 2026 21:33:36 GMT",
+        "autor": null
+      },
+      {
+        "titulo": "Stocks making the biggest moves midday: IBM, AMD, Dillard's, Novo Nordisk, Keysight Technologies & more",
+        "fuente": "cnbc",
+        "url": "https://www.cnbc.com/2026/02/24/stocks-making-the-biggest-moves-midday-ibm-amd-dds-nvo-more.html",
+        "resumen": "These are the stocks posting the largest moves in midday trading.",
+        "fecha": "Tue, 24 Feb 2026 19:08:26 GMT",
+        "autor": null
+      },
+      {
+        "titulo": "Fed's Goolsbee calls for a hold on cuts as current rate of inflation is 'not good enough'",
+        "fuente": "cnbc",
+        "url": "https://www.cnbc.com/2026/02/24/feds-goolsbee-calls-for-a-hold-on-cuts-as-current-rate-of-inflation-is-not-good-enough.html",
+        "resumen": "The Chicago Fed president said Tuesday that cuts aren't appropriate until there's more evidence that inflation is on its way down.",
+        "fecha": "Tue, 24 Feb 2026 15:58:03 GMT",
+        "autor": null
+      },
+      {
+        "titulo": "Stocks making the biggest moves premarket: AMD, Home Depot, Hims & Hers Health, Diamondback Energy and more",
+        "fuente": "cnbc",
+        "url": "https://www.cnbc.com/2026/02/24/stocks-making-the-biggest-moves-premarket-amd-hd-hims-fang.html",
+        "resumen": "These are the stocks posting the largest moves in early trading.",
+        "fecha": "Tue, 24 Feb 2026 17:49:08 GMT",
+        "autor": null
+      },
+      {
+        "titulo": "Jamie Dimon says 'watch out’ as lofty asset prices add to economic risks: ‘My anxiety is high’",
+        "fuente": "cnbc",
+        "url": "https://www.cnbc.com/2026/02/23/jamie-dimon-says-watch-out-as-high-asset-prices-add-to-economic-risks-my-anxiety-is-high.html",
+        "resumen": "JPMorgan Chase CEO Jamie Dimon is anxious as high asset levels collide with increased competition among lenders and jitters over loans to the software industry.",
+        "fecha": "Tue, 24 Feb 2026 13:17:41 GMT",
+        "autor": null
+      },
+      {
+        "titulo": "World’s best-performing market gets boost from corporate reform bill",
+        "fuente": "ft",
+        "url": "https://www.ft.com/content/3c39cd79-bce6-467b-9671-f13de70d05fb",
+        "resumen": "Law ends practice that investors say helps owner families maintain control at expense of minority shareholders",
+        "fecha": "Wed, 25 Feb 2026 08:41:34 GMT",
+        "autor": null
+      },
+      {
+        "titulo": "Australian and NZ dollars surge as traders position for global rate rises",
+        "fuente": "ft",
+        "url": "https://www.ft.com/content/92101fcd-84b8-4485-ab4a-ac4eed81635c",
+        "resumen": "Commodity-linked currencies acting as ‘canaries in coal mine’ for shift towards rises in borrowing costs",
+        "fecha": "Wed, 25 Feb 2026 07:24:52 GMT",
+        "autor": null
+      },
+      {
+        "titulo": "Yen weakens after Takaichi picks dovish Bank of Japan candidates",
+        "fuente": "ft",
+        "url": "https://www.ft.com/content/96e8b7aa-e130-4772-96a5-6be041f98738",
+        "resumen": "Academics favouring lower interest rates could challenge governor Kazuo Ueda’s efforts to normalise policy, analysts say",
+        "fecha": "Wed, 25 Feb 2026 06:37:41 GMT",
+        "autor": null
+      },
+      {
+        "titulo": "The AI doomers aren’t done yet",
+        "fuente": "ft",
+        "url": "https://www.ft.com/content/d88b9342-4700-4628-b4c9-636df862504e",
+        "resumen": "Plus AMD and Meta",
+        "fecha": "Wed, 25 Feb 2026 06:30:04 GMT",
+        "autor": null
+      },
+      {
+        "titulo": "The death of the Trump trade",
+        "fuente": "ft",
+        "url": "https://www.ft.com/content/cfdc8ea7-57ed-4843-82b6-7cc427b3e32f",
+        "resumen": "Investor backlash against US markets appears to be real",
+        "fecha": "Wed, 25 Feb 2026 05:00:25 GMT",
+        "autor": null
+      },
+      {
+        "titulo": "Klarna shows the perils of running a bank like a tech company",
+        "fuente": "ft",
+        "url": "https://www.ft.com/content/c28774a4-5dd8-4170-bcdb-2a1781844636",
+        "resumen": "When the Swedish fintech grows rapidly, short-term income goes down — as have its shares",
+        "fecha": "Wed, 25 Feb 2026 05:00:16 GMT",
+        "autor": null
+      },
+      {
+        "titulo": "Investors seek shelter from AI rout in asset-heavy stocks",
+        "fuente": "ft",
+        "url": "https://www.ft.com/content/86b5591a-9e62-4c3f-9e03-7d90d36ed068",
+        "resumen": "Energy and utilities emerge as big winners from fears that artificial intelligence will upend software industry",
+        "fecha": "Tue, 24 Feb 2026 22:26:18 GMT",
+        "autor": null
+      },
+      {
+        "titulo": "Which piece of speculative fiction had the greatest single-day stock market impact?",
+        "fuente": "ft",
+        "url": "https://www.ft.com/content/f12398a8-ef57-412f-ae40-67ef9b421bed",
+        "resumen": "Oh, give my props to the writer. Price’s at an all-time low in the future",
+        "fecha": "Tue, 24 Feb 2026 21:03:51 GMT",
+        "autor": null
+      },
+      {
+        "titulo": "The report that rattled Wall Street",
+        "fuente": "ft",
+        "url": "https://www.ft.com/content/e87bc114-5cb9-43ce-b271-ec1d948e4c11",
+        "resumen": "AI boom or AI doom?",
+        "fecha": "Tue, 24 Feb 2026 21:00:00 GMT",
+        "autor": null
+      },
+      {
+        "titulo": "Odey cleared to put UK financial regulator’s ‘animus’ on trial",
+        "fuente": "ft",
+        "url": "https://www.ft.com/content/2c2f956b-c79b-42c4-981c-5dd94ef8e529",
+        "resumen": "FCA had attempted to block parts of the financier’s legal arguments ahead of March trial",
+        "fecha": "Tue, 24 Feb 2026 18:43:54 GMT",
+        "autor": null
+      }
+    ]
+  },
+  "calculados": {
+    "merval_usd_ccl": 1942.68,
+    "ratio_eth_btc": 0.029451,
+    "inflacion_anualizada_pct": 40.92,
+    "tasa_real_plazo_fijo_pct": -40.65,
+    "cedears_prima_promedio_pct": -0.11
+  }
+}

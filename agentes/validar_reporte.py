@@ -137,6 +137,11 @@ def check_disclaimer(reporte, agente="manu"):
             r"esto no es recomendaci[oó]n",
             r"mi lectura del mercado",
         ]
+    elif agente == "editor":
+        patterns = [
+            r"siete miradas.{0,5}una redacci[oó]n",
+            r"las decisiones son tuyas",
+        ]
     else:
         patterns = [
             r"esto es análisis.{0,5}no predicción",
@@ -149,21 +154,32 @@ def check_disclaimer(reporte, agente="manu"):
 
 
 def check_titulo(reporte, agente="manu"):
-    """Verificar formato del título."""
+    """Verificar formato del título (nuevo formato: H1 dinámico + nombre del reporte en subtítulo)."""
+    # Nuevo formato: H1 es un titular dinámico, nombre del reporte aparece en línea siguiente
+    # como **El Tablero** — [fecha] o similar
     titulo_patterns = {
-        "manu": (r'#\s*El Tablero\s*[—–-]', "El Tablero"),
-        "tomi": (r'#\s*Señales\s*[—–-]', "Señales"),
-        "vale": (r'#\s*Renta Fija Hoy\s*[—–-]', "Renta Fija Hoy"),
-        "santi": (r'#\s*Research Diario\s*[—–-]', "Research Diario"),
-        "sol": (r'#\s*Portafolio\s*[—–-]', "Portafolio"),
-        "diego": (r'#\s*Técnico\s*[—–-]', "Técnico"),
-        "roberto": (r'#\s*(Oportunidad|Sin novedad)\s*[—–-]', "Oportunidad/Sin novedad"),
+        "manu": (r'\*\*\s*El Tablero\s*\*\*\s*[—–-]', "El Tablero"),
+        "tomi": (r'\*\*\s*Señales\s*\*\*\s*[—–-]', "Señales"),
+        "vale": (r'\*\*\s*Renta [Ff]ija [Hh]oy\s*\*\*\s*[—–-]', "Renta Fija Hoy"),
+        "santi": (r'\*\*\s*Research Diario\s*\*\*\s*[—–-]', "Research Diario"),
+        "sol": (r'\*\*\s*Portafolio\s*\*\*\s*[—–-]', "Portafolio"),
+        "diego": (r'\*\*\s*Técnico\s*\*\*\s*[—–-]', "Técnico"),
+        "roberto": (r'\*\*\s*(Oportunidad|Sin novedad)\s*\*\*\s*[—–-]', "Oportunidad/Sin novedad"),
+        "editor": (r'\*\*\s*La Redacción\s*\*\*\s*[—–-]', "La Redacción"),
     }
     if agente in titulo_patterns:
         pattern, nombre = titulo_patterns[agente]
+        # También aceptar el formato viejo por retrocompatibilidad
+        old_pattern = pattern.replace(r'\*\*\s*', r'').replace(r'\s*\*\*', r'')
+        old_h1_pattern = r'#\s*' + old_pattern
         if re.search(pattern, reporte, re.IGNORECASE):
-            return "OK", f"Título correcto ({nombre})"
-        return "FAIL", f"Título incorrecto (debe ser '# {nombre} — [fecha]')"
+            # Verificar que hay un H1 dinámico antes
+            if re.search(r'^#\s+\S', reporte, re.MULTILINE):
+                return "OK", f"Título correcto ({nombre} con titular dinámico)"
+            return "WARN", f"Nombre del reporte presente pero falta titular H1"
+        if re.search(old_h1_pattern, reporte, re.IGNORECASE):
+            return "OK", f"Título correcto ({nombre}, formato clásico)"
+        return "FAIL", f"Título incorrecto (debe incluir '**{nombre}** — [fecha]')"
     return "OK", "Check de título no implementado para este agente"
 
 
@@ -213,6 +229,12 @@ def check_secciones(reporte, agente="manu"):
             ("La tesis", r"la\s+tesis"),
             ("Bitácora", r"bit[aá]cora"),
             ("Perspectiva", r"perspectiva"),
+        ],
+        "editor": [
+            ("El día en un párrafo", r"(el\s+)?d[ií]a\s+en\s+un\s+p[aá]rrafo"),
+            ("Lo que dice el equipo", r"(lo\s+)?que\s+dice\s+el\s+equipo"),
+            ("La tensión del día", r"tensi[oó]n.{0,10}d[ií]a"),
+            ("Lo que vigilo mañana", r"(lo\s+)?que\s+vigilo"),
         ],
     }
 
@@ -665,6 +687,7 @@ def validar(reporte_path, datos_path=None, use_llm=False, llm_model=None):
         "sol": (1000, 1500),
         "diego": (600, 1000),
         "roberto": (200, 1200),  # 200 for "sin novedad", 1200 for full report
+        "editor": (700, 1200),
     }
     min_w, max_w = extension_limites.get(agente, (800, 1200))
     ext_check = check_extension(reporte, min_words=min_w, max_words=max_w)

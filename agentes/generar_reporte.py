@@ -8,6 +8,7 @@ import glob
 import json
 import os
 import sys
+from datetime import datetime, timedelta
 
 from dotenv import load_dotenv
 from openai import OpenAI
@@ -75,6 +76,48 @@ def _detectar_fechas(data, fecha_pipeline):
             fechas[f"Dólar {tipo}"] = fa[:10]
 
     return fechas
+
+
+def _load_past_reports_summary(agente, fecha_actual, days=5):
+    """Cargar resúmenes de los últimos N días de reportes para contexto."""
+    summaries = []
+    try:
+        current = datetime.strptime(fecha_actual, "%Y-%m-%d")
+    except ValueError:
+        return ""
+
+    for i in range(1, days + 1):
+        past_date = (current - timedelta(days=i)).strftime("%Y-%m-%d")
+        path = os.path.join(REPORTES_DIR, f"{agente}_{past_date}.md")
+        if os.path.exists(path):
+            with open(path, "r", encoding="utf-8") as f:
+                content = f.read()
+            # Extraer título (primera línea H1) y primeras ~200 palabras
+            lines = content.strip().split("\n")
+            title = ""
+            for line in lines:
+                if line.startswith("# "):
+                    title = line
+                    break
+            words = content.split()
+            excerpt = " ".join(words[:200])
+            if len(words) > 200:
+                excerpt += "..."
+            summaries.append(f"### Reporte del {past_date}\n{title}\n\n{excerpt}")
+
+    if not summaries:
+        return ""
+
+    header = (
+        "## Contexto: tus reportes de los últimos días\n\n"
+        "Para mantener coherencia con lo que escribiste anteriormente, acá tenés un resumen de tus últimos reportes. Usalo para:\n"
+        "- No repetir exactamente las mismas ideas o frases\n"
+        "- Dar continuidad a tesis abiertas o trades en seguimiento\n"
+        "- Referenciar análisis anteriores si es relevante (\"como mencioné ayer...\", \"la semana pasada señalé que...\")\n"
+        "- Mantener coherencia en tu narrativa\n"
+        "- NO copies texto de reportes anteriores — usá la información como contexto\n\n"
+    )
+    return header + "\n\n".join(summaries) + "\n\n---\n"
 
 
 def _build_manu_user_message(data):
@@ -1049,6 +1092,46 @@ def _build_roberto_user_message(data):
     return "\n".join(lines)
 
 
+def _build_editor_user_message(data):
+    """Construir user message para el Editor leyendo los reportes de los demás agentes."""
+    fecha = data.get("metadata", {}).get("fecha", "unknown")
+    agentes_base = ["manu", "tomi", "vale", "santi", "sol", "diego", "roberto"]
+
+    lines = []
+    lines.append(f"# Reportes del equipo — {fecha}")
+    lines.append("")
+    lines.append("A continuación tenés los reportes publicados hoy por cada analista del equipo. Leelos y escribí tu editorial.")
+    lines.append("")
+
+    reportes_encontrados = 0
+    for agente in agentes_base:
+        path = os.path.join(REPORTES_DIR, f"{agente}_{fecha}.md")
+        if os.path.exists(path):
+            with open(path, "r", encoding="utf-8") as f:
+                contenido = f.read()
+            lines.append(f"## Reporte de {agente.capitalize()}")
+            lines.append("")
+            lines.append(contenido)
+            lines.append("")
+            lines.append("---")
+            lines.append("")
+            reportes_encontrados += 1
+        else:
+            lines.append(f"## Reporte de {agente.capitalize()}")
+            lines.append(f"(No disponible — {agente} no publicó hoy)")
+            lines.append("")
+
+    if reportes_encontrados == 0:
+        lines.append("**ATENCIÓN: No se encontraron reportes del equipo para hoy. No podés escribir el editorial sin insumos.**")
+        return "\n".join(lines)
+
+    lines.append("---")
+    lines.append(f"Escribí tu editorial **La Redacción** para hoy basándote en los reportes de tu equipo.")
+    lines.append(f"Reportes disponibles: {reportes_encontrados} de {len(agentes_base)} analistas.")
+
+    return "\n".join(lines)
+
+
 def _load_latest_json():
     """Cargar el JSON diario más reciente de output/."""
     pattern = os.path.join(OUTPUT_DIR, "datos_diarios_*.json")
@@ -1079,6 +1162,7 @@ def _build_user_message(agente, data):
         "sol": _build_sol_user_message,
         "diego": _build_diego_user_message,
         "roberto": _build_roberto_user_message,
+        "editor": _build_editor_user_message,
     }
     builder = builders.get(agente)
     if not builder:
@@ -1106,11 +1190,18 @@ def generar(agente, datos_path, model=None):
     system_prompt = _load_system_prompt(agente)
     user_message = _build_user_message(agente, data)
 
+    # Agregar contexto de reportes anteriores (últimos 5 días)
+    past_context = _load_past_reports_summary(agente, fecha)
+    if past_context:
+        user_message = past_context + "\n" + user_message
+
     print(f"Generando reporte de {agente} para {fecha}...")
     print(f"  Modelo: {model}")
     print(f"  Datos: {datos_path}")
     print(f"  System prompt: {len(system_prompt)} chars")
     print(f"  User message: {len(user_message)} chars")
+    if past_context:
+        print(f"  Contexto histórico: {len(past_context)} chars")
 
     # Llamar a OpenRouter
     client = OpenAI(
@@ -1149,6 +1240,7 @@ def generar(agente, datos_path, model=None):
         "sol": (1000, 1500),
         "diego": (600, 1000),
         "roberto": (800, 1200),
+        "editor": (800, 1200),
     }
     min_w, max_w = limites.get(agente, (800, 1200))
     if palabras < min_w:
